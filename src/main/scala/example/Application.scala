@@ -8,6 +8,7 @@ import qx.ui.tabview.{Page, TabView}
 
 import scala.scalajs.js
 import scala.scalajs.js.JSApp
+import js.Dynamic.{literal => jsobj, global => jsg, newInstance => jsnew}
 
 object Application extends JSApp
 {
@@ -29,7 +30,7 @@ object Application extends JSApp
 		}}
 
 		val root = app.getRoot().asInstanceOf[Composite]
-		root.add(tabView, js.Dynamic.literal(edge = 0))
+		root.add(tabView, jsobj(edge = 0))
 	}
 
 	private def createPage(name: String): Page =

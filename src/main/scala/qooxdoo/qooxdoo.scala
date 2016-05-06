@@ -6,19 +6,6 @@ import js.|
 
 package qx {
 
-@JSName("qx.IMap")
-@js.native
-trait IMap extends js.Object {
-  @JSBracketAccess
-  def apply(key: String): js.Any = js.native
-  @JSBracketAccess
-  def update(key: String, v: js.Any): Unit = js.native
-}
-
-}
-
-package qx {
-
 package registry {
 
 @JSName("qx.registry")
@@ -43,7 +30,7 @@ object Bootstrap extends js.Object {
     def bind(func: js.Function, self: js.Any = ???, varargs: js.Any = ???): js.Function = js.native
     def createNamespace(name: String, obj: js.Any): String = js.native
     def debug(obj: js.Any, message: js.Any): Unit = js.native
-    def define(name: String = ???, config: qx.IMap = ???): qx.Class = js.native
+    def define(name: String = ???, config: js.Any = ???): qx.Class = js.native
     def error(obj: js.Any, message: js.Any): Unit = js.native
     def extendClass(clazz: js.Function, construct: js.Function, superClass: js.Function, name: js.Function, basename: js.Function): Unit = js.native
     def firstLow(str: String): String = js.native
@@ -78,7 +65,7 @@ class Class extends js.Object {
 @js.native
 @JSName("qx.Class")
 object Class extends js.Object {
-    def define(name: String = ???, config: qx.IMap = ???): qx.Class = js.native
+    def define(name: String = ???, config: js.Any = ???): qx.Class = js.native
     def genericToString(): String = js.native
     def getByInterface(clazz: qx.Class, iface: qx.Interface): qx.Class = js.native
     def getByMixin(clazz: qx.Class, mixin: qx.Mixin): qx.Class = js.native
@@ -89,7 +76,7 @@ object Class extends js.Object {
     def getInterfaces(clazz: qx.Class): js.Array[qx.Interface] = js.native
     def getMixins(clazz: qx.Class): js.Array[qx.Mixin] = js.native
     def getProperties(clazz: qx.Class): js.Array[String] = js.native
-    def getPropertyDefinition(clazz: qx.Class, name: String): qx.IMap = js.native
+    def getPropertyDefinition(clazz: qx.Class, name: String): js.Dynamic = js.native
     def getTotalNumber(): Long = js.native
     def hasInterface(clazz: qx.Class, iface: qx.Interface): Boolean = js.native
     def hasMixin(clazz: qx.Class, mixin: qx.Mixin): Boolean = js.native
@@ -118,7 +105,7 @@ object Interface extends js.Object {
     def assert(clazz: qx.Class, iface: qx.Interface, wrap: Boolean = ???): Unit = js.native
     def assertObject(obj: qx.core.Object, iface: qx.Interface): Unit = js.native
     def classImplements(clazz: qx.Class, iface: qx.Interface): Boolean = js.native
-    def define(name: String, config: qx.IMap = ???): qx.Interface = js.native
+    def define(name: String, config: js.Any = ???): qx.Interface = js.native
     def flatten(ifaces: js.Array[qx.Interface] = ???): qx.data.Array = js.native
     def genericToString(): String = js.native
     def getByName(name: String): qx.Class = js.native
@@ -138,7 +125,7 @@ class Mixin extends js.Object {
 @JSName("qx.Mixin")
 object Mixin extends js.Object {
     def checkCompatibility(mixins: js.Array[qx.Mixin]): Boolean = js.native
-    def define(name: String, config: qx.IMap = ???): qx.Mixin = js.native
+    def define(name: String, config: js.Any = ???): qx.Mixin = js.native
     def flatten(mixins: js.Array[qx.Mixin] = ???): qx.data.Array = js.native
     def genericToString(): String = js.native
     def getByName(name: String): qx.Class = js.native
@@ -181,9 +168,9 @@ class Theme extends js.Object {
 @js.native
 @JSName("qx.Theme")
 object Theme extends js.Object {
-    def define(name: String, config: qx.IMap): Unit = js.native
+    def define(name: String, config: js.Any): Unit = js.native
     def genericToString(): String = js.native
-    def getAll(): qx.IMap = js.native
+    def getAll(): js.Dynamic = js.native
     def getByName(name: String): js.Dynamic = js.native
     def getTotalNumber(): Long = js.native
     def include(theme: qx.Theme, mixinTheme: qx.Theme): Unit = js.native
@@ -244,13 +231,13 @@ package qx.application {
 class Routing extends js.Object {
     protected def _executeGet(path: String, customData: js.Any, fromEvent: js.Any): Unit = js.native
     protected def _getPathOrFallback(path: String, defaultPath: String = ???): String = js.native
-    def back(customData: qx.IMap = ???): Unit = js.native
+    def back(customData: js.Any = ???): Unit = js.native
     def dispose(): Unit = js.native
     def execute(path: String, customData: js.Any): Unit = js.native
-    def executeDelete(path: String, params: qx.IMap, customData: js.Any): Unit = js.native
+    def executeDelete(path: String, params: js.Any, customData: js.Any): Unit = js.native
     def executeGet(path: String, customData: js.Any): Unit = js.native
-    def executePost(path: String, params: qx.IMap, customData: js.Any): Unit = js.native
-    def executePut(path: String, params: qx.IMap, customData: js.Any): Unit = js.native
+    def executePost(path: String, params: js.Any, customData: js.Any): Unit = js.native
+    def executePut(path: String, params: js.Any, customData: js.Any): Unit = js.native
     def getState(): String = js.native
     def init(defaultPath: String = ???): Unit = js.native
     def on(route: String, handler: js.Function, scope: js.Any): String = js.native
@@ -410,7 +397,7 @@ class Flash extends js.Object {
 @js.native
 @JSName("qx.bom.Flash")
 object Flash extends js.Object {
-    def create(element: HTMLElement, attributes: qx.IMap, variables: qx.IMap = ???, params: qx.IMap = ???, win: Window = ???): HTMLElement = js.native
+    def create(element: HTMLElement, attributes: js.Any, variables: js.Any = ???, params: js.Any = ???, win: Window = ???): HTMLElement = js.native
     def destroy(element: HTMLElement, win: Window = ???): Unit = js.native
 
 }
@@ -435,7 +422,7 @@ class Font protected () extends qx.core.Object {
     def getItalic(): Boolean = js.native
     def getLineHeight(): Long = js.native
     def getSize(): Int = js.native
-    def getStyles(): qx.IMap = js.native
+    def getStyles(): js.Dynamic = js.native
     def getTextShadow(): String = js.native
     protected def initBold(value: js.Any): Boolean = js.native
     protected def initColor(value: js.Any): String = js.native
@@ -470,9 +457,9 @@ class Font protected () extends qx.core.Object {
 @js.native
 @JSName("qx.bom.Font")
 object Font extends js.Object {
-    def fromConfig(config: qx.IMap): qx.bom.Font = js.native
+    def fromConfig(config: js.Any): qx.bom.Font = js.native
     def fromString(str: String): qx.bom.Font = js.native
-    def getDefaultStyles(): qx.IMap = js.native
+    def getDefaultStyles(): js.Dynamic = js.native
 
 }
 }
@@ -559,7 +546,7 @@ class Iframe extends js.Object {
 @js.native
 @JSName("qx.bom.Iframe")
 object Iframe extends js.Object {
-    def create(attributes: qx.IMap = ???, win: Window = ???): HTMLElement = js.native
+    def create(attributes: js.Any = ???, win: Window = ???): HTMLElement = js.native
     def getBody(iframe: HTMLElement): HTMLElement = js.native
     def getDocument(iframe: HTMLElement): Document = js.native
     def getWindow(iframe: HTMLElement): Window = js.native
@@ -585,7 +572,7 @@ class Input extends js.Object {
 @js.native
 @JSName("qx.bom.Input")
 object Input extends js.Object {
-    def create(`type`: String, attributes: qx.IMap, win: Window): HTMLElement = js.native
+    def create(`type`: String, attributes: js.Any, win: Window): HTMLElement = js.native
     def getValue(element: HTMLElement): String = js.native
     def setValue(element: HTMLElement, value: String): Unit = js.native
     def setWrap(element: HTMLElement, wrap: Boolean): Unit = js.native
@@ -602,8 +589,8 @@ class Label extends js.Object {
 @JSName("qx.bom.Label")
 object Label extends js.Object {
     def create(content: String, html: Boolean = ???, win: Window = ???): HTMLElement = js.native
-    def getHtmlSize(content: String, styles: qx.IMap = ???, width: Int = ???): qx.IMap = js.native
-    def getTextSize(text: String, styles: qx.IMap): qx.IMap = js.native
+    def getHtmlSize(content: String, styles: js.Any = ???, width: Int = ???): js.Dynamic = js.native
+    def getTextSize(text: String, styles: js.Any): js.Dynamic = js.native
     def getValue(element: HTMLElement): String = js.native
     def setSanitizer(func: js.Function): Unit = js.native
     def setValue(element: HTMLElement, value: String): Unit = js.native
@@ -840,7 +827,7 @@ class Vml extends js.Object {
 @js.native
 @JSName("qx.bom.Vml")
 object Vml extends js.Object {
-    def create(`type`: String, attributes: qx.IMap = ???, win: js.Any = ???): HTMLElement = js.native
+    def create(`type`: String, attributes: js.Any = ???, win: js.Any = ???): HTMLElement = js.native
     def createImage(source: String = ???, width: Int = ???, height: Int = ???, xOffset: Int = ???, yOffset: Int = ???, imageWidth: Int = ???, imageHeight: Int = ???): HTMLElement = js.native
     def updateImage(image: HTMLElement, source: String, width: Int, height: Int, xOffset: Int = ???, yOffset: Int = ???, imageWidth: Int = ???, imageHeight: Int = ???): Unit = js.native
 
@@ -870,7 +857,7 @@ object Window extends js.Object {
     def getBlocker(): qx.bom.Blocker = js.native
     def isClosed(win: Window): Boolean = js.native
     def moveTo(win: Window, top: Int, left: Int): Unit = js.native
-    def open(url: String, name: String, options: qx.IMap, modal: Boolean, useNativeModalDialog: Boolean, listener: js.Function = ???, self: js.Any = ???): Window = js.native
+    def open(url: String, name: String, options: js.Any, modal: Boolean, useNativeModalDialog: Boolean, listener: js.Function = ???, self: js.Any = ???): Window = js.native
     def resizeTo(win: Window, width: Int, height: Int): Unit = js.native
 
 }
@@ -1057,7 +1044,7 @@ object Event extends js.Object {
     def getHashChange(): Boolean = js.native
     def getHelp(): Boolean = js.native
     def getMouseEvent(): Boolean = js.native
-    def getMouseWheel(win: Window = ???): qx.IMap = js.native
+    def getMouseWheel(win: Window = ???): js.Dynamic = js.native
     def getMsPointer(): Boolean = js.native
     def getTouch(): Boolean = js.native
 
@@ -1294,8 +1281,8 @@ class Animation extends js.Object {
 @js.native
 @JSName("qx.bom.element.Animation")
 object Animation extends js.Object {
-    def animate(el: HTMLElement, desc: qx.IMap, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
-    def animateReverse(el: HTMLElement, desc: qx.IMap, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
+    def animate(el: HTMLElement, desc: js.Any, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
+    def animateReverse(el: HTMLElement, desc: js.Any, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
 
 }
 }
@@ -1308,9 +1295,9 @@ class AnimationCss extends js.Object {
 @js.native
 @JSName("qx.bom.element.AnimationCss")
 object AnimationCss extends js.Object {
-    protected def _animate(el: HTMLElement, desc: qx.IMap, duration: Int = ???, reverse: Boolean = ???): qx.bom.element.AnimationHandle = js.native
-    def animate(el: HTMLElement, desc: qx.IMap, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
-    def animateReverse(el: HTMLElement, desc: qx.IMap, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
+    protected def _animate(el: HTMLElement, desc: js.Any, duration: Int = ???, reverse: Boolean = ???): qx.bom.element.AnimationHandle = js.native
+    def animate(el: HTMLElement, desc: js.Any, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
+    def animateReverse(el: HTMLElement, desc: js.Any, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
 
 }
 }
@@ -1336,9 +1323,9 @@ class AnimationJs extends js.Object {
 @js.native
 @JSName("qx.bom.element.AnimationJs")
 object AnimationJs extends js.Object {
-    protected def _animate(el: HTMLElement, desc: qx.IMap, duration: Int = ???, reverse: Boolean = ???): qx.bom.element.AnimationHandle = js.native
-    def animate(el: HTMLElement, desc: qx.IMap, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
-    def animateReverse(el: HTMLElement, desc: qx.IMap, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
+    protected def _animate(el: HTMLElement, desc: js.Any, duration: Int = ???, reverse: Boolean = ???): qx.bom.element.AnimationHandle = js.native
+    def animate(el: HTMLElement, desc: js.Any, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
+    def animateReverse(el: HTMLElement, desc: js.Any, duration: Int = ???): qx.bom.element.AnimationHandle = js.native
     def pause(handle: qx.bom.element.AnimationHandle): qx.bom.element.AnimationHandle = js.native
     def play(handle: qx.bom.element.AnimationHandle): qx.bom.element.AnimationHandle = js.native
     def stop(handle: qx.bom.element.AnimationHandle): qx.bom.element.AnimationHandle = js.native
@@ -1354,7 +1341,7 @@ class Attribute extends js.Object {
 @js.native
 @JSName("qx.bom.element.Attribute")
 object Attribute extends js.Object {
-    def compile(map: qx.IMap): String = js.native
+    def compile(map: js.Any): String = js.native
     def get(element: HTMLElement, name: String): js.Dynamic = js.native
     def reset(element: HTMLElement, name: String): Unit = js.native
     def set(element: HTMLElement, name: String, value: js.Any): Unit = js.native
@@ -1371,7 +1358,7 @@ class Background extends js.Object {
 @JSName("qx.bom.element.Background")
 object Background extends js.Object {
     def compile(source: String = ???, repeat: String = ???, left: Int = ???, top: Int = ???): String = js.native
-    def getStyles(source: String, repeat: String = ???, left: Int = ???, top: Int = ???): qx.IMap = js.native
+    def getStyles(source: String, repeat: String = ???, left: Int = ???, top: Int = ???): js.Dynamic = js.native
     def set(element: HTMLElement, source: String = ???, repeat: String = ???, left: Int = ???, top: Int = ???): Unit = js.native
 
 }
@@ -1421,10 +1408,10 @@ class Clip extends js.Object {
 @js.native
 @JSName("qx.bom.element.Clip")
 object Clip extends js.Object {
-    def compile(map: qx.IMap): String = js.native
-    def get(element: HTMLElement, mode: Long): qx.IMap = js.native
+    def compile(map: js.Any): String = js.native
+    def get(element: HTMLElement, mode: Long): js.Dynamic = js.native
     def reset(element: HTMLElement): Unit = js.native
-    def set(element: HTMLElement, map: qx.IMap): Unit = js.native
+    def set(element: HTMLElement, map: js.Any): Unit = js.native
 
 }
 }
@@ -1454,7 +1441,7 @@ class Dataset extends js.Object {
 @JSName("qx.bom.element.Dataset")
 object Dataset extends js.Object {
     def get(element: HTMLElement, name: String): js.Dynamic = js.native
-    def getAll(element: HTMLElement): qx.IMap = js.native
+    def getAll(element: HTMLElement): js.Dynamic = js.native
     def hasData(element: HTMLElement): Boolean = js.native
     def remove(element: HTMLElement, name: String): Unit = js.native
     def set(element: HTMLElement, name: String, value: js.Any): Unit = js.native
@@ -1470,11 +1457,11 @@ class Decoration extends js.Object {
 @js.native
 @JSName("qx.bom.element.Decoration")
 object Decoration extends js.Object {
-    def create(source: String, repeat: String, style: qx.IMap): String = js.native
-    def getAttributes(source: String, repeat: String, style: qx.IMap): String = js.native
+    def create(source: String, repeat: String, style: js.Any): String = js.native
+    def getAttributes(source: String, repeat: String, style: js.Any): String = js.native
     def getTagName(repeat: String, source: String = ???): String = js.native
-    def processAlphaFix(style: qx.IMap, repeat: String, source: String): qx.IMap = js.native
-    def update(element: HTMLElement, source: String, repeat: String, style: qx.IMap): Unit = js.native
+    def processAlphaFix(style: js.Any, repeat: String, source: String): js.Dynamic = js.native
+    def update(element: HTMLElement, source: String, repeat: String, style: js.Any): Unit = js.native
 
 }
 }
@@ -1487,12 +1474,12 @@ class Dimension extends js.Object {
 @js.native
 @JSName("qx.bom.element.Dimension")
 object Dimension extends js.Object {
-    protected def _getBoundingClientRect(element: HTMLElement): qx.IMap = js.native
+    protected def _getBoundingClientRect(element: HTMLElement): js.Dynamic = js.native
     def getContentHeight(element: HTMLElement): Int = js.native
-    def getContentSize(element: HTMLElement): qx.IMap = js.native
+    def getContentSize(element: HTMLElement): js.Dynamic = js.native
     def getContentWidth(element: HTMLElement): Int = js.native
     def getHeight(element: HTMLElement): Int = js.native
-    def getSize(element: HTMLElement): qx.IMap = js.native
+    def getSize(element: HTMLElement): js.Dynamic = js.native
     def getWidth(element: HTMLElement): Int = js.native
 
 }
@@ -1506,12 +1493,12 @@ class Location extends js.Object {
 @js.native
 @JSName("qx.bom.element.Location")
 object Location extends js.Object {
-    def get(elem: HTMLElement, mode: String = ???): qx.IMap = js.native
+    def get(elem: HTMLElement, mode: String = ???): js.Dynamic = js.native
     def getBottom(elem: HTMLElement, mode: String): Int = js.native
     def getLeft(elem: HTMLElement, mode: String): Int = js.native
     def getOffsetParent(element: HTMLElement): HTMLElement = js.native
-    def getPosition(elem: HTMLElement): qx.IMap = js.native
-    def getRelative(elem1: HTMLElement, elem2: HTMLElement, mode1: String = ???, mode2: String = ???): qx.IMap = js.native
+    def getPosition(elem: HTMLElement): js.Dynamic = js.native
+    def getRelative(elem1: HTMLElement, elem2: HTMLElement, mode1: String = ???, mode2: String = ???): js.Dynamic = js.native
     def getRight(elem: HTMLElement, mode: String): Int = js.native
     def getTop(elem: HTMLElement, mode: String): Int = js.native
 
@@ -1558,14 +1545,14 @@ class Style extends js.Object {
 @js.native
 @JSName("qx.bom.element.Style")
 object Style extends js.Object {
-    def compile(map: qx.IMap): String = js.native
+    def compile(map: js.Any): String = js.native
     def get(element: HTMLElement, name: String, mode: Long, smart: Boolean = ???): js.Dynamic = js.native
     def getCss(element: HTMLElement): String = js.native
     def isPropertySupported(propertyName: String): Boolean = js.native
     def reset(element: HTMLElement, name: String, smart: Boolean = ???): Unit = js.native
     def set(element: HTMLElement, name: String, value: js.Any, smart: Boolean = ???): Unit = js.native
     def setCss(element: HTMLElement, value: String): Unit = js.native
-    def setStyles(element: HTMLElement, styles: qx.IMap, smart: Boolean = ???): Unit = js.native
+    def setStyles(element: HTMLElement, styles: js.Any, smart: Boolean = ???): Unit = js.native
 
 }
 }
@@ -1581,12 +1568,12 @@ object Transform extends js.Object {
     protected def _compute3dProperty(property: String, params: qx.data.Array): String = js.native
     protected def _computeAxisProperties(property: String, params: qx.data.Array): String = js.native
     def getBackfaceVisibility(el: HTMLElement): Boolean = js.native
-    def getCss(transforms: qx.IMap): String = js.native
+    def getCss(transforms: js.Any): String = js.native
     def getOrigin(el: HTMLElement): String = js.native
     def getPerspective(el: HTMLElement): String = js.native
     def getPerspectiveOrigin(el: HTMLElement): String = js.native
     def getStyle(el: HTMLElement): String = js.native
-    def getTransformValue(transforms: qx.IMap): String = js.native
+    def getTransformValue(transforms: js.Any): String = js.native
     def rotate(el: HTMLElement, value: String): Unit = js.native
     def scale(el: HTMLElement, value: Long): Unit = js.native
     def setBackfaceVisibility(el: HTMLElement, value: Boolean): Unit = js.native
@@ -1595,7 +1582,7 @@ object Transform extends js.Object {
     def setPerspectiveOrigin(el: HTMLElement, value: String): Unit = js.native
     def setStyle(el: HTMLElement, value: String): Unit = js.native
     def skew(el: HTMLElement, value: String): Unit = js.native
-    def transform(el: HTMLElement, transforms: qx.IMap): Unit = js.native
+    def transform(el: HTMLElement, transforms: js.Any): Unit = js.native
     def translate(el: HTMLElement, value: String): Unit = js.native
 
 }
@@ -1798,10 +1785,10 @@ package qx.bom.rest {
 @js.native
 @JSName("qx.bom.rest.Resource")
 class Resource protected () extends qx.event.Emitter {
-    def this(description: qx.IMap = ???) = this()
+    def this(description: js.Any = ???) = this()
     protected def _getRequest(): qx.bom.request.SimpleXhr = js.native
-    protected def _getRequestConfig(action: String, params: qx.IMap): qx.IMap = js.native
-    protected def _getRequestHandler(): qx.IMap = js.native
+    protected def _getRequestConfig(action: String, params: js.Any): js.Dynamic = js.native
+    protected def _getRequestHandler(): js.Dynamic = js.native
     protected def _getThrottleCount(): Int = js.native
     protected def _getThrottleLimit(): Int = js.native
     protected def _startPoll(action: String, listener: js.Function, interval: Long): Unit = js.native
@@ -1810,16 +1797,16 @@ class Resource protected () extends qx.event.Emitter {
     def destruct(): Unit = js.native
     def dispose(): Unit = js.native
     def getRequestsByAction(action: String): qx.data.Array = js.native
-    def invoke(action: String, params: qx.IMap, data: qx.IMap): Long = js.native
+    def invoke(action: String, params: js.Any, data: js.Any): Long = js.native
     def isDisposed(): Boolean = js.native
     def longPoll(action: String): String = js.native
-    def map(action: String, method: String, url: String, check: qx.IMap = ???): Unit = js.native
-    def poll(action: String, interval: Long, params: qx.IMap = ???, immediately: Boolean = ???): Unit = js.native
+    def map(action: String, method: String, url: String, check: js.Any = ???): Unit = js.native
+    def poll(action: String, interval: Long, params: js.Any = ???, immediately: Boolean = ???): Unit = js.native
     def refresh(action: String): Unit = js.native
     def restartPollByAction(action: String): Unit = js.native
     def setBaseUrl(baseUrl: String): Unit = js.native
     def setRequestFactory(fn: js.Function): Unit = js.native
-    def setRequestHandler(handler: qx.IMap): Unit = js.native
+    def setRequestHandler(handler: js.Any): Unit = js.native
     def stopPollByAction(action: String): Unit = js.native
 
 }
@@ -1839,7 +1826,7 @@ class Memory extends js.Object {
     def getItem(key: String): js.Dynamic = js.native
     def getKey(index: Int): String = js.native
     def getLength(): Int = js.native
-    def getStorage(): qx.IMap = js.native
+    def getStorage(): js.Dynamic = js.native
     def removeItem(key: String): Unit = js.native
     def setItem(key: String, value: js.Any): Unit = js.native
 
@@ -1862,7 +1849,7 @@ class UserData protected () extends js.Object {
     def getItem(key: String): js.Dynamic = js.native
     def getKey(index: Int): String = js.native
     def getLength(): Int = js.native
-    def getStorage(): qx.IMap = js.native
+    def getStorage(): js.Dynamic = js.native
     def removeItem(key: String): Unit = js.native
     def setItem(key: String, value: js.Any): Unit = js.native
 
@@ -1922,7 +1909,7 @@ class Validator protected () extends qx.core.Object {
     def this(fontFamily: String = ???) = this()
     protected def _applyFontFamily(value: js.Any, old: js.Any): Unit = js.native
     protected def _getHelperElement(fontFamily: String): HTMLElement = js.native
-    protected def _getRequestedHelpers(): qx.IMap = js.native
+    protected def _getRequestedHelpers(): js.Dynamic = js.native
     protected def _isFontValid(): Boolean = js.native
     protected def _reset(): Unit = js.native
     def getFontFamily(): js.Dynamic = js.native
@@ -2000,7 +1987,7 @@ object Assert extends js.Object {
     def assertInteger(value: js.Any, msg: String): Unit = js.native
     def assertInterface(value: js.Any, iface: qx.Class, msg: String): Unit = js.native
     def assertJsonEquals(expected: js.Any, found: js.Any, msg: String): Unit = js.native
-    def assertKeyInMap(value: js.Any, map: qx.IMap, msg: String): Unit = js.native
+    def assertKeyInMap(value: js.Any, map: js.Any, msg: String): Unit = js.native
     def assertMap(value: js.Any, msg: String): Unit = js.native
     def assertMatch(str: String, re: String, msg: String): Unit = js.native
     def assertNotEquals(expected: js.Any, found: js.Any, msg: String): Unit = js.native
@@ -2059,14 +2046,14 @@ object Environment extends js.Object {
     protected def _initDefaultQxValues(): Unit = js.native
     def add(key: String, check: js.Any): Unit = js.native
     def addAsync(key: String, check: js.Function): Unit = js.native
-    def filter(map: qx.IMap): qx.data.Array = js.native
+    def filter(map: js.Any): qx.data.Array = js.native
     def get(key: String): js.Dynamic = js.native
     def getAsync(key: String, callback: js.Function, self: js.Any): Unit = js.native
-    def getAsyncChecks(): qx.IMap = js.native
-    def getChecks(): qx.IMap = js.native
+    def getAsyncChecks(): js.Dynamic = js.native
+    def getChecks(): js.Dynamic = js.native
     def invalidateCacheKey(key: String): Unit = js.native
-    def select(key: String, values: qx.IMap): js.Dynamic = js.native
-    def selectAsync(key: String, values: qx.IMap, self: js.Any): Unit = js.native
+    def select(key: String, values: js.Any): js.Dynamic = js.native
+    def selectAsync(key: String, values: js.Any, self: js.Any): Unit = js.native
 
 }
 }
@@ -2116,7 +2103,7 @@ trait MAssert extends js.Object {
     def assertInteger(value: js.Any, msg: String): Unit = js.native
     def assertInterface(value: js.Any, iface: qx.Class, msg: String): Unit = js.native
     def assertJsonEquals(expected: js.Any, found: js.Any, msg: String): Unit = js.native
-    def assertKeyInMap(value: js.Any, map: qx.IMap, msg: String): Unit = js.native
+    def assertKeyInMap(value: js.Any, map: js.Any, msg: String): Unit = js.native
     def assertMap(value: js.Any, msg: String): Unit = js.native
     def assertMatch(str: String, re: js.RegExp, msg: String): Unit = js.native
     def assertNotEquals(expected: js.Any, found: js.Any, msg: String): Unit = js.native
@@ -2181,7 +2168,7 @@ package qx.core {
 trait MProperty extends js.Object {
     def get(prop: String): js.Dynamic = js.native
     def reset(prop: String): Unit = js.native
-    def set(data: qx.IMap, value: js.Any = ???): js.Dynamic = js.native
+    def set(data: js.Any, value: js.Any = ???): js.Dynamic = js.native
 
 }
 }
@@ -2218,7 +2205,7 @@ object ObjectRegistry extends js.Object {
     def getNextHash(): Int = js.native
     def getPostId(): Int = js.native
     def getRegistry(): js.Dynamic = js.native
-    def getStackTraces(): qx.IMap = js.native
+    def getStackTraces(): js.Dynamic = js.native
     def register(obj: js.Any): Unit = js.native
     def shutdown(): Unit = js.native
     def toHashCode(obj: js.Any): String = js.native
@@ -2235,7 +2222,7 @@ class Property extends js.Object {
 @js.native
 @JSName("qx.core.Property")
 object Property extends js.Object {
-    def attachMethods(clazz: qx.Class, name: String, config: qx.IMap): Unit = js.native
+    def attachMethods(clazz: qx.Class, name: String, config: js.Any): Unit = js.native
     def attachRefreshInheritables(clazz: qx.Class): Unit = js.native
     def error(obj: qx.core.Object, id: Int, property: String, variant: String, value: js.Any): Unit = js.native
     def executeOptimizedGetter(instance: js.Any, clazz: qx.Class, name: String, variant: String): js.Dynamic = js.native
@@ -2340,7 +2327,7 @@ package qx.data {
 @js.native
 @JSName("qx.data.MBinding")
 trait MBinding extends js.Object {
-    def bind(sourcePropertyChain: String, targetObject: qx.core.Object, targetProperty: String, options: qx.IMap): js.Dynamic = js.native
+    def bind(sourcePropertyChain: String, targetObject: qx.core.Object, targetProperty: String, options: js.Any): js.Dynamic = js.native
     def getBindings(): qx.data.Array = js.native
     def removeAllBindings(): Unit = js.native
     def removeBinding(id: js.Any): Unit = js.native
@@ -2357,8 +2344,8 @@ class SingleValueBinding extends js.Object {
 @js.native
 @JSName("qx.data.SingleValueBinding")
 object SingleValueBinding extends js.Object {
-    def bind(sourceObject: qx.core.Object, sourcePropertyChain: String, targetObject: qx.core.Object, targetPropertyChain: String, options: qx.IMap = ???): js.Dynamic = js.native
-    def getAllBindings(): qx.IMap = js.native
+    def bind(sourceObject: qx.core.Object, sourcePropertyChain: String, targetObject: qx.core.Object, targetPropertyChain: String, options: js.Any = ???): js.Dynamic = js.native
+    def getAllBindings(): js.Dynamic = js.native
     def getAllBindingsForObject(obj: qx.core.Object): qx.data.Array = js.native
     def removeAllBindings(): Unit = js.native
     def removeAllBindingsForObject(obj: qx.core.Object): Unit = js.native
@@ -2367,7 +2354,7 @@ object SingleValueBinding extends js.Object {
     def resolvePropertyChain(o: qx.core.Object, propertyChain: String): js.Dynamic = js.native
     def showAllBindingsInLog(): Unit = js.native
     def showBindingInLog(obj: qx.core.Object, id: js.Any): Unit = js.native
-    def updateTarget(sourceObject: qx.core.Object, sourcePropertyChain: String, targetObject: qx.core.Object, targetPropertyChain: String, options: qx.IMap): Unit = js.native
+    def updateTarget(sourceObject: qx.core.Object, sourcePropertyChain: String, targetObject: qx.core.Object, targetPropertyChain: String, options: js.Any): Unit = js.native
 
 }
 }
@@ -2378,7 +2365,7 @@ class Form protected () extends qx.core.Object {
     def this(model: qx.core.Object = ???, target: qx.ui.form.Form = ???, selfUpdate: Boolean = ???) = this()
     protected def _applyModel(value: qx.core.Object, old: qx.core.Object): Unit = js.native
     protected def _applyTarget(value: qx.ui.form.Form, old: qx.ui.form.Form): Unit = js.native
-    def addBindingOptions(name: String, model2target: qx.IMap, target2model: qx.IMap): Unit = js.native
+    def addBindingOptions(name: String, model2target: js.Any, target2model: js.Any): Unit = js.native
     def createModel(includeBubbleEvents: Boolean): qx.core.Object = js.native
     def getModel(): qx.core.Object = js.native
     def getTarget(): qx.ui.form.Form = js.native
@@ -2420,9 +2407,9 @@ class List protected () extends qx.core.Object with qx.data.controller.ISelectio
     override def setSelection(value: qx.data.IListData): Unit = js.native
     def this(model: qx.data.Array = ???, target: qx.ui.core.Widget = ???, labelPath: String = ???) = this()
     protected def _applyDelegate(value: qx.core.Object, old: qx.core.Object): Unit = js.native
-    protected def _applyIconOptions(value: qx.IMap, old: qx.IMap): Unit = js.native
+    protected def _applyIconOptions(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyIconPath(value: String, old: String): Unit = js.native
-    protected def _applyLabelOptions(value: qx.IMap, old: qx.IMap): Unit = js.native
+    protected def _applyLabelOptions(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyLabelPath(value: String, old: String): Unit = js.native
     protected def _applyModel(value: qx.data.Array, old: qx.data.Array): Unit = js.native
     protected def _applyTarget(value: qx.ui.core.Widget, old: qx.ui.core.Widget): Unit = js.native
@@ -2435,8 +2422,8 @@ class List protected () extends qx.core.Object with qx.data.controller.ISelectio
     protected def _setCreateItem(value: js.Any, old: js.Any): Unit = js.native
     protected def _setFilter(value: js.Function, old: js.Function): Unit = js.native
     def bindDefaultProperties(item: qx.ui.form.ListItem, index: Long): Unit = js.native
-    def bindProperty(sourcePath: String, targetProperty: String, options: qx.IMap, targetWidget: qx.ui.core.Widget, index: Long): Unit = js.native
-    def bindPropertyReverse(targetPath: String, sourcePath: String, options: qx.IMap, sourceWidget: qx.ui.core.Widget, index: Long): Unit = js.native
+    def bindProperty(sourcePath: String, targetProperty: String, options: js.Any, targetWidget: qx.ui.core.Widget, index: Long): Unit = js.native
+    def bindPropertyReverse(targetPath: String, sourcePath: String, options: js.Any, sourceWidget: qx.ui.core.Widget, index: Long): Unit = js.native
     def getDelegate(): js.Dynamic = js.native
     def getIconOptions(): js.Dynamic = js.native
     def getIconPath(): String = js.native
@@ -2495,7 +2482,7 @@ package qx.data.controller {
 class Object protected () extends qx.core.Object {
     def this(model: qx.core.Object = ???) = this()
     protected def _applyModel(value: qx.core.Object, old: qx.core.Object): Unit = js.native
-    def addTarget(targetObject: qx.core.Object, targetProperty: String, sourceProperty: String, bidirectional: Boolean = ???, options: qx.IMap = ???, reverseOptions: qx.IMap = ???): Unit = js.native
+    def addTarget(targetObject: qx.core.Object, targetProperty: String, sourceProperty: String, bidirectional: Boolean = ???, options: js.Any = ???, reverseOptions: js.Any = ???): Unit = js.native
     def getModel(): qx.core.Object = js.native
     protected def initModel(value: js.Any): qx.core.Object = js.native
     def removeTarget(targetObject: qx.core.Object, targetProperty: String, sourceProperty: String): Unit = js.native
@@ -2514,9 +2501,9 @@ class Tree protected () extends qx.core.Object with qx.data.controller.ISelectio
     def this(model: qx.core.Object = ???, target: qx.ui.tree.Tree = ???, childPath: String = ???, labelPath: String = ???) = this()
     protected def _applyChildPath(value: String, old: String): Unit = js.native
     protected def _applyDelegate(value: qx.core.Object, old: qx.core.Object): Unit = js.native
-    protected def _applyIconOptions(value: qx.IMap, old: qx.IMap): Unit = js.native
+    protected def _applyIconOptions(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyIconPath(value: String, old: String): Unit = js.native
-    protected def _applyLabelOptions(value: qx.IMap, old: qx.IMap): Unit = js.native
+    protected def _applyLabelOptions(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyLabelPath(value: String, old: String): Unit = js.native
     protected def _applyModel(value: qx.core.Object, old: qx.core.Object): Unit = js.native
     protected def _applyTarget(value: qx.ui.tree.Tree, old: qx.ui.tree.Tree): Unit = js.native
@@ -2525,8 +2512,8 @@ class Tree protected () extends qx.core.Object with qx.data.controller.ISelectio
     protected def _setConfigureItem(value: js.Any, old: js.Any): Unit = js.native
     protected def _setCreateItem(value: js.Any, old: js.Any): Unit = js.native
     def bindDefaultProperties(treeNode: qx.ui.tree.core.AbstractTreeItem, modelNode: qx.core.Object): Unit = js.native
-    def bindProperty(sourcePath: String, targetPath: String, options: qx.IMap, targetWidget: qx.ui.tree.core.AbstractTreeItem, modelNode: js.Any): Unit = js.native
-    def bindPropertyReverse(targetPath: String, sourcePath: String, options: qx.IMap, sourceWidget: qx.ui.tree.core.AbstractTreeItem, modelNode: js.Any): Unit = js.native
+    def bindProperty(sourcePath: String, targetPath: String, options: js.Any, targetWidget: qx.ui.tree.core.AbstractTreeItem, modelNode: js.Any): Unit = js.native
+    def bindPropertyReverse(targetPath: String, sourcePath: String, options: js.Any, sourceWidget: qx.ui.tree.core.AbstractTreeItem, modelNode: js.Any): Unit = js.native
     def getChildPath(): String = js.native
     def getDelegate(): js.Dynamic = js.native
     def getIconOptions(): js.Dynamic = js.native
@@ -2574,7 +2561,7 @@ package qx.data.marshal {
 @js.native
 trait IMarshalerDelegate extends js.Object {
     def getArrayClass(parentProperty: String, depth: Long): qx.Class = js.native
-    def getModelClass(properties: String, obj: qx.IMap, parentProperty: String, depth: Long): qx.Class = js.native
+    def getModelClass(properties: String, obj: js.Any, parentProperty: String, depth: Long): qx.Class = js.native
     def getModelMixins(properties: String, parentProperty: String, depth: Long): qx.data.Array = js.native
     def getModelSuperClass(properties: String, parentProperty: String, depth: Long): qx.Class = js.native
     def getPropertyMapping(property: String, properties: String): String = js.native
@@ -2714,7 +2701,7 @@ class Element extends js.Object {
 @js.native
 @JSName("qx.dom.Element")
 object Element extends js.Object {
-    def create(name: String, attributes: qx.IMap = ???, win: Window = ???): HTMLElement = js.native
+    def create(name: String, attributes: js.Any = ???, win: Window = ???): HTMLElement = js.native
     def empty(element: HTMLElement): String = js.native
     def getHelperElement(win: Window = ???): HTMLElement = js.native
     def getParentElement(element: HTMLElement): HTMLElement = js.native
@@ -2825,8 +2812,8 @@ class Emitter extends js.Object {
     def addListener(name: String, listener: js.Function, ctx: js.Any = ???): Int = js.native
     def addListenerOnce(name: String, listener: js.Function, ctx: js.Any = ???): Int = js.native
     def emit(name: String, data: js.Any = ???): Unit = js.native
-    def getEntryById(id: Long): qx.IMap = js.native
-    def getListeners(): qx.IMap = js.native
+    def getEntryById(id: Long): js.Dynamic = js.native
+    def getListeners(): js.Dynamic = js.native
     def off(name: String, listener: js.Function, ctx: js.Any = ???): Int = js.native
     def offById(id: Int): Int = js.native
     def on(name: String, listener: js.Function, ctx: js.Any = ???): Int = js.native
@@ -2897,18 +2884,18 @@ class Manager protected () extends js.Object {
     def dispatchEvent(target: js.Any, event: qx.event.`type`.Event): Boolean = js.native
     def dispose(): Unit = js.native
     def findHandler(target: js.Any, `type`: String): qx.event.IEventHandler = js.native
-    def getAllListeners(): qx.IMap = js.native
+    def getAllListeners(): js.Dynamic = js.native
     def getDispatcher(clazz: qx.Class): js.Dynamic = js.native
     def getHandler(clazz: qx.Class): js.Dynamic = js.native
     def getListeners(target: js.Any, `type`: String, capture: Boolean = ???): qx.data.Array = js.native
     def getWindow(): Window = js.native
     def getWindowId(): String = js.native
     def hasListener(target: js.Any, `type`: String, capture: Boolean = ???): Boolean = js.native
-    def importListeners(target: js.Any, list: qx.IMap): Unit = js.native
+    def importListeners(target: js.Any, list: js.Any): Unit = js.native
     def removeAllListeners(target: js.Any): Boolean = js.native
     def removeListener(target: js.Any, `type`: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): Boolean = js.native
     def removeListenerById(target: js.Any, id: String): Boolean = js.native
-    def serializeListeners(target: js.Any): js.Array[qx.IMap] = js.native
+    def serializeListeners(target: js.Any): js.Array[js.Any] = js.native
     def toggleAttachedEvents(target: js.Any, enable: Boolean): Unit = js.native
 
 }
@@ -2924,10 +2911,10 @@ package qx.event {
 @JSName("qx.event.Messaging")
 class Messaging extends js.Object {
     protected def _addListener(channel: String, `type`: String, handler: js.Function, scope: js.Any = ???): String = js.native
-    protected def _emit(channel: String, path: String, params: qx.IMap, customData: js.Any): Unit = js.native
-    protected def _emitListeners(channel: String, path: String, listeners: js.Array[qx.IMap], params: qx.IMap, customData: js.Any): Boolean = js.native
-    protected def _emitRoute(channel: String, path: String, listener: qx.IMap, params: qx.IMap, customData: js.Any): Boolean = js.native
-    def emit(channel: String, path: String, params: qx.IMap, customData: js.Any): Unit = js.native
+    protected def _emit(channel: String, path: String, params: js.Any, customData: js.Any): Unit = js.native
+    protected def _emitListeners(channel: String, path: String, listeners: js.Array[js.Any], params: js.Any, customData: js.Any): Boolean = js.native
+    protected def _emitRoute(channel: String, path: String, listener: js.Any, params: js.Any, customData: js.Any): Boolean = js.native
+    def emit(channel: String, path: String, params: js.Any, customData: js.Any): Unit = js.native
     def has(channel: String, path: String): Boolean = js.native
     def on(channel: String, `type`: String, handler: js.Function, scope: js.Any = ???): String = js.native
     def onAny(`type`: String, handler: js.Function, scope: js.Any = ???): String = js.native
@@ -2973,7 +2960,7 @@ object Registration extends js.Object {
     def removeListener(target: js.Any, `type`: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): Boolean = js.native
     def removeListenerById(target: js.Any, id: js.Any): Boolean = js.native
     def removeManager(mgr: qx.event.Manager): Unit = js.native
-    def serializeListeners(target: js.Any): js.Array[qx.IMap] = js.native
+    def serializeListeners(target: js.Any): js.Array[js.Any] = js.native
 
 }
 }
@@ -3107,7 +3094,7 @@ class DragDrop protected () extends qx.core.Object with qx.event.IEventHandler {
     override def registerEvent(target: js.Any, `type`: String, capture: Boolean): Unit = js.native
     override def unregisterEvent(target: js.Any, `type`: String, capture: Boolean): Unit = js.native
     def this(manager: qx.event.Manager = ???) = this()
-    protected def _getDelta(e: qx.event.`type`.Pointer): qx.IMap = js.native
+    protected def _getDelta(e: qx.event.`type`.Pointer): js.Dynamic = js.native
     protected def _onKeyDown(e: qx.event.`type`.KeySequence): Unit = js.native
     protected def _onKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
     protected def _onKeyUp(e: qx.event.`type`.KeySequence): Unit = js.native
@@ -3209,7 +3196,7 @@ class GestureCore protected () extends js.Object {
     protected def _calcDistance(): Long = js.native
     protected def _fireEvent(domEvent: qx.event.`type`.Event, `type`: String, target: HTMLElement = ???): Unit = js.native
     protected def _fireRoll(domEvent: qx.event.`type`.Event, `type`: String, target: HTMLElement): Unit = js.native
-    protected def _getDeltaCoordinates(domEvent: qx.event.`type`.Event): qx.IMap = js.native
+    protected def _getDeltaCoordinates(domEvent: qx.event.`type`.Event): js.Dynamic = js.native
     protected def _hasIntermediaryHandler(target: HTMLElement): Boolean = js.native
     protected def _initObserver(): Unit = js.native
     protected def _isBelowTapMaxDistance(domEvent: qx.event.`type`.Event): Boolean = js.native
@@ -3396,7 +3383,7 @@ package qx.event.handler {
 @JSName("qx.event.handler.TouchCore")
 class TouchCore protected () extends js.Object {
     def this(target: HTMLElement = ???, emitter: qx.event.Emitter = ???) = this()
-    protected def _calcSingleTouchDelta(touch: qx.event.`type`.Event): qx.IMap = js.native
+    protected def _calcSingleTouchDelta(touch: qx.event.`type`.Event): js.Dynamic = js.native
     protected def _calcTouchesDelta(touches: qx.data.Array): qx.data.Array = js.native
     protected def _commonTouchEventHandler(domEvent: qx.event.`type`.Event, `type`: String = ???): Unit = js.native
     protected def _detectTouchesByPointer(domEvent: qx.event.`type`.Event, `type`: String = ???): qx.data.Array = js.native
@@ -3456,7 +3443,7 @@ class Bus extends qx.core.Object {
     def checkSubscription(message: String, subscriber: js.Function, context: js.Any): Boolean = js.native
     def dispatch(msg: qx.event.message.Message): Boolean = js.native
     def dispatchByName(name: String, data: js.Any): Boolean = js.native
-    def getSubscriptions(): qx.IMap = js.native
+    def getSubscriptions(): js.Dynamic = js.native
     def subscribe(message: String, subscriber: js.Function, context: js.Any): Boolean = js.native
     def unsubscribe(message: String, subscriber: js.Function, context: js.Any): Boolean = js.native
 
@@ -3722,7 +3709,7 @@ package qx.event.`type` {
 @js.native
 @JSName("qx.event.`type`.Roll")
 class Roll extends qx.event.`type`.Pointer {
-    def getDelta(): qx.IMap = js.native
+    def getDelta(): js.Dynamic = js.native
     def getMomentum(): Boolean = js.native
     def stopMomentum(): Unit = js.native
 
@@ -3782,7 +3769,7 @@ package qx.event.`type` {
 @js.native
 @JSName("qx.event.`type`.Track")
 class Track extends qx.event.`type`.Pointer {
-    def getDelta(): qx.IMap = js.native
+    def getDelta(): js.Dynamic = js.native
 
 }
 }
@@ -3790,9 +3777,9 @@ package qx.event.`type`.dom {
 @js.native
 @JSName("qx.event.`type`.dom.Custom")
 class Custom protected () extends js.Object {
-    def this(`type`: String = ???, domEvent: qx.event.`type`.Event = ???, customProps: qx.IMap = ???) = this()
+    def this(`type`: String = ???, domEvent: qx.event.`type`.Event = ???, customProps: js.Any = ???) = this()
     protected def _createEvent(): qx.event.`type`.Event = js.native
-    protected def _initEvent(domEvent: qx.event.`type`.Event, customProps: qx.IMap = ???): Unit = js.native
+    protected def _initEvent(domEvent: qx.event.`type`.Event, customProps: js.Any = ???): Unit = js.native
 
 }
 }
@@ -3848,7 +3835,7 @@ package qx.html {
 @js.native
 @JSName("qx.html.Canvas")
 class Canvas protected () extends qx.html.Element {
-    def this(styles: qx.IMap = ???, attributes: qx.IMap = ???) = this()
+    def this(styles: js.Any = ???, attributes: js.Any = ???) = this()
     def getCanvas(): HTMLElement = js.native
     def getContext2d(): CanvasRenderingContext2D = js.native
     def getHeight(): Int = js.native
@@ -3862,7 +3849,7 @@ package qx.html {
 @js.native
 @JSName("qx.html.Element")
 class Element protected () extends qx.core.Object {
-    def this(tagName: String = ???, styles: qx.IMap = ???, attributes: qx.IMap = ???) = this()
+    def this(tagName: String = ???, styles: js.Any = ???, attributes: js.Any = ???) = this()
     protected def _applyProperty(name: String, value: js.Any): qx.html.Element = js.native
     protected def _copyData(fromMarkup: Boolean): Unit = js.native
     protected def _createDomElement(): HTMLElement = js.native
@@ -3889,12 +3876,12 @@ class Element protected () extends qx.core.Object {
     def fadeOut(duration: Long): qx.bom.element.AnimationHandle = js.native
     def focus(): Unit = js.native
     def free(): qx.html.Element = js.native
-    def getAllStyles(): qx.IMap = js.native
+    def getAllStyles(): js.Dynamic = js.native
     def getAttribute(key: String): js.Dynamic = js.native
     def getChild(index: Int): qx.html.Element = js.native
     def getChildren(): qx.data.Array = js.native
     def getDomElement(): HTMLElement = js.native
-    def getListeners(): js.Array[qx.IMap] = js.native
+    def getListeners(): js.Array[js.Any] = js.native
     def getNodeName(): String = js.native
     def getParent(): qx.html.Element = js.native
     def getScrollX(): Int = js.native
@@ -3934,12 +3921,12 @@ class Element protected () extends qx.core.Object {
     def scrollToX(x: Int, `lazy`: Boolean = ???): Unit = js.native
     def scrollToY(y: Int, `lazy`: Boolean = ???): Unit = js.native
     def setAttribute(key: String, value: js.Any, direct: Boolean = ???): qx.html.Element = js.native
-    def setAttributes(map: qx.IMap, direct: Boolean = ???): qx.html.Element = js.native
+    def setAttributes(map: js.Any, direct: Boolean = ???): qx.html.Element = js.native
     def setNodeName(name: String): Unit = js.native
     def setRoot(root: Boolean): Unit = js.native
     def setSelectable(value: Boolean): Unit = js.native
     def setStyle(key: String, value: js.Any, direct: Boolean = ???): qx.html.Element = js.native
-    def setStyles(map: qx.IMap, direct: Boolean = ???): qx.html.Element = js.native
+    def setStyles(map: js.Any, direct: Boolean = ???): qx.html.Element = js.native
     def setTextSelection(start: Int, end: Int): Unit = js.native
     def show(): qx.html.Element = js.native
     def useElement(elem: HTMLElement): Unit = js.native
@@ -3958,16 +3945,16 @@ package qx.html {
 @js.native
 @JSName("qx.html.Flash")
 class Flash protected () extends qx.html.Element {
-    def this(styles: qx.IMap = ???, attributes: qx.IMap = ???) = this()
+    def this(styles: js.Any = ???, attributes: js.Any = ???) = this()
     def createFlash(): Unit = js.native
-    def getAttributes(): qx.IMap = js.native
+    def getAttributes(): js.Dynamic = js.native
     def getFlashElement(): HTMLElement = js.native
-    def getParams(): qx.IMap = js.native
-    def getVariables(): qx.IMap = js.native
+    def getParams(): js.Dynamic = js.native
+    def getVariables(): js.Dynamic = js.native
     def setId(value: String): Unit = js.native
     def setParam(key: String, value: String): Unit = js.native
     def setSource(value: String): Unit = js.native
-    def setVariables(value: qx.IMap): Unit = js.native
+    def setVariables(value: js.Any): Unit = js.native
 
 }
 }
@@ -3975,7 +3962,7 @@ package qx.html {
 @js.native
 @JSName("qx.html.Iframe")
 class Iframe protected () extends qx.html.Element {
-    def this(url: String = ???, styles: qx.IMap = ???, attributes: qx.IMap = ???) = this()
+    def this(url: String = ???, styles: js.Any = ???, attributes: js.Any = ???) = this()
     def getBody(): HTMLElement = js.native
     def getDocument(): Document = js.native
     def getName(): String = js.native
@@ -4004,7 +3991,7 @@ package qx.html {
 @js.native
 @JSName("qx.html.Input")
 class Input protected () extends qx.html.Element {
-    def this(`type`: String = ???, styles: qx.IMap = ???, attributes: qx.IMap = ???) = this()
+    def this(`type`: String = ???, styles: js.Any = ???, attributes: js.Any = ???) = this()
     def getValue(): String = js.native
     def getWrap(): Boolean = js.native
     def setEnabled(value: Boolean): Unit = js.native
@@ -4044,7 +4031,7 @@ object ImageLoader extends js.Object {
     def dispose(): Unit = js.native
     def getFormat(source: String): String = js.native
     def getHeight(source: String): Int = js.native
-    def getSize(source: String): qx.IMap = js.native
+    def getSize(source: String): js.Dynamic = js.native
     def getWidth(source: String): Int = js.native
     def isFailed(source: String): Boolean = js.native
     def isLoaded(source: String): Boolean = js.native
@@ -4058,7 +4045,7 @@ package qx.io {
 @JSName("qx.io.PartLoader")
 class PartLoader extends qx.core.Object {
     def getPart(name: String): qx.io.part.Part = js.native
-    def getParts(): qx.IMap = js.native
+    def getParts(): js.Dynamic = js.native
     def hasPart(name: String): Boolean = js.native
     def require(partNames: String, callback: js.Function, self: js.Any = ???): Unit = js.native
 
@@ -4144,7 +4131,7 @@ class Exchange protected () extends qx.core.Object {
 @js.native
 @JSName("qx.io.remote.Exchange")
 object Exchange extends js.Object {
-    def canHandle(vImpl: js.Any, vNeeds: qx.IMap, vResponseType: String): Boolean = js.native
+    def canHandle(vImpl: js.Any, vNeeds: js.Any, vResponseType: String): Boolean = js.native
     def initTypes(): Unit = js.native
     def registerType(vClass: js.Any, vId: String): Unit = js.native
     def statusCodeToString(vStatusCode: Int): String = js.native
@@ -4554,8 +4541,8 @@ class AbstractRequest protected () extends qx.core.Object {
     def this(url: String = ???) = this()
     protected def _createTransport(): js.Dynamic = js.native
     protected def _fireStatefulEvent(evt: String): Unit = js.native
-    protected def _getAllRequestHeaders(): qx.IMap = js.native
-    protected def _getConfiguredRequestHeaders(): qx.IMap = js.native
+    protected def _getAllRequestHeaders(): js.Dynamic = js.native
+    protected def _getConfiguredRequestHeaders(): js.Dynamic = js.native
     protected def _getConfiguredUrl(): String = js.native
     protected def _getMethod(): String = js.native
     protected def _getParsedResponse(): String = js.native
@@ -4653,7 +4640,7 @@ package qx.io.request.authentication {
 @js.native
 @JSName("qx.io.request.authentication.Basic")
 class Basic protected () extends qx.core.Object with qx.io.request.authentication.IAuthentication {
-    override def getAuthHeaders(): js.Array[qx.IMap] = js.native
+    override def getAuthHeaders(): js.Array[js.Any] = js.native
     def this(username: js.Any = ???, password: js.Any = ???) = this()
 
 }
@@ -4661,7 +4648,7 @@ class Basic protected () extends qx.core.Object with qx.io.request.authenticatio
 package qx.io.request.authentication {
 @js.native
 trait IAuthentication extends js.Object {
-    def getAuthHeaders(): js.Array[qx.IMap] = js.native
+    def getAuthHeaders(): js.Array[js.Any] = js.native
 
 }
 }
@@ -4669,19 +4656,19 @@ package qx.io.rest {
 @js.native
 @JSName("qx.io.rest.Resource")
 class Resource protected () extends qx.core.Object {
-    def this(description: qx.IMap = ???) = this()
+    def this(description: js.Any = ???) = this()
     protected def _getRequest(): qx.io.request.Xhr = js.native
-    protected def _getRequestConfig(action: String, params: qx.IMap): qx.IMap = js.native
-    protected def _getResource(description: qx.IMap = ???): qx.bom.rest.Resource = js.native
+    protected def _getRequestConfig(action: String, params: js.Any): js.Dynamic = js.native
+    protected def _getResource(description: js.Any = ???): qx.bom.rest.Resource = js.native
     protected def _getThrottleCount(): Int = js.native
     protected def _getThrottleLimit(): Int = js.native
     protected def _tailorResource(resource: qx.bom.rest.Resource): qx.bom.rest.Resource = js.native
     def abort(varargs: String = ???): Unit = js.native
     def configureRequest(callback: js.Function): Unit = js.native
-    def invoke(action: String, params: qx.IMap, data: qx.IMap): Long = js.native
+    def invoke(action: String, params: js.Any, data: js.Any): Long = js.native
     def longPoll(action: String): String = js.native
-    def map(action: String, method: String, url: String, check: qx.IMap = ???): Unit = js.native
-    def poll(action: String, interval: Long, params: qx.IMap = ???, immediately: Boolean = ???): qx.event.Timer = js.native
+    def map(action: String, method: String, url: String, check: js.Any = ???): Unit = js.native
+    def poll(action: String, interval: Long, params: js.Any = ???, immediately: Boolean = ???): qx.event.Timer = js.native
     def refresh(action: String): Unit = js.native
     def setBaseUrl(baseUrl: String): Unit = js.native
 
@@ -4736,7 +4723,7 @@ class Function extends js.Object {
 object Function extends js.Object {
     def attempt(func: js.Function, self: js.Any = ???, varargs: js.Any = ???): Boolean = js.native
     def bind(func: js.Function, self: js.Any = ???, varargs: js.Any = ???): js.Function = js.native
-    def create(func: js.Function, options: qx.IMap = ???): js.Function = js.native
+    def create(func: js.Function, options: js.Any = ???): js.Function = js.native
     def curry(func: js.Function, varargs: js.Any = ???): js.Dynamic = js.native
     def delay(func: js.Function, delay: Int, self: js.Any = ???, varargs: js.Any = ???): Int = js.native
     def getCaller(args: js.Any): js.Function = js.native
@@ -4789,7 +4776,7 @@ object Object extends js.Object {
     def contains(map: js.Any, value: js.Any): Boolean = js.native
     def empty(map: js.Any): Unit = js.native
     def equals(object1: js.Any, object2: js.Any): Boolean = js.native
-    def fromArray(array: qx.data.Array): qx.IMap = js.native
+    def fromArray(array: qx.data.Array): js.Dynamic = js.native
     def getKeyFromValue(map: js.Any, value: js.Any): String = js.native
     def getLength(map: js.Any): Int = js.native
     def getValues(map: js.Any): qx.data.Array = js.native
@@ -5003,8 +4990,8 @@ package qx.locale {
 @JSName("qx.locale.Manager")
 class Manager extends qx.core.Object {
     protected def _applyLocale(value: String, old: String): Unit = js.native
-    def addLocale(localeCode: String, localeMap: qx.IMap): Unit = js.native
-    def addTranslation(languageCode: String, translationMap: qx.IMap): Unit = js.native
+    def addLocale(localeCode: String, localeMap: js.Any): Unit = js.native
+    def addTranslation(languageCode: String, translationMap: js.Any): Unit = js.native
     def getAvailableLocales(includeNonloaded: Boolean = ???): js.Array[String] = js.native
     def getLanguage(): String = js.native
     def getLocale(): String = js.native
@@ -5102,7 +5089,7 @@ object Console extends js.Object {
     def dispose(): Unit = js.native
     def execute(): Unit = js.native
     def init(): Unit = js.native
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
     def show(): Unit = js.native
     def toggle(): Unit = js.native
 
@@ -5114,7 +5101,7 @@ package qx.log.appender {
 class Element protected () extends qx.core.Object {
     def this(element: HTMLElement = ???) = this()
     def clear(): Unit = js.native
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
     def setElement(element: HTMLElement): Unit = js.native
 
 }
@@ -5128,7 +5115,7 @@ class Native extends js.Object {
 @js.native
 @JSName("qx.log.appender.Native")
 object Native extends js.Object {
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
 
 }
 }
@@ -5145,7 +5132,7 @@ object NodeConsole extends js.Object {
     def error(logMessage: String): Unit = js.native
     def info(logMessage: String): Unit = js.native
     def log(logMessage: String, level: String): Unit = js.native
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
     def warn(logMessage: String): Unit = js.native
 
 }
@@ -5159,7 +5146,7 @@ class PhoneGap extends js.Object {
 @js.native
 @JSName("qx.log.appender.PhoneGap")
 object PhoneGap extends js.Object {
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
 
 }
 }
@@ -5176,7 +5163,7 @@ object RhinoConsole extends js.Object {
     def error(logMessage: String): Unit = js.native
     def info(logMessage: String): Unit = js.native
     def log(logMessage: String, level: String): Unit = js.native
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
     def warn(logMessage: String): Unit = js.native
 
 }
@@ -5195,7 +5182,7 @@ object RhinoFile extends js.Object {
     def error(logMessage: String): Unit = js.native
     def info(logMessage: String): Unit = js.native
     def log(logMessage: String, level: String): Unit = js.native
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
     def warn(logMessage: String): Unit = js.native
 
 }
@@ -5208,7 +5195,7 @@ class RingBuffer protected () extends qx.util.RingBuffer {
     def clearHistory(): Unit = js.native
     def getAllLogEvents(): qx.data.Array = js.native
     def getMaxMessages(): Int = js.native
-    def process(entry: qx.IMap): Unit = js.native
+    def process(entry: js.Any): Unit = js.native
     def retrieveLogEvents(count: Int, startingFromMark: Boolean = ???): qx.data.Array = js.native
     def setMaxMessages(maxMessages: Int): Unit = js.native
 
@@ -5225,9 +5212,9 @@ class Util extends js.Object {
 object Util extends js.Object {
     def escapeHTML(value: String): String = js.native
     def formatOffset(offset: Int, length: Int = ???): String = js.native
-    def toHtml(entry: qx.IMap): Unit = js.native
-    def toText(entry: qx.IMap): String = js.native
-    def toTextArray(entry: qx.IMap): qx.data.Array = js.native
+    def toHtml(entry: js.Any): Unit = js.native
+    def toText(entry: js.Any): String = js.native
+    def toTextArray(entry: js.Any): qx.data.Array = js.native
 
 }
 }
@@ -5338,7 +5325,7 @@ class Appearance extends qx.core.Object {
     protected def initTheme(value: js.Any): qx.Theme = js.native
     def resetTheme(): Unit = js.native
     def setTheme(value: js.Any): qx.Theme = js.native
-    def styleFrom(id: String, states: qx.IMap, theme: qx.Theme = ???, defaultId: String = ???): qx.IMap = js.native
+    def styleFrom(id: String, states: js.Any, theme: qx.Theme = ???, defaultId: String = ???): js.Dynamic = js.native
 
 }
 @js.native
@@ -5915,7 +5902,7 @@ class Blocker protected () extends qx.core.Object {
     protected def _block(zIndex: Long, blockContent: Boolean): Unit = js.native
     protected def _onChangeTheme(): Unit = js.native
     protected def _restoreActiveWidget(): Unit = js.native
-    protected def _updateBlockerBounds(bounds: qx.IMap): Unit = js.native
+    protected def _updateBlockerBounds(bounds: js.Any): Unit = js.native
     def block(): Unit = js.native
     def blockContent(zIndex: Int): Unit = js.native
     def forceUnblock(): Unit = js.native
@@ -6040,7 +6027,7 @@ class LayoutItem extends qx.core.Object {
     protected def _applyDimension(value: Int, old: Int): Unit = js.native
     protected def _applyMargin(value: Int, old: Int): Unit = js.native
     protected def _applyStretching(value: Boolean, old: Boolean): Unit = js.native
-    protected def _computeSizeHint(): qx.IMap = js.native
+    protected def _computeSizeHint(): js.Dynamic = js.native
     protected def _getHeightForWidth(width: Int): Int = js.native
     protected def _getLayout(): qx.ui.layout.Abstract = js.native
     protected def _getRoot(): qx.ui.core.Widget = js.native
@@ -6055,10 +6042,10 @@ class LayoutItem extends qx.core.Object {
     def getAllowShrinkX(): Boolean = js.native
     def getAllowShrinkY(): Boolean = js.native
     def getApplicationRoot(): qx.ui.root.Abstract = js.native
-    def getBounds(): qx.IMap = js.native
+    def getBounds(): js.Dynamic = js.native
     def getHeight(): Int = js.native
     def getLayoutParent(): qx.ui.core.Widget = js.native
-    def getLayoutProperties(): qx.IMap = js.native
+    def getLayoutProperties(): js.Dynamic = js.native
     def getMarginBottom(): Int = js.native
     def getMarginLeft(): Int = js.native
     def getMarginRight(): Int = js.native
@@ -6067,7 +6054,7 @@ class LayoutItem extends qx.core.Object {
     def getMaxWidth(): Int = js.native
     def getMinHeight(): Int = js.native
     def getMinWidth(): Int = js.native
-    def getSizeHint(compute: Boolean = ???): qx.IMap = js.native
+    def getSizeHint(compute: Boolean = ???): js.Dynamic = js.native
     def getWidth(): Int = js.native
     def hasUserBounds(): Boolean = js.native
     def hasValidLayout(): Boolean = js.native
@@ -6094,8 +6081,8 @@ class LayoutItem extends qx.core.Object {
     def isAllowShrinkY(): Boolean = js.native
     def isExcluded(): Boolean = js.native
     def isRootWidget(): Boolean = js.native
-    def renderLayout(left: Int, top: Int, width: Int, height: Int): qx.IMap = js.native
-    def renderSeparator(separator: String, bounds: qx.IMap): Unit = js.native
+    def renderLayout(left: Int, top: Int, width: Int, height: Int): js.Dynamic = js.native
+    def renderSeparator(separator: String, bounds: js.Any): Unit = js.native
     def resetAlignX(): Unit = js.native
     def resetAlignY(): Unit = js.native
     def resetAllowGrowX(): Unit = js.native
@@ -6127,7 +6114,7 @@ class LayoutItem extends qx.core.Object {
     def setAllowStretchY(allowGrowY: js.Any, allowShrinkY: js.Any): Unit = js.native
     def setHeight(value: js.Any): Int = js.native
     def setLayoutParent(parent: qx.ui.core.Widget): Unit = js.native
-    def setLayoutProperties(props: qx.IMap): Unit = js.native
+    def setLayoutProperties(props: js.Any): Unit = js.native
     def setMargin(marginTop: js.Any, marginRight: js.Any, marginBottom: js.Any, marginLeft: js.Any): Unit = js.native
     def setMarginBottom(value: js.Any): Int = js.native
     def setMarginLeft(value: js.Any): Int = js.native
@@ -6143,7 +6130,7 @@ class LayoutItem extends qx.core.Object {
     def toggleAllowGrowY(): Boolean = js.native
     def toggleAllowShrinkX(): Boolean = js.native
     def toggleAllowShrinkY(): Boolean = js.native
-    def updateLayoutProperties(props: qx.IMap = ???): Unit = js.native
+    def updateLayoutProperties(props: js.Any = ???): Unit = js.native
 
 }
 }
@@ -6176,9 +6163,9 @@ package qx.ui.core {
 @JSName("qx.ui.core.MChildrenHandling")
 trait MChildrenHandling extends js.Object {
     def add(child: qx.ui.core.LayoutItem, options: js.Dynamic = ???): Unit = js.native
-    def addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
-    def addAt(child: qx.ui.core.LayoutItem, index: Int, options: qx.IMap = ???): Unit = js.native
-    def addBefore(child: qx.ui.core.LayoutItem, before: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
+    def addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
+    def addAt(child: qx.ui.core.LayoutItem, index: Int, options: js.Any = ???): Unit = js.native
+    def addBefore(child: qx.ui.core.LayoutItem, before: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     def getChildren(): js.Array[qx.ui.core.LayoutItem] = js.native
     def hasChildren(): Boolean = js.native
     def indexOf(child: qx.ui.core.Widget): Int = js.native
@@ -6190,7 +6177,7 @@ trait MChildrenHandling extends js.Object {
 @js.native
 @JSName("qx.ui.core.MChildrenHandling")
 object MChildrenHandling extends js.Object {
-    def remap(members: qx.IMap): Unit = js.native
+    def remap(members: js.Any): Unit = js.native
 
 }
 }
@@ -6228,8 +6215,8 @@ trait MDragDropScrolling extends js.Object {
     protected def _calculateThresholdExceedance(diff: Long, threshold: Long): Long = js.native
     protected def _findScrollableParent(widget: qx.ui.core.LayoutItem): qx.ui.core.Widget = js.native
     protected def _getAxis(edgeType: String): String = js.native
-    protected def _getBounds(scrollable: qx.ui.core.Widget): qx.IMap = js.native
-    protected def _getEdgeType(diff: qx.IMap, thresholdX: Long, thresholdY: Long): String = js.native
+    protected def _getBounds(scrollable: qx.ui.core.Widget): js.Dynamic = js.native
+    protected def _getEdgeType(diff: js.Any, thresholdX: Long, thresholdY: Long): String = js.native
     protected def _getThresholdByEdgeType(edgeType: String): Long = js.native
     protected def _isScrollable(widget: qx.ui.core.Widget): Boolean = js.native
     protected def _isScrollbarExceedingMaxPos(scrollbar: qx.ui.core.scroll.IScrollBar, axis: String, amount: Long): Boolean = js.native
@@ -6274,7 +6261,7 @@ trait MLayoutHandling extends js.Object {
 @js.native
 @JSName("qx.ui.core.MLayoutHandling")
 object MLayoutHandling extends js.Object {
-    def remap(members: qx.IMap): Unit = js.native
+    def remap(members: js.Any): Unit = js.native
 
 }
 }
@@ -6367,10 +6354,10 @@ package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MPlacement")
 trait MPlacement extends js.Object {
-    protected def _getPlacementOffsets(): qx.IMap = js.native
-    protected def _place(coords: qx.IMap): Unit = js.native
+    protected def _getPlacementOffsets(): js.Dynamic = js.native
+    protected def _place(coords: js.Any): Unit = js.native
     def getDomMove(): Boolean = js.native
-    def getLayoutLocation(widget: qx.ui.core.Widget): qx.IMap = js.native
+    def getLayoutLocation(widget: qx.ui.core.Widget): js.Dynamic = js.native
     def getOffsetBottom(): Int = js.native
     def getOffsetLeft(): Int = js.native
     def getOffsetRight(): Int = js.native
@@ -6391,7 +6378,7 @@ trait MPlacement extends js.Object {
     def isDomMove(): Boolean = js.native
     def moveTo(left: Int, top: Int): Unit = js.native
     def placeToElement(elem: HTMLElement, liveupdate: Boolean): Unit = js.native
-    def placeToPoint(point: qx.IMap): Unit = js.native
+    def placeToPoint(point: js.Any): Unit = js.native
     def placeToPointer(event: qx.event.`type`.Pointer): Unit = js.native
     def placeToWidget(target: qx.ui.core.Widget, liveupdate: Boolean): Boolean = js.native
     def resetDomMove(): Unit = js.native
@@ -6431,10 +6418,10 @@ package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.MRemoteChildrenHandling")
 trait MRemoteChildrenHandling extends js.Object {
-    def add(child: qx.ui.core.LayoutItem, options: qx.IMap = ???): qx.ui.core.Widget = js.native
-    def addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
-    def addAt(child: qx.ui.core.LayoutItem, index: Int, options: qx.IMap = ???): Unit = js.native
-    def addBefore(child: qx.ui.core.LayoutItem, before: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
+    def add(child: qx.ui.core.LayoutItem, options: js.Any = ???): qx.ui.core.Widget = js.native
+    def addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
+    def addAt(child: qx.ui.core.LayoutItem, index: Int, options: js.Any = ???): Unit = js.native
+    def addBefore(child: qx.ui.core.LayoutItem, before: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     def getChildren(): js.Array[qx.ui.core.LayoutItem] = js.native
     def hasChildren(): Boolean = js.native
     def indexOf(child: qx.ui.core.LayoutItem): Int = js.native
@@ -6536,7 +6523,7 @@ package qx.ui.core {
 @JSName("qx.ui.core.Spacer")
 class Spacer protected () extends qx.ui.core.LayoutItem {
     def this(width: Int = ???, height: Int = ???) = this()
-    def addChildrenToQueue(queue: qx.IMap): Unit = js.native
+    def addChildrenToQueue(queue: js.Any): Unit = js.native
     def checkAppearanceNeeds(): Unit = js.native
     def destroy(): Unit = js.native
 
@@ -6546,10 +6533,10 @@ package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.Widget")
 class Widget extends qx.ui.core.LayoutItem with qx.locale.MTranslation {
-    protected def _add(child: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
-    protected def _addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
-    protected def _addAt(child: qx.ui.core.LayoutItem, index: Int, options: qx.IMap = ???): Unit = js.native
-    protected def _addBefore(child: qx.ui.core.LayoutItem, before: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
+    protected def _add(child: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
+    protected def _addAfter(child: qx.ui.core.LayoutItem, after: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
+    protected def _addAt(child: qx.ui.core.LayoutItem, index: Int, options: js.Any = ???): Unit = js.native
+    protected def _addBefore(child: qx.ui.core.LayoutItem, before: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     protected def _afterAddChild(child: qx.ui.core.LayoutItem): Unit = js.native
     protected def _afterRemoveChild(child: qx.ui.core.LayoutItem): Unit = js.native
     protected def _applyAnonymous(value: Boolean, old: Boolean): Unit = js.native
@@ -6582,8 +6569,8 @@ class Widget extends qx.ui.core.LayoutItem with qx.locale.MTranslation {
     protected def _findTopControl(): qx.ui.core.Widget = js.native
     protected def _getChildren(): js.Array[qx.ui.core.LayoutItem] = js.native
     protected def _getContentHeightForWidth(width: Int): Int = js.native
-    protected def _getContentHint(): qx.IMap = js.native
-    protected def _getCreatedChildControls(): qx.IMap = js.native
+    protected def _getContentHint(): js.Dynamic = js.native
+    protected def _getCreatedChildControls(): js.Dynamic = js.native
     protected def _getDragDropCursor(): qx.ui.core.DragDropCursor = js.native
     protected def _hasChildren(): Boolean = js.native
     protected def _indexOf(child: qx.ui.core.Widget): Int = js.native
@@ -6620,7 +6607,7 @@ class Widget extends qx.ui.core.LayoutItem with qx.locale.MTranslation {
     def getChildControl(id: String, notcreate: Boolean = ???): qx.ui.core.Widget = js.native
     def getChildrenContainer(): qx.ui.core.Widget = js.native
     def getContentElement(): qx.html.Element = js.native
-    def getContentLocation(mode: String = ???): qx.IMap = js.native
+    def getContentLocation(mode: String = ???): js.Dynamic = js.native
     def getContextMenu(): qx.ui.menu.Menu = js.native
     def getCursor(): String = js.native
     def getDecorator(): qx.ui.decoration.Decorator = js.native
@@ -6632,8 +6619,8 @@ class Widget extends qx.ui.core.LayoutItem with qx.locale.MTranslation {
     def getFocusElement(): qx.html.Element = js.native
     def getFocusTarget(): qx.ui.core.Widget = js.native
     def getFont(): String = js.native
-    def getInnerSize(): qx.IMap = js.native
-    def getInsets(): qx.IMap = js.native
+    def getInnerSize(): js.Dynamic = js.native
+    def getInsets(): js.Dynamic = js.native
     def getKeepActive(): Boolean = js.native
     def getKeepFocus(): Boolean = js.native
     def getLayoutChildren(): js.Array[qx.ui.core.Widget] = js.native
@@ -6773,7 +6760,7 @@ class Widget extends qx.ui.core.LayoutItem with qx.locale.MTranslation {
     def setZIndex(value: js.Any): Int = js.native
     def show(): Unit = js.native
     def syncAppearance(): Unit = js.native
-    def syncWidget(jobs: qx.IMap): Unit = js.native
+    def syncWidget(jobs: js.Any): Unit = js.native
     def tabFocus(): Unit = js.native
     def toggleAnonymous(): Boolean = js.native
     def toggleBlockToolTip(): Boolean = js.native
@@ -6908,7 +6895,7 @@ class AbstractScrollArea extends qx.ui.core.Widget with qx.ui.core.scroll.MScrol
     def getItemLeft(item: qx.ui.core.Widget): Int = js.native
     def getItemRight(item: qx.ui.core.Widget): Int = js.native
     def getItemTop(item: qx.ui.core.Widget): Int = js.native
-    def getPaneSize(): qx.IMap = js.native
+    def getPaneSize(): js.Dynamic = js.native
     def getScrollbarX(): js.Dynamic = js.native
     def getScrollbarY(): js.Dynamic = js.native
     def getScrollX(): Int = js.native
@@ -7079,7 +7066,7 @@ class ScrollPane extends qx.ui.core.Widget {
     def getItemTop(item: qx.ui.core.Widget): Int = js.native
     def getScrollMaxX(): Int = js.native
     def getScrollMaxY(): Int = js.native
-    def getScrollSize(): qx.IMap = js.native
+    def getScrollSize(): js.Dynamic = js.native
     def getScrollX(): js.Dynamic = js.native
     def getScrollY(): js.Dynamic = js.native
     protected def initScrollX(value: js.Any): js.Dynamic = js.native
@@ -7119,16 +7106,16 @@ class Abstract extends qx.core.Object {
     protected def _deselectItemRange(item1: js.Any, item2: js.Any): Unit = js.native
     protected def _fireChange(context: String): Unit = js.native
     protected def _getAnchorItem(): js.Dynamic = js.native
-    protected def _getDimension(): qx.IMap = js.native
+    protected def _getDimension(): js.Dynamic = js.native
     protected def _getFirstSelectable(): js.Dynamic = js.native
     protected def _getLastSelectable(): js.Dynamic = js.native
-    protected def _getLocation(): qx.IMap = js.native
+    protected def _getLocation(): js.Dynamic = js.native
     protected def _getPage(lead: js.Any, up: Boolean = ???): Unit = js.native
     protected def _getRelatedSelectable(item: js.Any, relation: String): js.Dynamic = js.native
-    protected def _getScroll(): qx.IMap = js.native
+    protected def _getScroll(): js.Dynamic = js.native
     protected def _getSelectableFromPointerEvent(event: qx.event.`type`.Pointer): js.Dynamic = js.native
-    protected def _getSelectableLocationX(item: js.Any): qx.IMap = js.native
-    protected def _getSelectableLocationY(item: js.Any): qx.IMap = js.native
+    protected def _getSelectableLocationX(item: js.Any): js.Dynamic = js.native
+    protected def _getSelectableLocationY(item: js.Any): js.Dynamic = js.native
     protected def _getSelectableRange(item1: js.Any, item2: js.Any): qx.data.Array = js.native
     protected def _getSelectedItem(): js.Dynamic = js.native
     protected def _isSelectable(item: js.Any): Boolean = js.native
@@ -7210,10 +7197,10 @@ package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.Abstract")
 class Abstract extends qx.core.Object with qx.ui.decoration.IDecorator {
-    override def getInsets(): qx.IMap = js.native
-    override def getPadding(): qx.IMap = js.native
-    override def getStyles(): qx.IMap = js.native
-    protected def _getDefaultInsets(): qx.IMap = js.native
+    override def getInsets(): js.Dynamic = js.native
+    override def getPadding(): js.Dynamic = js.native
+    override def getStyles(): js.Dynamic = js.native
+    protected def _getDefaultInsets(): js.Dynamic = js.native
     protected def _isInitialized(): Boolean = js.native
     protected def _resetInsets(): Unit = js.native
 
@@ -7223,19 +7210,19 @@ package qx.ui.decoration {
 @js.native
 @JSName("qx.ui.decoration.Decorator")
 class Decorator extends qx.ui.decoration.Abstract with qx.ui.decoration.IDecorator with qx.ui.decoration.MBackgroundColor with qx.ui.decoration.MBorderRadius with qx.ui.decoration.MBoxShadow with qx.ui.decoration.MDoubleBorder with qx.ui.decoration.MLinearBackgroundGradient with qx.ui.decoration.MBorderImage {
-    override def getInsets(): qx.IMap = js.native
-    override def getPadding(): qx.IMap = js.native
-    override def getStyles(): qx.IMap = js.native
-    protected def _getStyles(): qx.IMap = js.native
+    override def getInsets(): js.Dynamic = js.native
+    override def getPadding(): js.Dynamic = js.native
+    override def getStyles(): js.Dynamic = js.native
+    protected def _getStyles(): js.Dynamic = js.native
 
 }
 }
 package qx.ui.decoration {
 @js.native
 trait IDecorator extends js.Object {
-    def getInsets(): qx.IMap = js.native
-    def getPadding(): qx.IMap = js.native
-    def getStyles(): qx.IMap = js.native
+    def getInsets(): js.Dynamic = js.native
+    def getPadding(): js.Dynamic = js.native
+    def getStyles(): js.Dynamic = js.native
 
 }
 }
@@ -7244,7 +7231,7 @@ package qx.ui.decoration {
 @JSName("qx.ui.decoration.MBackgroundColor")
 trait MBackgroundColor extends js.Object {
     protected def _applyBackgroundColor(value: String, old: String): Unit = js.native
-    protected def _styleBackgroundColor(styles: qx.IMap): Unit = js.native
+    protected def _styleBackgroundColor(styles: js.Any): Unit = js.native
     def getBackgroundColor(): String = js.native
     protected def initBackgroundColor(value: js.Any): String = js.native
     def resetBackgroundColor(): Unit = js.native
@@ -7258,7 +7245,7 @@ package qx.ui.decoration {
 trait MBackgroundImage extends js.Object {
     protected def _applyBackgroundImage(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyBackgroundPosition(value: js.Any, old: js.Any): Unit = js.native
-    protected def _styleBackgroundImage(styles: qx.IMap): Unit = js.native
+    protected def _styleBackgroundImage(styles: js.Any): Unit = js.native
     def getBackgroundImage(): String = js.native
     def getBackgroundPositionX(): js.Dynamic = js.native
     def getBackgroundPositionY(): js.Dynamic = js.native
@@ -7285,8 +7272,8 @@ package qx.ui.decoration {
 @JSName("qx.ui.decoration.MBorderImage")
 trait MBorderImage extends js.Object {
     protected def _applyBorderImage(value: js.Any, old: js.Any): Unit = js.native
-    protected def _getDefaultInsetsForBorderImage(): qx.IMap = js.native
-    protected def _styleBorderImage(styles: qx.IMap): Unit = js.native
+    protected def _getDefaultInsetsForBorderImage(): js.Dynamic = js.native
+    protected def _styleBorderImage(styles: js.Any): Unit = js.native
     def getBorderImage(): String = js.native
     def getBorderImageMode(): js.Dynamic = js.native
     def getFill(): Boolean = js.native
@@ -7337,7 +7324,7 @@ package qx.ui.decoration {
 @JSName("qx.ui.decoration.MBorderRadius")
 trait MBorderRadius extends js.Object {
     protected def _applyBorderRadius(value: Int, old: Int): Unit = js.native
-    protected def _styleBorderRadius(styles: qx.IMap): Unit = js.native
+    protected def _styleBorderRadius(styles: js.Any): Unit = js.native
     def getRadiusBottomLeft(): Int = js.native
     def getRadiusBottomRight(): Int = js.native
     def getRadiusTopLeft(): Int = js.native
@@ -7364,7 +7351,7 @@ package qx.ui.decoration {
 @JSName("qx.ui.decoration.MBoxShadow")
 trait MBoxShadow extends js.Object {
     protected def _applyBoxShadow(value: js.Any, old: js.Any): Unit = js.native
-    protected def _styleBoxShadow(styles: qx.IMap): Unit = js.native
+    protected def _styleBoxShadow(styles: js.Any): Unit = js.native
     def getInset(): Boolean = js.native
     def getShadowBlurRadius(): Int = js.native
     def getShadowColor(): String = js.native
@@ -7449,7 +7436,7 @@ package qx.ui.decoration {
 @JSName("qx.ui.decoration.MLinearBackgroundGradient")
 trait MLinearBackgroundGradient extends js.Object {
     protected def _applyLinearBackgroundGradient(value: js.Any, old: js.Any): Unit = js.native
-    protected def _styleLinearBackgroundGradient(styles: qx.IMap): Unit = js.native
+    protected def _styleLinearBackgroundGradient(styles: js.Any): Unit = js.native
     def getColorPositionUnit(): js.Dynamic = js.native
     def getEndColor(): String = js.native
     def getEndColorPosition(): Long = js.native
@@ -7487,8 +7474,8 @@ package qx.ui.decoration {
 trait MSingleBorder extends js.Object {
     protected def _applyStyle(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyWidth(value: Long, old: Long): Unit = js.native
-    protected def _getDefaultInsetsForBorder(): qx.IMap = js.native
-    protected def _styleBorder(styles: qx.IMap): Unit = js.native
+    protected def _getDefaultInsetsForBorder(): js.Dynamic = js.native
+    protected def _styleBorder(styles: js.Any): Unit = js.native
     def getColorBottom(): String = js.native
     def getColorLeft(): String = js.native
     def getColorRight(): String = js.native
@@ -7621,7 +7608,7 @@ class Flash protected () extends qx.ui.core.Widget {
     protected def _applyQuality(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyScale(value: js.Any, old: js.Any): Unit = js.native
     protected def _applySource(value: String, old: String): Unit = js.native
-    protected def _applyVariables(value: qx.IMap, old: qx.IMap): Unit = js.native
+    protected def _applyVariables(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyWmode(value: js.Any, old: js.Any): Unit = js.native
     protected def _checkLoading(): Unit = js.native
     def getAllowScriptAccess(): js.Dynamic = js.native
@@ -7637,7 +7624,7 @@ class Flash protected () extends qx.ui.core.Widget {
     def getQuality(): js.Dynamic = js.native
     def getScale(): js.Dynamic = js.native
     def getSource(): String = js.native
-    def getVariables(): qx.IMap = js.native
+    def getVariables(): js.Dynamic = js.native
     def getWmode(): js.Dynamic = js.native
     protected def initAllowScriptAccess(value: js.Any): js.Dynamic = js.native
     protected def initId(value: js.Any): String = js.native
@@ -7650,7 +7637,7 @@ class Flash protected () extends qx.ui.core.Widget {
     protected def initQuality(value: js.Any): js.Dynamic = js.native
     protected def initScale(value: js.Any): js.Dynamic = js.native
     protected def initSource(value: js.Any): String = js.native
-    protected def initVariables(value: js.Any): qx.IMap = js.native
+    protected def initVariables(value: js.Any): js.Dynamic = js.native
     protected def initWmode(value: js.Any): js.Dynamic = js.native
     def isLiveConnect(): Boolean = js.native
     def isLoaded(): Boolean = js.native
@@ -7682,7 +7669,7 @@ class Flash protected () extends qx.ui.core.Widget {
     def setQuality(value: js.Any): js.Dynamic = js.native
     def setScale(value: js.Any): js.Dynamic = js.native
     def setSource(value: js.Any): String = js.native
-    def setVariables(value: js.Any): qx.IMap = js.native
+    def setVariables(value: js.Any): js.Dynamic = js.native
     def setWmode(value: js.Any): js.Dynamic = js.native
     def toggleLiveConnect(): Boolean = js.native
     def toggleLoop(): Boolean = js.native
@@ -7794,7 +7781,7 @@ class AbstractField protected () extends qx.ui.core.Widget with qx.ui.form.IStri
     protected def _applyTextAlign(value: js.Any, old: js.Any): Unit = js.native
     protected def _createInputElement(): qx.html.Input = js.native
     protected def _getPlaceholderElement(): Unit = js.native
-    protected def _getTextSize(): qx.IMap = js.native
+    protected def _getTextSize(): js.Dynamic = js.native
     protected def _onChangeContent(e: qx.event.`type`.Data): Unit = js.native
     protected def _onChangeLocale(e: qx.event.`type`.Event): Unit = js.native
     protected def _onHtmlInput(e: qx.event.`type`.Data): Unit = js.native
@@ -8003,13 +7990,13 @@ package qx.ui.form {
 class Form extends qx.core.Object {
     protected def _createResetter(): qx.ui.form.Resetter = js.native
     protected def _createValidationManager(): qx.ui.form.validation.Manager = js.native
-    def add(item: qx.ui.form.IForm, label: String, validator: js.Function = ???, name: String = ???, validatorContext: js.Any = ???, options: qx.IMap = ???): Unit = js.native
-    def addButton(button: qx.ui.form.Button, options: qx.IMap = ???): Unit = js.native
-    def addGroupHeader(title: String, options: qx.IMap = ???): Unit = js.native
+    def add(item: qx.ui.form.IForm, label: String, validator: js.Function = ???, name: String = ???, validatorContext: js.Any = ???, options: js.Any = ???): Unit = js.native
+    def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
+    def addGroupHeader(title: String, options: js.Any = ???): Unit = js.native
     def getButtonOptions(): qx.data.Array = js.native
     def getButtons(): qx.data.Array = js.native
     def getGroups(): qx.data.Array = js.native
-    def getItems(): qx.IMap = js.native
+    def getItems(): js.Dynamic = js.native
     def getValidationManager(): qx.ui.form.validation.Manager = js.native
     def redefineResetter(): Unit = js.native
     def redefineResetterItem(item: qx.ui.core.Widget): Unit = js.native
@@ -8353,7 +8340,7 @@ class RadioButtonGroup protected () extends qx.ui.core.Widget with qx.ui.form.IF
     def this(layout: qx.ui.layout.Abstract = ???) = this()
     protected def _applyInvalidMessage(value: String, old: String): Unit = js.native
     protected def _applyValid(value: Boolean, old: Boolean): Unit = js.native
-    def add(child: qx.ui.core.LayoutItem, options: qx.IMap = ???): Unit = js.native
+    def add(child: qx.ui.core.LayoutItem, options: js.Any = ???): Unit = js.native
     def getChildren(): js.Array[qx.ui.core.LayoutItem] = js.native
     def getRadioGroup(): qx.ui.form.RadioGroup = js.native
     protected def initInvalidMessage(value: js.Any): String = js.native
@@ -8908,8 +8895,8 @@ package qx.ui.form.renderer {
 @js.native
 @JSName("qx.ui.form.renderer.AbstractRenderer")
 class AbstractRenderer protected () extends qx.ui.core.Widget with qx.ui.form.renderer.IFormRenderer {
-    override def addButton(button: qx.ui.form.Button, options: qx.IMap = ???): Unit = js.native
-    override def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: qx.IMap = ???): Unit = js.native
+    override def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
+    override def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: js.Any = ???): Unit = js.native
     def this(form: qx.ui.form.Form = ???) = this()
     protected def _connectVisibility(item: qx.ui.core.Widget, label: qx.ui.basic.Label): Unit = js.native
     protected def _createLabelText(name: String, item: qx.ui.form.IForm): String = js.native
@@ -8933,8 +8920,8 @@ class Double protected () extends qx.ui.form.renderer.AbstractRenderer {
 package qx.ui.form.renderer {
 @js.native
 trait IFormRenderer extends js.Object {
-    def addButton(button: qx.ui.form.Button, options: qx.IMap = ???): Unit = js.native
-    def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: qx.IMap = ???): Unit = js.native
+    def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
+    def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: js.Any = ???): Unit = js.native
 
 }
 }
@@ -8953,8 +8940,8 @@ package qx.ui.form.renderer {
 @js.native
 @JSName("qx.ui.form.renderer.SinglePlaceholder")
 class SinglePlaceholder extends qx.ui.form.renderer.Single with qx.ui.form.renderer.IFormRenderer {
-    override def addButton(button: qx.ui.form.Button, options: qx.IMap = ???): Unit = js.native
-    override def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: qx.IMap = ???): Unit = js.native
+    override def addButton(button: qx.ui.form.Button, options: js.Any = ???): Unit = js.native
+    override def addItems(items: js.Array[qx.ui.core.Widget], names: js.Array[String], title: String = ???, itemsOptions: qx.data.Array = ???, headerOptions: js.Any = ???): Unit = js.native
 
 }
 }
@@ -9092,17 +9079,17 @@ package qx.ui.layout {
 class Abstract extends qx.core.Object {
     protected def _applyLayoutChange(): Unit = js.native
     protected def _clearSeparators(): Unit = js.native
-    protected def _computeSizeHint(): qx.IMap = js.native
+    protected def _computeSizeHint(): js.Dynamic = js.native
     protected def _getLayoutChildren(): qx.data.Array = js.native
     protected def _getWidget(): qx.ui.core.Widget = js.native
-    protected def _renderSeparator(separator: String, bounds: qx.IMap): Unit = js.native
+    protected def _renderSeparator(separator: String, bounds: js.Any): Unit = js.native
     def connectToWidget(widget: qx.ui.core.Widget): Unit = js.native
     def getHeightForWidth(width: Int): Int = js.native
-    def getSizeHint(): qx.IMap = js.native
+    def getSizeHint(): js.Dynamic = js.native
     def hasHeightForWidth(): Boolean = js.native
     def invalidateChildrenCache(): Unit = js.native
     def invalidateLayoutCache(): Unit = js.native
-    def renderLayout(availWidth: Int, availHeight: Int, padding: qx.IMap): Unit = js.native
+    def renderLayout(availWidth: Int, availHeight: Int, padding: js.Any): Unit = js.native
     def verifyLayoutProperty(item: js.Any, name: js.Any, value: js.Any): Unit = js.native
 
 }
@@ -9154,7 +9141,7 @@ package qx.ui.layout {
 class Dock protected () extends qx.ui.layout.Abstract {
     def this(spacingX: Int = ???, spacingY: Int = ???, separatorX: String = ???, separatorY: String = ???) = this()
     protected def _applySort(value: js.Any, old: js.Any): Unit = js.native
-    protected def _getSeparatorWidths(): qx.IMap = js.native
+    protected def _getSeparatorWidths(): js.Dynamic = js.native
     def getConnectSeparators(): Boolean = js.native
     def getSeparatorX(): qx.ui.decoration.Decorator = js.native
     def getSeparatorY(): qx.ui.decoration.Decorator = js.native
@@ -9220,23 +9207,23 @@ package qx.ui.layout {
 @JSName("qx.ui.layout.Grid")
 class Grid protected () extends qx.ui.layout.Abstract {
     def this(spacingX: Int = ???, spacingY: Int = ???) = this()
-    protected def _fixHeightsRowSpan(rowHeights: js.Array[qx.IMap]): Unit = js.native
-    protected def _fixWidthsColSpan(colWidths: js.Array[qx.IMap]): Unit = js.native
+    protected def _fixHeightsRowSpan(rowHeights: js.Array[js.Any]): Unit = js.native
+    protected def _fixWidthsColSpan(colWidths: js.Array[js.Any]): Unit = js.native
     protected def _getColumnFlexOffsets(width: Int): js.Array[Int] = js.native
-    protected def _getColWidths(): js.Array[qx.IMap] = js.native
+    protected def _getColWidths(): js.Array[js.Any] = js.native
     protected def _getRowFlexOffsets(height: Int): js.Array[Int] = js.native
-    protected def _getRowHeights(): js.Array[qx.IMap] = js.native
+    protected def _getRowHeights(): js.Array[js.Any] = js.native
     protected def _setColumnData(column: Int, key: String, value: js.Any): Unit = js.native
     protected def _setRowData(row: Int, key: String, value: js.Any): Unit = js.native
-    def getCellAlign(row: Int, column: Int): qx.IMap = js.native
+    def getCellAlign(row: Int, column: Int): js.Dynamic = js.native
     def getCellWidget(row: Int, column: Int): qx.ui.core.Widget = js.native
-    def getColumnAlign(column: Int): qx.IMap = js.native
+    def getColumnAlign(column: Int): js.Dynamic = js.native
     def getColumnCount(): Int = js.native
     def getColumnFlex(column: Int): Int = js.native
     def getColumnMaxWidth(column: Int): Int = js.native
     def getColumnMinWidth(column: Int): Int = js.native
     def getColumnWidth(column: Int): Int = js.native
-    def getRowAlign(row: Int): qx.IMap = js.native
+    def getRowAlign(row: Int): js.Dynamic = js.native
     def getRowCount(): Int = js.native
     def getRowFlex(row: Int): Int = js.native
     def getRowHeight(row: Int): Int = js.native
@@ -9307,7 +9294,7 @@ package qx.ui.layout {
 @JSName("qx.ui.layout.LineSizeIterator")
 class LineSizeIterator protected () extends js.Object {
     def this(children: js.Array[qx.ui.core.Widget] = ???, spacing: Int = ???) = this()
-    def computeNextLine(availWidth: Int): qx.IMap = js.native
+    def computeNextLine(availWidth: Int): js.Dynamic = js.native
     def hasMoreLines(): Boolean = js.native
 
 }
@@ -9321,9 +9308,9 @@ class Util extends js.Object {
 @js.native
 @JSName("qx.ui.layout.Util")
 object Util extends js.Object {
-    def arrangeIdeals(beginMin: Int, beginIdeal: Int, beginMax: Int, endMin: Int, endIdeal: Int, endMax: Int): qx.IMap = js.native
+    def arrangeIdeals(beginMin: Int, beginIdeal: Int, beginMax: Int, endMin: Int, endIdeal: Int, endMax: Int): js.Dynamic = js.native
     def collapseMargins(varargs: js.Any = ???): Int = js.native
-    def computeFlexOffsets(flexibles: qx.IMap, avail: Int, used: Int): qx.IMap = js.native
+    def computeFlexOffsets(flexibles: js.Any, avail: Int, used: Int): js.Dynamic = js.native
     def computeHorizontalAlignOffset(align: String, width: Int, availWidth: Int, marginLeft: Int = ???, marginRight: Int = ???): Int = js.native
     def computeHorizontalGaps(children: qx.data.Array, spacing: Int = ???, collapse: Boolean = ???): Int = js.native
     def computeHorizontalSeparatorGaps(children: js.Array[qx.ui.core.LayoutItem], spacing: Int, separator: String): Int = js.native
@@ -9476,8 +9463,8 @@ trait MWidgetController extends js.Object {
     protected def _configureItem(item: qx.ui.core.Widget): Unit = js.native
     protected def _removeBindingsFrom(item: qx.ui.core.Widget): Unit = js.native
     def bindDefaultProperties(item: qx.ui.core.Widget, index: Int): Unit = js.native
-    def bindProperty(sourcePath: String, targetProperty: String, options: qx.IMap, targetWidget: qx.ui.core.Widget, index: Int): Unit = js.native
-    def bindPropertyReverse(targetPath: String, sourceProperty: String, options: qx.IMap, sourceWidget: qx.ui.core.Widget, index: Int): Unit = js.native
+    def bindProperty(sourcePath: String, targetProperty: String, options: js.Any, targetWidget: qx.ui.core.Widget, index: Int): Unit = js.native
+    def bindPropertyReverse(targetPath: String, sourceProperty: String, options: js.Any, sourceWidget: qx.ui.core.Widget, index: Int): Unit = js.native
     def getDelegate(): js.Dynamic = js.native
     def getGroupLabelOptions(): js.Dynamic = js.native
     def getGroupLabelPath(): String = js.native
@@ -9503,9 +9490,9 @@ trait MWidgetController extends js.Object {
 //    def setDelegate(value: js.Any): js.Dynamic = js.native
     def setGroupLabelOptions(value: js.Any): js.Dynamic = js.native
     def setGroupLabelPath(value: js.Any): String = js.native
-    def setIconOptions(value: js.Any): js.Dynamic = js.native
+    def setIconOptions(value: js.Any): Unit = js.native
     def setIconPath(value: js.Any): String = js.native
-    def setLabelOptions(value: js.Any): js.Dynamic = js.native
+    def setLabelOptions(value: js.Any): Unit = js.native
     def setLabelPath(value: js.Any): String = js.native
 
 }
@@ -9519,9 +9506,9 @@ trait IListProvider extends js.Object {
     def isSelectable(row: Int): Boolean = js.native
     def removeBindings(): Unit = js.native
     def setDelegate(delegate: js.Any): Unit = js.native
-    def setIconOptions(options: qx.IMap): Unit = js.native
+    def setIconOptions(options: js.Any): Unit
     def setIconPath(path: String): Unit = js.native
-    def setLabelOptions(options: qx.IMap): Unit = js.native
+    def setLabelOptions(options: js.Any): Unit
     def setLabelPath(path: String): Unit = js.native
     def styleSelectabled(row: Int): Unit = js.native
     def styleUnselectabled(row: Int): Unit = js.native
@@ -9540,9 +9527,7 @@ class WidgetProvider protected () extends qx.core.Object with qx.ui.virtual.core
     override def isSelectable(row: Int): Boolean = js.native
     override def removeBindings(): Unit = js.native
 //    override def setDelegate(delegate: js.Any): js.Dynamic = js.native
-    override def setIconOptions(options: qx.IMap): Unit = js.native
     override def setIconPath(path: String): Unit = js.native
-    override def setLabelOptions(options: qx.IMap): Unit = js.native
     override def setLabelPath(path: String): Unit = js.native
     override def styleSelectabled(row: Int): Unit = js.native
     override def styleUnselectabled(row: Int): Unit = js.native
@@ -9699,8 +9684,8 @@ class Menu extends qx.ui.core.Widget with qx.ui.core.MPlacement with qx.ui.core.
     protected def _applySpacingX(value: Int, old: Int): Unit = js.native
     protected def _applySpacingY(value: Int, old: Int): Unit = js.native
     protected def _assertSlideBar(callback: js.Function): js.Dynamic = js.native
-    protected def _computePlacementSize(): qx.IMap = js.native
-    protected def _getMenuBounds(): qx.IMap = js.native
+    protected def _computePlacementSize(): js.Dynamic = js.native
+    protected def _getMenuBounds(): js.Dynamic = js.native
     protected def _getMenuLayout(): js.Dynamic = js.native
     protected def _onPointerOut(e: qx.event.`type`.Pointer): Unit = js.native
     protected def _onPointerOver(e: qx.event.`type`.Pointer): Unit = js.native
@@ -9735,7 +9720,7 @@ class Menu extends qx.ui.core.Widget with qx.ui.core.MPlacement with qx.ui.core.
     protected def initSpacingY(value: js.Any): Int = js.native
     def isBlockBackground(): Boolean = js.native
     def open(): Unit = js.native
-    def openAtPoint(point: qx.IMap): Unit = js.native
+    def openAtPoint(point: js.Any): Unit = js.native
     def openAtPointer(e: qx.event.`type`.Pointer): Unit = js.native
     def resetArrowColumnWidth(): Unit = js.native
     def resetBlockBackground(): Unit = js.native
@@ -9884,7 +9869,7 @@ package qx.ui.progressive {
 @js.native
 @JSName("qx.ui.progressive.State")
 class State protected () extends qx.core.Object {
-    def this(initialState: qx.IMap = ???) = this()
+    def this(initialState: js.Any = ???) = this()
     def getBatchSize(): js.Dynamic = js.native
     def getModel(): js.Dynamic = js.native
     def getPane(): js.Dynamic = js.native
@@ -9998,7 +9983,7 @@ package qx.ui.progressive.renderer.table {
 class Widths protected () extends qx.core.Object {
     def this(numColumns: Int = ???) = this()
     def getData(): qx.data.Array = js.native
-    def set(column: Int, map: qx.IMap): Unit = js.native
+    def set(column: Int, map: js.Any): Unit = js.native
     def setMaxWidth(column: Int, width: Int): Unit = js.native
     def setMinWidth(column: Int, width: Int): Unit = js.native
     def setWidth(column: Int, width: Int): Unit = js.native
@@ -10059,7 +10044,7 @@ package qx.ui.progressive.renderer.table.cell {
 @js.native
 @JSName("qx.ui.progressive.renderer.table.cell.Icon")
 class Icon extends qx.ui.progressive.renderer.table.cell.Abstract {
-    protected def _identifyImage(cellInfo: qx.IMap): qx.IMap = js.native
+    protected def _identifyImage(cellInfo: js.Any): js.Dynamic = js.native
     def getBlankImage(): String = js.native
 
 }
@@ -10242,7 +10227,7 @@ object Stylesheet extends js.Object {
 package qx.ui.table {
 @js.native
 trait ICellEditorFactory extends js.Object {
-    def createCellEditor(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
+    def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
 
 }
@@ -10250,7 +10235,7 @@ trait ICellEditorFactory extends js.Object {
 package qx.ui.table {
 @js.native
 trait ICellRenderer extends js.Object {
-    def createDataCellHtml(cellInfo: qx.IMap, htmlArr: js.Array[String]): Boolean = js.native
+    def createDataCellHtml(cellInfo: js.Any, htmlArr: js.Array[String]): Boolean = js.native
 
 }
 }
@@ -10258,7 +10243,7 @@ package qx.ui.table {
 @js.native
 trait IColumnMenuButton extends js.Object {
     def empty(): Unit = js.native
-    def factory(item: String, options: qx.IMap): qx.ui.core.Widget = js.native
+    def factory(item: String, options: js.Any): qx.ui.core.Widget = js.native
     def getMenu(): js.Dynamic = js.native
     protected def initMenu(value: js.Any): js.Dynamic = js.native
     def resetMenu(): Unit = js.native
@@ -10279,18 +10264,18 @@ trait IColumnMenuItem extends js.Object {
 package qx.ui.table {
 @js.native
 trait IHeaderRenderer extends js.Object {
-    def createHeaderCell(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
-    def updateHeaderCell(cellInfo: qx.IMap, cellWidget: qx.ui.core.Widget): Unit = js.native
+    def createHeaderCell(cellInfo: js.Any): qx.ui.core.Widget = js.native
+    def updateHeaderCell(cellInfo: js.Any, cellWidget: qx.ui.core.Widget): Unit = js.native
 
 }
 }
 package qx.ui.table {
 @js.native
 trait IRowRenderer extends js.Object {
-    def createRowStyle(rowInfo: qx.IMap): Unit = js.native
-    def getRowClass(rowInfo: qx.IMap): Unit = js.native
+    def createRowStyle(rowInfo: js.Any): Unit = js.native
+    def getRowClass(rowInfo: js.Any): Unit = js.native
     def getRowHeightStyle(height: Int): Unit = js.native
-    def updateDataRowElement(rowInfo: qx.IMap, rowElement: HTMLElement): Unit = js.native
+    def updateDataRowElement(rowInfo: js.Any, rowElement: HTMLElement): Unit = js.native
 
 }
 }
@@ -10329,7 +10314,7 @@ package qx.ui.table {
 @js.native
 @JSName("qx.ui.table.Table")
 class Table protected () extends qx.ui.core.Widget with qx.ui.core.MDragDropScrolling {
-    def this(tableModel: qx.ui.table.ITableModel = ???, custom: qx.IMap = ???) = this()
+    def this(tableModel: qx.ui.table.ITableModel = ???, custom: js.Any = ???) = this()
     protected def _applyAdditionalStatusBarText(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyColumnVisibilityButtonVisible(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyContextMenuFromDataCellsOnly(value: Boolean, old: Boolean): Unit = js.native
@@ -10351,16 +10336,16 @@ class Table protected () extends qx.ui.core.Widget with qx.ui.core.MDragDropScro
     protected def _getPaneScrollerArr(): js.Array[qx.ui.table.pane.Scroller] = js.native
     protected def _initColumnMenu(): Unit = js.native
     protected def _onChangeLocale(evt: qx.event.`type`.Event): Unit = js.native
-    protected def _onColOrderChanged(evt: qx.IMap): Unit = js.native
-    protected def _onColVisibilityChanged(evt: qx.IMap): Unit = js.native
-    protected def _onColWidthChanged(evt: qx.IMap): Unit = js.native
-    protected def _onFocusChanged(evt: qx.IMap): Unit = js.native
+    protected def _onColOrderChanged(evt: js.Any): Unit = js.native
+    protected def _onColVisibilityChanged(evt: js.Any): Unit = js.native
+    protected def _onColWidthChanged(evt: js.Any): Unit = js.native
+    protected def _onFocusChanged(evt: js.Any): Unit = js.native
     protected def _onKeyPress(evt: qx.event.`type`.KeySequence): Unit = js.native
     protected def _onResize(): Unit = js.native
-    protected def _onScrollY(evt: qx.IMap): Unit = js.native
-    protected def _onSelectionChanged(evt: qx.IMap): Unit = js.native
-    protected def _onTableModelDataChanged(evt: qx.IMap): Unit = js.native
-    protected def _onTableModelMetaDataChanged(evt: qx.IMap): Unit = js.native
+    protected def _onScrollY(evt: js.Any): Unit = js.native
+    protected def _onSelectionChanged(evt: js.Any): Unit = js.native
+    protected def _onTableModelDataChanged(evt: js.Any): Unit = js.native
+    protected def _onTableModelMetaDataChanged(evt: js.Any): Unit = js.native
     protected def _updateScrollBarVisibility(): Unit = js.native
     protected def _updateScrollerWidths(): Unit = js.native
     protected def _updateStatusBar(): Unit = js.native
@@ -10528,7 +10513,7 @@ package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.AbstractField")
 class AbstractField extends qx.core.Object with qx.ui.table.ICellEditorFactory {
-    override def createCellEditor(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
+    override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     protected def _createEditor(): qx.ui.core.Widget = js.native
     def getValidationFunction(): js.Function = js.native
@@ -10542,7 +10527,7 @@ package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.CheckBox")
 class CheckBox extends qx.core.Object with qx.ui.table.ICellEditorFactory {
-    override def createCellEditor(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
+    override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
 
 }
@@ -10551,7 +10536,7 @@ package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.ComboBox")
 class ComboBox extends qx.core.Object with qx.ui.table.ICellEditorFactory {
-    override def createCellEditor(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
+    override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     def getListData(): qx.data.Array = js.native
     def getValidationFunction(): js.Function = js.native
@@ -10568,7 +10553,7 @@ package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.Dynamic")
 class Dynamic protected () extends qx.core.Object with qx.ui.table.ICellEditorFactory {
-    override def createCellEditor(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
+    override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     def this(cellEditorFactoryFunction: js.Function = ???) = this()
     def getCellEditorFactoryFunction(): js.Function = js.native
@@ -10589,7 +10574,7 @@ package qx.ui.table.celleditor {
 @js.native
 @JSName("qx.ui.table.celleditor.SelectBox")
 class SelectBox extends qx.core.Object with qx.ui.table.ICellEditorFactory {
-    override def createCellEditor(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
+    override def createCellEditor(cellInfo: js.Any): qx.ui.core.Widget = js.native
     override def getCellEditorValue(cellEditor: qx.ui.core.Widget): js.Dynamic = js.native
     def getListData(): qx.data.Array = js.native
     def getValidationFunction(): js.Function = js.native
@@ -10613,13 +10598,13 @@ package qx.ui.table.cellrenderer {
 @js.native
 @JSName("qx.ui.table.cellrenderer.Abstract")
 class Abstract extends qx.core.Object with qx.ui.table.ICellRenderer {
-//    override def createDataCellHtml(cellInfo: qx.IMap, htmlArr: js.Array[String]): Boolean = js.native
+//    override def createDataCellHtml(cellInfo: js.Any, htmlArr: js.Array[String]): Boolean = js.native
     protected def _createStyleSheet(): Unit = js.native
-    protected def _getCellAttributes(cellInfo: qx.IMap): String = js.native
-    protected def _getCellClass(cellInfo: qx.IMap): String = js.native
+    protected def _getCellAttributes(cellInfo: js.Any): String = js.native
+    protected def _getCellClass(cellInfo: js.Any): String = js.native
     protected def _getCellSizeStyle(width: Int, height: Int, insetX: Int, insetY: Int): String = js.native
-    protected def _getCellStyle(cellInfo: qx.IMap): js.Dynamic = js.native
-    protected def _getContentHtml(cellInfo: qx.IMap): String = js.native
+    protected def _getCellStyle(cellInfo: js.Any): js.Dynamic = js.native
+    protected def _getContentHtml(cellInfo: js.Any): String = js.native
     protected def _onChangeTheme(): Unit = js.native
     def getDefaultCellStyle(): String = js.native
     protected def initDefaultCellStyle(value: js.Any): String = js.native
@@ -10632,8 +10617,8 @@ package qx.ui.table.cellrenderer {
 @js.native
 @JSName("qx.ui.table.cellrenderer.AbstractImage")
 class AbstractImage extends qx.ui.table.cellrenderer.Abstract {
-    protected def _getImageInfos(cellInfo: qx.IMap): qx.IMap = js.native
-    protected def _identifyImage(cellInfo: qx.IMap): qx.IMap = js.native
+    protected def _getImageInfos(cellInfo: js.Any): js.Dynamic = js.native
+    protected def _identifyImage(cellInfo: js.Any): js.Dynamic = js.native
     def getRepeat(): js.Dynamic = js.native
     protected def initRepeat(value: js.Any): js.Dynamic = js.native
     def resetRepeat(): Unit = js.native
@@ -10691,8 +10676,8 @@ package qx.ui.table.cellrenderer {
 @js.native
 @JSName("qx.ui.table.cellrenderer.Default")
 class Default extends qx.ui.table.cellrenderer.Abstract {
-    protected def _formatValue(cellInfo: qx.IMap): String = js.native
-    protected def _getStyleFlags(cellInfo: qx.IMap): Int = js.native
+    protected def _formatValue(cellInfo: js.Any): String = js.native
+    protected def _getStyleFlags(cellInfo: js.Any): Int = js.native
     def getUseAutoAlign(): Boolean = js.native
     protected def initUseAutoAlign(value: js.Any): Boolean = js.native
     def isUseAutoAlign(): Boolean = js.native
@@ -10775,7 +10760,7 @@ package qx.ui.table.columnmenu {
 @JSName("qx.ui.table.columnmenu.Button")
 class Button extends qx.ui.form.MenuButton with qx.ui.table.IColumnMenuButton {
     override def empty(): Unit = js.native
-    override def factory(item: String, options: qx.IMap): qx.ui.core.Widget = js.native
+    override def factory(item: String, options: js.Any): qx.ui.core.Widget = js.native
 //    override def getMenu(): js.Dynamic = js.native
     override def resetMenu(): Unit = js.native
 //    override def setMenu(value: js.Any): js.Dynamic = js.native
@@ -10800,7 +10785,7 @@ package qx.ui.table.columnmodel {
 @js.native
 @JSName("qx.ui.table.columnmodel.Basic")
 class Basic extends qx.core.Object {
-    protected def _getColToXPosMap(): qx.IMap = js.native
+    protected def _getColToXPosMap(): js.Dynamic = js.native
     def getCellEditorFactory(col: Int): qx.ui.table.ICellEditorFactory = js.native
     def getColumnWidth(col: Int): Int = js.native
     def getDataCellRenderer(col: Int): qx.ui.table.ICellRenderer = js.native
@@ -10876,7 +10861,7 @@ class Default extends qx.ui.table.columnmodel.resizebehavior.Abstract {
     def resetInitializeWidthsOnEveryAppear(): Unit = js.native
     def resetNewResizeBehaviorColumnData(): Unit = js.native
     def resetTableColumnModel(): Unit = js.native
-    def set(col: Int, map: qx.IMap): Unit = js.native
+    def set(col: Int, map: js.Any): Unit = js.native
     def setInitializeWidthsOnEveryAppear(value: js.Any): Boolean = js.native
     def setMaxWidth(col: Int, width: Int): Unit = js.native
     def setMinWidth(col: Int, width: Int): Unit = js.native
@@ -10891,8 +10876,8 @@ package qx.ui.table.headerrenderer {
 @js.native
 @JSName("qx.ui.table.headerrenderer.Default")
 class Default extends qx.core.Object with qx.ui.table.IHeaderRenderer {
-    override def createHeaderCell(cellInfo: qx.IMap): qx.ui.core.Widget = js.native
-    override def updateHeaderCell(cellInfo: qx.IMap, cellWidget: qx.ui.core.Widget): Unit = js.native
+    override def createHeaderCell(cellInfo: js.Any): qx.ui.core.Widget = js.native
+    override def updateHeaderCell(cellInfo: js.Any, cellWidget: qx.ui.core.Widget): Unit = js.native
     def getToolTip(): String = js.native
     protected def initToolTip(value: js.Any): String = js.native
     def resetToolTip(): Unit = js.native
@@ -10956,7 +10941,7 @@ class Abstract extends qx.core.Object with qx.ui.table.ITableModel {
     override def sortByColumn(columnIndex: Int, ascending: Boolean): Unit = js.native
     def init(table: qx.ui.table.Table): Unit = js.native
     def setColumnIds(columnIdArr: js.Array[String]): Unit = js.native
-    def setColumnNamesById(columnNameMap: qx.IMap): Unit = js.native
+    def setColumnNamesById(columnNameMap: js.Any): Unit = js.native
     def setColumnNamesByIndex(columnNameArr: js.Array[String]): Unit = js.native
     def setColumns(columnNameArr: js.Array[String], columnIdArr: js.Array[String] = ???): Unit = js.native
 
@@ -10986,12 +10971,12 @@ class Remote extends qx.ui.table.model.Abstract {
     protected def _loadRowCount(): Unit = js.native
     protected def _loadRowData(firstRow: Int, lastRow: Int): Unit = js.native
     protected def _onRowCountLoaded(rowCount: Int): Unit = js.native
-    protected def _onRowDataLoaded(rowDataArr: js.Array[qx.IMap]): Unit = js.native
+    protected def _onRowDataLoaded(rowDataArr: js.Array[js.Any]): Unit = js.native
     protected def _setRowBlockData(block: Int, rowDataArr: js.Array[js.Any]): Unit = js.native
     def clearCache(): Unit = js.native
     def getBlockConcurrentLoadRowCount(): Boolean = js.native
     def getBlockSize(): Int = js.native
-    def getCacheContent(): qx.IMap = js.native
+    def getCacheContent(): js.Dynamic = js.native
     def getClearCacheOnRemove(): Boolean = js.native
     def getMaxCachedBlockCount(): Int = js.native
     protected def initBlockConcurrentLoadRowCount(value: js.Any): Boolean = js.native
@@ -11007,7 +10992,7 @@ class Remote extends qx.ui.table.model.Abstract {
     def resetBlockSize(): Unit = js.native
     def resetClearCacheOnRemove(): Unit = js.native
     def resetMaxCachedBlockCount(): Unit = js.native
-    def restoreCacheContent(cacheContent: qx.IMap): Unit = js.native
+    def restoreCacheContent(cacheContent: js.Any): Unit = js.native
     def setBlockConcurrentLoadRowCount(value: js.Any): Boolean = js.native
     def setBlockSize(value: js.Any): Int = js.native
     def setClearCacheOnRemove(value: js.Any): Boolean = js.native
@@ -11026,17 +11011,17 @@ package qx.ui.table.model {
 @js.native
 @JSName("qx.ui.table.model.Simple")
 class Simple extends qx.ui.table.model.Abstract {
-    protected def _mapArray2RowArr(mapArr: js.Array[qx.IMap], rememberMaps: Boolean = ???): js.Array[js.Dynamic] = js.native
+    protected def _mapArray2RowArr(mapArr: js.Array[js.Any], rememberMaps: Boolean = ???): js.Array[js.Dynamic] = js.native
     protected def _setSortAscending(ascending: Boolean): Unit = js.native
     protected def _setSortColumnIndex(columnIndex: Int): Unit = js.native
     def addRows(rowArr: js.Array[js.Any], startIndex: Int = ???, clearSorting: Boolean = ???): Unit = js.native
-    def addRowsAsMapArray(mapArr: js.Array[qx.IMap], startIndex: Int = ???, rememberMaps: Boolean = ???, clearSorting: Boolean = ???): Unit = js.native
+    def addRowsAsMapArray(mapArr: js.Array[js.Any], startIndex: Int = ???, rememberMaps: Boolean = ???, clearSorting: Boolean = ???): Unit = js.native
     def clearSorting(): Unit = js.native
     def getCaseSensitiveSorting(): Boolean = js.native
     def getData(): js.Array[js.Dynamic] = js.native
-    def getDataAsMapArray(): js.Array[qx.IMap] = js.native
-    def getRowDataAsMap(rowIndex: Int): qx.IMap = js.native
-    def getSortMethods(columnIndex: Int): qx.IMap = js.native
+    def getDataAsMapArray(): js.Array[js.Any] = js.native
+    def getRowDataAsMap(rowIndex: Int): js.Dynamic = js.native
+    def getSortMethods(columnIndex: Int): js.Dynamic = js.native
     protected def initCaseSensitiveSorting(value: js.Any): Boolean = js.native
     def isCaseSensitiveSorting(): Boolean = js.native
     def removeRows(startIndex: Int, howMany: Int, clearSorting: Boolean = ???): Unit = js.native
@@ -11045,10 +11030,10 @@ class Simple extends qx.ui.table.model.Abstract {
     def setColumnEditable(columnIndex: Int, editable: Boolean): Unit = js.native
     def setColumnSortable(columnIndex: Int, sortable: Boolean): Unit = js.native
     def setData(rowArr: js.Array[js.Any], clearSorting: Boolean = ???): Unit = js.native
-    def setDataAsMapArray(mapArr: js.Array[qx.IMap], rememberMaps: Boolean = ???, clearSorting: Boolean = ???): Unit = js.native
+    def setDataAsMapArray(mapArr: js.Array[js.Any], rememberMaps: Boolean = ???, clearSorting: Boolean = ???): Unit = js.native
     def setEditable(editable: Boolean): Unit = js.native
     def setRows(rowArr: js.Array[js.Any], startIndex: Int = ???, clearSorting: Boolean = ???): Unit = js.native
-    def setRowsAsMapArray(mapArr: js.Array[qx.IMap], startIndex: Int = ???, rememberMaps: Boolean = ???, clearSorting: Boolean = ???): Unit = js.native
+    def setRowsAsMapArray(mapArr: js.Array[js.Any], startIndex: Int = ???, rememberMaps: Boolean = ???, clearSorting: Boolean = ???): Unit = js.native
     def setSortMethods(columnIndex: Int, compare: js.Function): Unit = js.native
     def toggleCaseSensitiveSorting(): Boolean = js.native
 
@@ -11134,8 +11119,8 @@ class Model protected () extends qx.core.Object {
     def this(tableColumnModel: qx.ui.table.columnmodel.Basic = ???) = this()
     protected def _applyFirstColumnX(value: Int, old: Int): Unit = js.native
     protected def _applyMaxColumnCount(value: Long, old: Long): Unit = js.native
-    protected def _onColVisibilityChanged(evt: qx.IMap): Unit = js.native
-    protected def _onHeaderCellRendererChanged(evt: qx.IMap): Unit = js.native
+    protected def _onColVisibilityChanged(evt: js.Any): Unit = js.native
+    protected def _onHeaderCellRendererChanged(evt: js.Any): Unit = js.native
     def getColumnAtX(xPos: Int): Int = js.native
     def getColumnCount(): Int = js.native
     def getColumnLeft(col: Int): js.Dynamic = js.native
@@ -11209,26 +11194,26 @@ class Scroller protected () extends qx.ui.core.Widget with qx.ui.core.scroll.MSc
     protected def _getRowForPagePos(pageX: Int, pageY: Int): Int = js.native
     protected def _hideResizeLine(): Unit = js.native
     protected def _onAppear(): Unit = js.native
-    protected def _onCellEditorModalWindowClose(e: qx.IMap): Unit = js.native
+    protected def _onCellEditorModalWindowClose(e: js.Any): Unit = js.native
     protected def _onChangeCaptureHeader(e: qx.event.`type`.Data): Unit = js.native
     protected def _onContextMenu(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onDbltapPane(e: qx.IMap): Unit = js.native
+    protected def _onDbltapPane(e: js.Any): Unit = js.native
     protected def _onDisappear(): Unit = js.native
     protected def _oninterval(): Unit = js.native
     protected def _onPaneModelChanged(): Unit = js.native
-    protected def _onPointerdownHeader(e: qx.IMap): Unit = js.native
-    protected def _onPointerdownPane(e: qx.IMap): Unit = js.native
-    protected def _onPointermoveHeader(e: qx.IMap): Unit = js.native
-    protected def _onPointermovePane(e: qx.IMap): Unit = js.native
-    protected def _onPointerout(e: qx.IMap): Unit = js.native
+    protected def _onPointerdownHeader(e: js.Any): Unit = js.native
+    protected def _onPointerdownPane(e: js.Any): Unit = js.native
+    protected def _onPointermoveHeader(e: js.Any): Unit = js.native
+    protected def _onPointermovePane(e: js.Any): Unit = js.native
+    protected def _onPointerout(e: js.Any): Unit = js.native
     protected def _onPointerupFocusIndicator(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerupHeader(e: qx.IMap): Unit = js.native
+    protected def _onPointerupHeader(e: js.Any): Unit = js.native
     protected def _onResizePane(): Unit = js.native
     protected def _onRoll(e: qx.event.`type`.Roll): Unit = js.native
-    protected def _onScrollX(e: qx.IMap): Unit = js.native
-    protected def _onScrollY(e: qx.IMap): Unit = js.native
-    protected def _onTapHeader(e: qx.IMap): Unit = js.native
-    protected def _onTapPane(e: qx.IMap): Unit = js.native
+    protected def _onScrollX(e: js.Any): Unit = js.native
+    protected def _onScrollY(e: js.Any): Unit = js.native
+    protected def _onTapHeader(e: js.Any): Unit = js.native
+    protected def _onTapPane(e: js.Any): Unit = js.native
     protected def _postponedUpdateContent(): Unit = js.native
     protected def _showResizeLine(x: Int): Unit = js.native
     protected def _startInterval(timeout: Int): Unit = js.native
@@ -11338,10 +11323,10 @@ package qx.ui.table.rowrenderer {
 @js.native
 @JSName("qx.ui.table.rowrenderer.Default")
 class Default extends qx.core.Object with qx.ui.table.IRowRenderer {
-    override def createRowStyle(rowInfo: qx.IMap): Unit = js.native
-    override def getRowClass(rowInfo: qx.IMap): Unit = js.native
+    override def createRowStyle(rowInfo: js.Any): Unit = js.native
+    override def getRowClass(rowInfo: js.Any): Unit = js.native
     override def getRowHeightStyle(height: Int): Unit = js.native
-    override def updateDataRowElement(rowInfo: qx.IMap, rowElement: HTMLElement): Unit = js.native
+    override def updateDataRowElement(rowInfo: js.Any, rowElement: HTMLElement): Unit = js.native
     protected def _renderFont(font: qx.bom.Font): Unit = js.native
     def getHighlightFocusRow(): Boolean = js.native
     def getRowAttributes(rowInfo: js.Any): String = js.native
@@ -11358,10 +11343,10 @@ package qx.ui.table.selection {
 @js.native
 @JSName("qx.ui.table.selection.Manager")
 class Manager extends qx.core.Object {
-    protected def _handleSelectEvent(index: Int, evt: qx.IMap): Unit = js.native
+    protected def _handleSelectEvent(index: Int, evt: js.Any): Unit = js.native
     def getSelectionModel(): qx.ui.table.selection.Model = js.native
-    def handleMoveKeyDown(index: Int, evt: qx.IMap): Unit = js.native
-    def handleSelectKeyDown(index: Int, evt: qx.IMap): Unit = js.native
+    def handleMoveKeyDown(index: Int, evt: js.Any): Unit = js.native
+    def handleSelectKeyDown(index: Int, evt: js.Any): Unit = js.native
     def handleTap(index: Int, evt: qx.event.`type`.Tap): Unit = js.native
     protected def initSelectionModel(value: js.Any): qx.ui.table.selection.Model = js.native
     def resetSelectionModel(): Unit = js.native
@@ -11377,7 +11362,7 @@ class Model extends qx.core.Object {
     protected def _applySelectionMode(selectionMode: js.Any, old: js.Any): Unit = js.native
     protected def _dumpRanges(): Unit = js.native
     protected def _fireChangeSelection(): Unit = js.native
-    protected def _getSelectedRangeArr(): js.Array[qx.IMap] = js.native
+    protected def _getSelectedRangeArr(): js.Array[js.Any] = js.native
     protected def _resetSelection(): Unit = js.native
     protected def _setAnchorSelectionIndex(index: Int): Unit = js.native
     protected def _setLeadSelectionIndex(index: Int): Unit = js.native
@@ -11385,7 +11370,7 @@ class Model extends qx.core.Object {
     def getAnchorSelectionIndex(): Int = js.native
     def getLeadSelectionIndex(): Int = js.native
     def getSelectedCount(): Int = js.native
-    def getSelectedRanges(): js.Array[qx.IMap] = js.native
+    def getSelectedRanges(): js.Array[js.Any] = js.native
     def getSelectionMode(): js.Dynamic = js.native
     def hasBatchMode(): Boolean = js.native
     protected def initSelectionMode(value: js.Any): js.Dynamic = js.native
@@ -11888,7 +11873,7 @@ class AbstractItem protected () extends qx.ui.core.Widget with qx.ui.form.IModel
     def addLabel(text: String = ???): Unit = js.native
     def addOpenButton(): Unit = js.native
     def addSpacer(): Unit = js.native
-    def addWidget(widget: qx.ui.core.Widget, options: qx.IMap = ???): Unit = js.native
+    def addWidget(widget: qx.ui.core.Widget, options: js.Any = ???): Unit = js.native
     def getIcon(): String = js.native
     def getIconOpened(): String = js.native
     def getIndent(): Int = js.native
@@ -11999,8 +11984,8 @@ trait MWidgetController extends js.Object {
     protected def _bindItem(item: qx.ui.core.Widget, index: Int): Unit = js.native
     protected def _removeBindingsFrom(item: qx.ui.core.Widget): Unit = js.native
     def bindDefaultProperties(item: qx.ui.core.Widget, index: Int): Unit = js.native
-    def bindProperty(sourcePath: String, targetProperty: String, options: qx.IMap, targetWidget: qx.ui.core.Widget, index: Int): Unit = js.native
-    def bindPropertyReverse(targetPath: String, sourceProperty: String, options: qx.IMap, sourceWidget: qx.ui.core.Widget, index: Int): Unit = js.native
+    def bindProperty(sourcePath: String, targetProperty: String, options: js.Any, targetWidget: qx.ui.core.Widget, index: Int): Unit = js.native
+    def bindPropertyReverse(targetPath: String, sourceProperty: String, options: js.Any, sourceWidget: qx.ui.core.Widget, index: Int): Unit = js.native
     def getChildProperty(): String = js.native
     def getDelegate(): js.Dynamic = js.native
     def getIconOptions(): js.Dynamic = js.native
@@ -12124,7 +12109,7 @@ trait MNode extends js.Object {
     def nodeSetOpened(nodeReference: js.Any, b: Boolean): Unit = js.native
     def nodeSetSelected(nodeReference: js.Any, b: Boolean): Unit = js.native
     def nodeSetSelectedIcon(nodeReference: js.Any, path: String): Unit = js.native
-    def nodeSetState(nodeReference: js.Any, attributes: qx.IMap): Unit = js.native
+    def nodeSetState(nodeReference: js.Any, attributes: js.Any): Unit = js.native
     def nodeToggleOpened(nodeReference: js.Any): Unit = js.native
 
 }
@@ -12139,7 +12124,7 @@ trait MTreePrimitive extends js.Object {
 @JSName("qx.ui.treevirtual.MTreePrimitive")
 object MTreePrimitive extends js.Object {
     protected def _addNode(nodeArr: qx.data.Array, parentNodeId: Int, label: String, bOpened: Boolean, bHideOpenCloseButton: Boolean, `type`: Int, icon: String, iconSelected: String, nodeId: Int = ???): Int = js.native
-    protected def _getEmptyTree(): qx.IMap = js.native
+    protected def _getEmptyTree(): js.Dynamic = js.native
 
 }
 }
@@ -12148,7 +12133,7 @@ package qx.ui.treevirtual {
 @JSName("qx.ui.treevirtual.SelectionManager")
 class SelectionManager protected () extends qx.ui.table.selection.Manager {
     def this(table: qx.ui.table.Table = ???) = this()
-    protected def _handleExtendedClick(tree: qx.ui.treevirtual.TreeVirtual, evt: qx.IMap, node: qx.IMap, left: Int): Boolean = js.native
+    protected def _handleExtendedClick(tree: qx.ui.treevirtual.TreeVirtual, evt: js.Any, node: js.Any, left: Int): Boolean = js.native
     def getTable(): qx.ui.table.Table = js.native
 
 }
@@ -12157,14 +12142,14 @@ package qx.ui.treevirtual {
 @js.native
 @JSName("qx.ui.treevirtual.SimpleTreeDataCellRenderer")
 class SimpleTreeDataCellRenderer extends qx.ui.table.cellrenderer.Abstract {
-    protected def _addExtraContentBeforeIcon(cellInfo: qx.IMap, pos: Int): qx.IMap = js.native
-    protected def _addExtraContentBeforeIndentation(cellInfo: qx.IMap, pos: Int): qx.IMap = js.native
-    protected def _addExtraContentBeforeLabel(cellInfo: qx.IMap, pos: Int): qx.IMap = js.native
-    protected def _addIcon(cellInfo: qx.IMap, pos: Int): qx.IMap = js.native
-    protected def _addImage(imageInfo: qx.IMap): String = js.native
-    protected def _addIndentation(cellInfo: qx.IMap, pos: Int): qx.IMap = js.native
-    protected def _addLabel(cellInfo: qx.IMap, pos: Int): String = js.native
-    protected def _getIndentSymbol(column: Int, node: Node, bUseTreeLines: Boolean, bAlwaysShowOpenCloseSymbol: Boolean, bExcludeFirstLevelTreeLines: Boolean): qx.IMap = js.native
+    protected def _addExtraContentBeforeIcon(cellInfo: js.Any, pos: Int): js.Dynamic = js.native
+    protected def _addExtraContentBeforeIndentation(cellInfo: js.Any, pos: Int): js.Dynamic = js.native
+    protected def _addExtraContentBeforeLabel(cellInfo: js.Any, pos: Int): js.Dynamic = js.native
+    protected def _addIcon(cellInfo: js.Any, pos: Int): js.Dynamic = js.native
+    protected def _addImage(imageInfo: js.Any): String = js.native
+    protected def _addIndentation(cellInfo: js.Any, pos: Int): js.Dynamic = js.native
+    protected def _addLabel(cellInfo: js.Any, pos: Int): String = js.native
+    protected def _getIndentSymbol(column: Int, node: Node, bUseTreeLines: Boolean, bAlwaysShowOpenCloseSymbol: Boolean, bExcludeFirstLevelTreeLines: Boolean): js.Dynamic = js.native
     def getAlwaysShowOpenCloseSymbol(): Boolean = js.native
     def getExcludeFirstLevelTreeLines(): Boolean = js.native
     def getUseTreeLines(): Boolean = js.native
@@ -12219,7 +12204,7 @@ class SimpleTreeDataModel extends qx.ui.table.model.Abstract with qx.ui.treevirt
     def setData(nodeArr: qx.data.Array): Unit = js.native
     def setEditable(editable: Boolean): Unit = js.native
     def setFilter(value: js.Any): js.Function = js.native
-    def setState(nodeReference: js.Any, attributes: qx.IMap): Unit = js.native
+    def setState(nodeReference: js.Any, attributes: js.Any): Unit = js.native
     def setTree(tree: qx.ui.treevirtual.TreeVirtual): Unit = js.native
     def setTreeColumn(columnIndex: Int): Unit = js.native
 
@@ -12236,7 +12221,7 @@ package qx.ui.treevirtual {
 @js.native
 @JSName("qx.ui.treevirtual.TreeVirtual")
 class TreeVirtual protected () extends qx.ui.table.Table {
-    def this(headings: qx.data.Array = ???, custom: qx.IMap = ???) = this()
+    def this(headings: qx.data.Array = ???, custom: js.Any = ???) = this()
     protected def _calculateSelectedNodes(): qx.data.Array = js.native
     def getAlwaysShowOpenCloseSymbol(): Boolean = js.native
     def getDataModel(): qx.ui.table.ITableModel = js.native
@@ -12263,7 +12248,7 @@ package qx.ui.virtual.behavior {
 @js.native
 @JSName("qx.ui.virtual.behavior.Prefetch")
 class Prefetch protected () extends qx.core.Object {
-    def this(scroller: qx.ui.virtual.core.Scroller = ???, settings: qx.IMap = ???) = this()
+    def this(scroller: qx.ui.virtual.core.Scroller = ???, settings: js.Any = ???) = this()
     protected def _applyInterval(value: Int, old: Int): Unit = js.native
     protected def _applyScroller(value: qx.ui.virtual.core.Scroller, old: qx.ui.virtual.core.Scroller): Unit = js.native
     protected def _onInterval(): Unit = js.native
@@ -12284,7 +12269,7 @@ package qx.ui.virtual.cell {
 @js.native
 @JSName("qx.ui.virtual.cell.Abstract")
 class Abstract extends qx.core.Object with qx.ui.virtual.cell.ICell {
-    override def getCellProperties(data: js.Any, states: qx.IMap): qx.IMap = js.native
+    override def getCellProperties(data: js.Any, states: js.Any): js.Dynamic = js.native
     def getAttributes(value: js.Any, states: js.Any): String = js.native
     def getContent(value: js.Any, states: js.Any): String = js.native
     def getCssClasses(value: js.Any, states: js.Any): String = js.native
@@ -12297,7 +12282,7 @@ package qx.ui.virtual.cell {
 @js.native
 @JSName("qx.ui.virtual.cell.AbstractImage")
 class AbstractImage extends qx.ui.virtual.cell.Cell {
-    protected def _identifyImage(value: js.Any): qx.IMap = js.native
+    protected def _identifyImage(value: js.Any): js.Dynamic = js.native
 
 }
 }
@@ -12305,10 +12290,10 @@ package qx.ui.virtual.cell {
 @js.native
 @JSName("qx.ui.virtual.cell.AbstractWidget")
 class AbstractWidget extends qx.core.Object with qx.ui.virtual.cell.IWidgetCell {
-    override def getCellWidget(data: js.Any, states: qx.IMap): qx.ui.core.LayoutItem = js.native
+    override def getCellWidget(data: js.Any, states: js.Any): qx.ui.core.LayoutItem = js.native
     override def pool(widget: qx.ui.core.LayoutItem): Unit = js.native
     override def updateData(widget: qx.ui.core.LayoutItem, data: js.Any): Unit = js.native
-    override def updateStates(widget: qx.ui.core.LayoutItem, states: qx.IMap): Unit = js.native
+    override def updateStates(widget: qx.ui.core.LayoutItem, states: js.Any): Unit = js.native
     protected def _cleanupPool(): Unit = js.native
     protected def _createWidget(): qx.ui.core.LayoutItem = js.native
 
@@ -12423,17 +12408,17 @@ class Html extends qx.ui.virtual.cell.Cell {
 package qx.ui.virtual.cell {
 @js.native
 trait ICell extends js.Object {
-    def getCellProperties(data: js.Any, states: qx.IMap): qx.IMap = js.native
+    def getCellProperties(data: js.Any, states: js.Any): js.Dynamic = js.native
 
 }
 }
 package qx.ui.virtual.cell {
 @js.native
 trait IWidgetCell extends js.Object {
-    def getCellWidget(data: js.Any, states: qx.IMap): qx.ui.core.LayoutItem = js.native
+    def getCellWidget(data: js.Any, states: js.Any): qx.ui.core.LayoutItem = js.native
     def pool(widget: qx.ui.core.LayoutItem): Unit = js.native
     def updateData(widget: qx.ui.core.LayoutItem, data: js.Any): Unit = js.native
-    def updateStates(widget: qx.ui.core.LayoutItem, states: qx.IMap): Unit = js.native
+    def updateStates(widget: qx.ui.core.LayoutItem, states: js.Any): Unit = js.native
 
 }
 }
@@ -12488,7 +12473,7 @@ package qx.ui.virtual.core {
 class Axis protected () extends qx.core.Object {
     def this(defaultItemSize: Int = ???, itemCount: Int = ???) = this()
     def getDefaultItemSize(): Int = js.native
-    def getItemAtPosition(position: Int): qx.IMap = js.native
+    def getItemAtPosition(position: Int): js.Dynamic = js.native
     def getItemCount(): Int = js.native
     def getItemPosition(index: Int): Int = js.native
     def getItemSize(index: Int): Int = js.native
@@ -12519,7 +12504,7 @@ class CellEvent extends qx.event.`type`.Pointer {
 package qx.ui.virtual.core {
 @js.native
 trait IHtmlCellProvider extends js.Object {
-    def getCellProperties(row: Int, column: Int): qx.IMap = js.native
+    def getCellProperties(row: Int, column: Int): js.Dynamic = js.native
 
 }
 }
@@ -12557,14 +12542,14 @@ class Pane protected () extends qx.ui.core.Widget {
     protected def _updateScrollPosition(): Unit = js.native
     def addLayer(layer: qx.ui.virtual.core.ILayer): Unit = js.native
     def fullUpdate(): Unit = js.native
-    def getCellAtPosition(documentX: Int, documentY: Int): qx.IMap = js.native
+    def getCellAtPosition(documentX: Int, documentY: Int): js.Dynamic = js.native
     def getChildren(): js.Array[js.Dynamic] = js.native
     def getColumnConfig(): qx.ui.virtual.core.Axis = js.native
     def getLayers(): js.Array[qx.ui.virtual.core.ILayer] = js.native
     def getRowConfig(): qx.ui.virtual.core.Axis = js.native
     def getScrollMaxX(): Int = js.native
     def getScrollMaxY(): Int = js.native
-    def getScrollSize(): qx.IMap = js.native
+    def getScrollSize(): js.Dynamic = js.native
     def getScrollX(): Int = js.native
     def getScrollY(): Int = js.native
     def getVisibleLayers(): js.Array[qx.ui.virtual.core.ILayer] = js.native
@@ -12633,19 +12618,19 @@ package qx.ui.virtual.layer {
 @JSName("qx.ui.virtual.layer.CellSpanManager")
 class CellSpanManager protected () extends qx.core.Object {
     def this(rowConfig: qx.ui.virtual.core.Axis = ???, columnConfig: qx.ui.virtual.core.Axis = ???) = this()
-    protected def _findCellsInRange(key: String, min: Int, max: Int): qx.IMap = js.native
+    protected def _findCellsInRange(key: String, min: Int, max: Int): js.Dynamic = js.native
     protected def _getColumnPosition(column: Int): Int = js.native
     protected def _getRowPosition(row: Int): Int = js.native
-    protected def _getSingleCellBounds(cell: qx.IMap, firstVisibleRow: qx.IMap, firstVisibleColumn: qx.IMap): qx.IMap = js.native
-    protected def _getSortedCells(key: String): js.Array[qx.IMap] = js.native
+    protected def _getSingleCellBounds(cell: js.Any, firstVisibleRow: js.Any, firstVisibleColumn: js.Any): js.Dynamic = js.native
+    protected def _getSortedCells(key: String): js.Array[js.Any] = js.native
     protected def _invalidatePositionCache(): Unit = js.native
     protected def _invalidateSortCache(): Unit = js.native
     protected def _onColumnConfigChange(e: qx.event.`type`.Event): Unit = js.native
     protected def _onRowConfigChange(e: qx.event.`type`.Event): Unit = js.native
     def addCell(id: String, row: Int, column: Int, rowSpan: Int, columnSpan: Int): Unit = js.native
-    def computeCellSpanMap(cells: js.Array[qx.IMap], firstRow: Int, firstColumn: Int, rowCount: Int, columnCount: Int): js.Array[qx.IMap] = js.native
-    def findCellsInWindow(firstRow: Int, firstColumn: Int, rowCount: Int, columnCount: Int): js.Array[qx.IMap] = js.native
-    def getCellBounds(cells: js.Array[qx.IMap], firstVisibleRow: qx.IMap, firstVisibleColumn: qx.IMap): js.Array[qx.IMap] = js.native
+    def computeCellSpanMap(cells: js.Array[js.Any], firstRow: Int, firstColumn: Int, rowCount: Int, columnCount: Int): js.Array[js.Any] = js.native
+    def findCellsInWindow(firstRow: Int, firstColumn: Int, rowCount: Int, columnCount: Int): js.Array[js.Any] = js.native
+    def getCellBounds(cells: js.Array[js.Any], firstVisibleRow: js.Any, firstVisibleColumn: js.Any): js.Array[js.Any] = js.native
     def removeCell(id: String): Unit = js.native
 
 }
@@ -12999,7 +12984,7 @@ package qx.util {
 class AliasManager extends qx.util.ValueManager {
     protected def _preprocess(value: String): String = js.native
     def add(alias: String, base: String): Unit = js.native
-    def getAliases(): qx.IMap = js.native
+    def getAliases(): js.Dynamic = js.native
     def remove(alias: String): Unit = js.native
 
 }
@@ -13132,7 +13117,7 @@ class EditDistance extends js.Object {
 @js.native
 @JSName("qx.util.EditDistance")
 object EditDistance extends js.Object {
-    def getEditOperations(dataA: qx.data.Array, dataB: qx.data.Array): js.Array[qx.IMap] = js.native
+    def getEditOperations(dataA: qx.data.Array, dataB: qx.data.Array): js.Array[js.Any] = js.native
 
 }
 }
@@ -13164,7 +13149,7 @@ object OOUtil extends js.Object {
     def getByInterface(clazz: qx.Class, iface: qx.Interface): qx.Class = js.native
     def getEventType(clazz: qx.Class, name: String): String = js.native
     def getMixins(clazz: qx.Class): js.Array[qx.Mixin] = js.native
-    def getPropertyDefinition(clazz: qx.Class, name: String): qx.IMap = js.native
+    def getPropertyDefinition(clazz: qx.Class, name: String): js.Dynamic = js.native
     def hasInterface(clazz: qx.Class, iface: qx.Interface): Boolean = js.native
     def hasProperty(clazz: qx.Class, name: String): Boolean = js.native
     def supportsEvent(clazz: qx.Class, name: String): Boolean = js.native
@@ -13194,7 +13179,7 @@ class Permutation extends js.Object {
 @js.native
 @JSName("qx.util.Permutation")
 object Permutation extends js.Object {
-    def permute(options: qx.IMap, callback: js.Function, context: js.Any): Unit = js.native
+    def permute(options: js.Any, callback: js.Function, context: js.Any): Unit = js.native
 
 }
 }
@@ -13210,9 +13195,9 @@ object PropertyUtil extends js.Object {
     def deleteInitValue(obj: js.Any, propertyName: String): Unit = js.native
     def deleteThemeValue(obj: js.Any, propertyName: String): Unit = js.native
     def deleteUserValue(obj: js.Any, propertyName: String): Unit = js.native
-    def getAllProperties(clazz: qx.Class): qx.IMap = js.native
+    def getAllProperties(clazz: qx.Class): js.Dynamic = js.native
     def getInitValue(obj: js.Any, propertyName: String): js.Dynamic = js.native
-    def getProperties(clazz: qx.Class): qx.IMap = js.native
+    def getProperties(clazz: qx.Class): js.Dynamic = js.native
     def getThemeValue(obj: js.Any, propertyName: String): js.Dynamic = js.native
     def getUserValue(obj: js.Any, propertyName: String): js.Dynamic = js.native
     def resetThemed(obj: js.Any, propertyName: String): Unit = js.native
@@ -13324,8 +13309,8 @@ class StringEscape extends js.Object {
 @js.native
 @JSName("qx.util.StringEscape")
 object StringEscape extends js.Object {
-    def escape(str: String, charCodeToEntities: qx.IMap): String = js.native
-    def unescape(str: String, entitiesToCharCode: qx.IMap): String = js.native
+    def escape(str: String, charCodeToEntities: js.Any): String = js.native
+    def unescape(str: String, entitiesToCharCode: js.Any): String = js.native
 
 }
 }
@@ -13402,8 +13387,8 @@ package qx.util {
 @js.native
 @JSName("qx.util.ValueManager")
 class ValueManager extends qx.core.Object {
-    protected def _getDynamic(): qx.IMap = js.native
-    protected def _setDynamic(value: qx.IMap): Unit = js.native
+    protected def _getDynamic(): js.Dynamic = js.native
+    protected def _setDynamic(value: js.Any): Unit = js.native
     def isDynamic(value: String): Boolean = js.native
     def resolve(value: String): js.Dynamic = js.native
     def resolveDynamic(value: String): js.Dynamic = js.native
@@ -13502,7 +13487,7 @@ package qx.util.fsm {
 @JSName("qx.util.fsm.FiniteStateMachine")
 class FiniteStateMachine protected () extends qx.core.Object {
     def this(machineName: String = ???) = this()
-    protected def _getInternalData(): qx.IMap = js.native
+    protected def _getInternalData(): js.Dynamic = js.native
     def addObject(friendlyName: String, obj: js.Any, groupNames: qx.data.Array): Unit = js.native
     def addState(state: qx.util.fsm.State): Unit = js.native
     def displayAllObjects(): Unit = js.native
@@ -13551,7 +13536,7 @@ package qx.util.fsm {
 @js.native
 @JSName("qx.util.fsm.State")
 class State protected () extends qx.core.Object {
-    def this(stateName: String = ???, stateInfo: qx.IMap = ???) = this()
+    def this(stateName: String = ???, stateInfo: js.Any = ???) = this()
     def addTransition(trans: qx.util.fsm.Transition): Unit = js.native
     def getAutoActionsAfterOnentry(): js.Dynamic = js.native
     def getAutoActionsAfterOnexit(): js.Dynamic = js.native
@@ -13636,8 +13621,8 @@ class AbstractAxis extends js.Object {
 @JSName("qx.util.placement.AbstractAxis")
 object AbstractAxis extends js.Object {
     protected def _isInRange(start: Int, size: Int, areaSize: Int): Boolean = js.native
-    protected def _moveToEdgeAndAlign(size: Int, target: qx.IMap, offsets: qx.IMap, position: String): Int = js.native
-    def computeStart(size: Int, target: qx.IMap, offsets: qx.IMap, areaSize: Int, position: String): Int = js.native
+    protected def _moveToEdgeAndAlign(size: Int, target: js.Any, offsets: js.Any, position: String): Int = js.native
+    def computeStart(size: Int, target: js.Any, offsets: js.Any, areaSize: Int, position: String): Int = js.native
 
 }
 }
@@ -13650,7 +13635,7 @@ class BestFitAxis extends js.Object {
 @js.native
 @JSName("qx.util.placement.BestFitAxis")
 object BestFitAxis extends js.Object {
-    def computeStart(size: Int, target: qx.IMap, offsets: qx.IMap, areaSize: Int, position: String): Int = js.native
+    def computeStart(size: Int, target: js.Any, offsets: js.Any, areaSize: Int, position: String): Int = js.native
 
 }
 }
@@ -13663,7 +13648,7 @@ class DirectAxis extends js.Object {
 @js.native
 @JSName("qx.util.placement.DirectAxis")
 object DirectAxis extends js.Object {
-    def computeStart(size: Int, target: qx.IMap, offsets: qx.IMap, areaSize: Int, position: String): Int = js.native
+    def computeStart(size: Int, target: js.Any, offsets: js.Any, areaSize: Int, position: String): Int = js.native
 
 }
 }
@@ -13676,7 +13661,7 @@ class KeepAlignAxis extends js.Object {
 @js.native
 @JSName("qx.util.placement.KeepAlignAxis")
 object KeepAlignAxis extends js.Object {
-    def computeStart(size: Int, target: qx.IMap, offsets: qx.IMap, areaSize: Int, position: String): Int = js.native
+    def computeStart(size: Int, target: js.Any, offsets: js.Any, areaSize: Int, position: String): Int = js.native
 
 }
 }
@@ -13684,7 +13669,7 @@ package qx.util.placement {
 @js.native
 @JSName("qx.util.placement.Placement")
 class Placement extends qx.core.Object {
-    def compute(size: qx.IMap, area: qx.IMap, target: qx.IMap, offsets: qx.IMap): qx.IMap = js.native
+    def compute(size: js.Any, area: js.Any, target: js.Any, offsets: js.Any): js.Dynamic = js.native
     def getAlign(): js.Dynamic = js.native
     def getAxisX(): qx.Class = js.native
     def getAxisY(): qx.Class = js.native
@@ -13737,8 +13722,8 @@ object Element extends js.Object {
     def getAttributeNS(element: HTMLElement, namespaceUri: String, name: String): String = js.native
     def getElementsByTagNameNS(element: HTMLElement, namespaceURI: js.Any, tagname: String): js.Array[HTMLElement] = js.native
     def getSingleNodeText(element: HTMLElement, query: String): String = js.native
-    def selectNodes(element: HTMLElement, query: String, namespaces: qx.IMap): js.Array[HTMLElement] = js.native
-    def selectSingleNode(element: HTMLElement, query: String, namespaces: qx.IMap): HTMLElement = js.native
+    def selectNodes(element: HTMLElement, query: String, namespaces: js.Any): js.Array[HTMLElement] = js.native
+    def selectSingleNode(element: HTMLElement, query: String, namespaces: js.Any): HTMLElement = js.native
     def serialize(element: HTMLElement): String = js.native
     def setAttributeNS(document: Document, element: HTMLElement, namespaceUri: String, name: String, value: String): Unit = js.native
 

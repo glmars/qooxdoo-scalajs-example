@@ -3477,7 +3477,7 @@ class Message protected () extends qx.core.Object {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Data")
+@JSName("qx.event.type.Data")
 class Data extends qx.event.`type`.Event {
     def getData(): js.Dynamic = js.native
     def getOldData(): js.Dynamic = js.native
@@ -3486,7 +3486,7 @@ class Data extends qx.event.`type`.Event {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Dom")
+@JSName("qx.event.type.Dom")
 class Dom extends qx.event.`type`.Native {
     def getModifiers(): Int = js.native
     def isAltPressed(): Boolean = js.native
@@ -3499,7 +3499,7 @@ class Dom extends qx.event.`type`.Native {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Drag")
+@JSName("qx.event.type.Drag")
 class Drag extends qx.event.`type`.Event {
     def addAction(action: String): Unit = js.native
     def addData(`type`: String, data: js.Any): Unit = js.native
@@ -3520,7 +3520,7 @@ class Drag extends qx.event.`type`.Event {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Event")
+@JSName("qx.event.type.Event")
 class Event extends qx.core.Object {
     def getBubbles(): Boolean = js.native
     def getCurrentTarget(): HTMLElement = js.native
@@ -3550,14 +3550,14 @@ class Event extends qx.core.Object {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Focus")
+@JSName("qx.event.type.Focus")
 class Focus extends qx.event.`type`.Event {
 
 }
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.GeoPosition")
+@JSName("qx.event.type.GeoPosition")
 class GeoPosition extends qx.event.`type`.Event {
     def getAccuracy(): Long = js.native
     def getAltitude(): Long = js.native
@@ -3596,7 +3596,7 @@ class GeoPosition extends qx.event.`type`.Event {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.KeyInput")
+@JSName("qx.event.type.KeyInput")
 class KeyInput extends qx.event.`type`.Dom {
     def getChar(): String = js.native
     def getCharCode(): Int = js.native
@@ -3605,7 +3605,7 @@ class KeyInput extends qx.event.`type`.Dom {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.KeySequence")
+@JSName("qx.event.type.KeySequence")
 class KeySequence extends qx.event.`type`.Dom {
     def getKeyCode(): Long = js.native
     def getKeyIdentifier(): String = js.native
@@ -3615,7 +3615,7 @@ class KeySequence extends qx.event.`type`.Dom {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Mouse")
+@JSName("qx.event.type.Mouse")
 class Mouse extends qx.event.`type`.Dom {
     def getButton(): String = js.native
     def getDocumentLeft(): Int = js.native
@@ -3632,7 +3632,7 @@ class Mouse extends qx.event.`type`.Dom {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.MouseWheel")
+@JSName("qx.event.type.MouseWheel")
 class MouseWheel extends qx.event.`type`.Mouse {
     def getWheelDelta(axis: String = ???): Int = js.native
 
@@ -3640,7 +3640,7 @@ class MouseWheel extends qx.event.`type`.Mouse {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Native")
+@JSName("qx.event.type.Native")
 class Native extends qx.event.`type`.Event {
     protected def _cloneNativeEvent(nativeEvent: qx.event.`type`.Event, clone: js.Any): js.Dynamic = js.native
     def getNativeEvent(): qx.event.`type`.Event = js.native
@@ -3651,7 +3651,7 @@ class Native extends qx.event.`type`.Event {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Orientation")
+@JSName("qx.event.type.Orientation")
 class Orientation extends qx.event.`type`.Event {
     def getOrientation(): Int = js.native
     def isLandscape(): Boolean = js.native
@@ -3661,7 +3661,7 @@ class Orientation extends qx.event.`type`.Event {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Pinch")
+@JSName("qx.event.type.Pinch")
 class Pinch extends qx.event.`type`.Pointer {
     def getScale(): Float = js.native
 
@@ -3669,7 +3669,7 @@ class Pinch extends qx.event.`type`.Pointer {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Pointer")
+@JSName("qx.event.type.Pointer")
 class Pointer extends qx.event.`type`.Mouse {
     def getHeight(): Long = js.native
     def getPointerId(): Long = js.native
@@ -3684,7 +3684,7 @@ class Pointer extends qx.event.`type`.Mouse {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Rest")
+@JSName("qx.event.type.Rest")
 class Rest extends qx.event.`type`.Data {
     def getAction(): String = js.native
     def getId(): Long = js.native
@@ -3707,7 +3707,7 @@ class Rest extends qx.event.`type`.Data {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Roll")
+@JSName("qx.event.type.Roll")
 class Roll extends qx.event.`type`.Pointer {
     def getDelta(): js.Dynamic = js.native
     def getMomentum(): Boolean = js.native
@@ -3717,7 +3717,7 @@ class Roll extends qx.event.`type`.Pointer {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Rotate")
+@JSName("qx.event.type.Rotate")
 class Rotate extends qx.event.`type`.Pointer {
     def getAngle(): Long = js.native
 
@@ -3725,7 +3725,7 @@ class Rotate extends qx.event.`type`.Pointer {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Swipe")
+@JSName("qx.event.type.Swipe")
 class Swipe extends qx.event.`type`.Pointer {
     def getAxis(): String = js.native
     def getDirection(): String = js.native
@@ -3738,14 +3738,14 @@ class Swipe extends qx.event.`type`.Pointer {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Tap")
+@JSName("qx.event.type.Tap")
 class Tap extends qx.event.`type`.Pointer {
 
 }
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Touch")
+@JSName("qx.event.type.Touch")
 class Touch extends qx.event.`type`.Dom {
     protected def _isTouchEnd(): Boolean = js.native
     def getAllTouches(): js.Array[js.Dynamic] = js.native
@@ -3767,7 +3767,7 @@ class Touch extends qx.event.`type`.Dom {
 }
 package qx.event.`type` {
 @js.native
-@JSName("qx.event.`type`.Track")
+@JSName("qx.event.type.Track")
 class Track extends qx.event.`type`.Pointer {
     def getDelta(): js.Dynamic = js.native
 
@@ -3775,7 +3775,7 @@ class Track extends qx.event.`type`.Pointer {
 }
 package qx.event.`type`.dom {
 @js.native
-@JSName("qx.event.`type`.dom.Custom")
+@JSName("qx.event.type.dom.Custom")
 class Custom protected () extends js.Object {
     def this(`type`: String = ???, domEvent: qx.event.`type`.Event = ???, customProps: js.Any = ???) = this()
     protected def _createEvent(): qx.event.`type`.Event = js.native
@@ -3785,13 +3785,13 @@ class Custom protected () extends js.Object {
 }
 package qx.event.`type`.dom {
 @js.native
-@JSName("qx.event.`type`.dom.Pointer")
+@JSName("qx.event.type.dom.Pointer")
 class Pointer protected () extends qx.event.`type`.dom.Custom {
     def this(`type`: js.Any = ???, domEvent: js.Any = ???, customProps: js.Any = ???) = this()
 
 }
 @js.native
-@JSName("qx.event.`type`.dom.Pointer")
+@JSName("qx.event.type.dom.Pointer")
 object Pointer extends js.Object {
     def getDocumentLeft(): Long = js.native
     def getDocumentTop(): Long = js.native
@@ -5503,7 +5503,7 @@ class Image extends qx.core.Object {
 }
 package qx.`type` {
 @js.native
-@JSName("qx.`type`.Array")
+@JSName("qx.type.Array")
 class Array protected () extends qx.`type`.BaseArray {
     def this(length_or_items: Int = ???) = this()
     def insertAt(obj: js.Any, i: Int): qx.data.Array = js.native
@@ -5517,14 +5517,14 @@ class Array protected () extends qx.`type`.BaseArray {
 }
 package qx.`type` {
 @js.native
-@JSName("qx.`type`.BaseArray")
+@JSName("qx.type.BaseArray")
 class BaseArray protected () extends js.Array {
     def this(length_or_items: Int = ???) = this()
 }
 }
 package qx.`type` {
 @js.native
-@JSName("qx.`type`.BaseError")
+@JSName("qx.type.BaseError")
 class BaseError protected () extends js.Error {
     def this(comment: String = ???, failMessage: String = ???) = this()
     def getComment(): String = js.native
@@ -5533,7 +5533,7 @@ class BaseError protected () extends js.Error {
 }
 package qx.`type` {
 @js.native
-@JSName("qx.`type`.BaseString")
+@JSName("qx.type.BaseString")
 class BaseString protected () extends js.Object {
     def this(txt: String = ???) = this()
     def base(args: js.Any, varags: js.Any): js.Dynamic = js.native

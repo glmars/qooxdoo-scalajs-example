@@ -7,12 +7,12 @@ import js.|
 package qx.bom {
 @js.native
 @JSName("qx.bom.String")
-class String extends js.Object {
+class StringQx extends js.Object {
 
 }
 @js.native
 @JSName("qx.bom.String")
-object String extends js.Object {
+object StringQx extends js.Object {
     def escape(str: String): String = js.native
     def fromText(str: String): String = js.native
     def toText(str: String): String = js.native

@@ -4,12 +4,12 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.`type` {
+package qx.typ {
 @js.native
 @JSName("qx.type.BaseArray")
 class BaseArray protected () extends js.Array[js.Any] {
     def this(length_or_items: Int = ???) = this()
-    def concat(varargs: js.Array[js.Any] = ???): qx.`type`.BaseArray = js.native
+    def concat(varargs: js.Array[js.Any] = ???): qx.typ.BaseArray = js.native
     def every(callback: js.Function, obj: js.Any): Boolean = js.native
     def filter(callback: js.Function, obj: js.Any): js.Dynamic = js.native
     def forEach(callback: js.Function, obj: js.Any): Unit = js.native

@@ -9,7 +9,7 @@ package qx.ui.tree {
 @JSName("qx.ui.tree.VirtualTreeItem")
 class VirtualTreeItem extends qx.ui.tree.core.AbstractItem {
     protected def _applyModel(value: js.Any, old: js.Any): Unit = js.native
-    protected def _onChangeChildProperty(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeChildProperty(e: qx.event.typ.Data): Unit = js.native
     protected def _onChangeLength(): Unit = js.native
 
 }

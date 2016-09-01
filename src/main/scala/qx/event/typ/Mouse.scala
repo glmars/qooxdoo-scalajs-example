@@ -4,10 +4,10 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.event.`type` {
+package qx.event.typ {
 @js.native
 @JSName("qx.event.type.Mouse")
-class Mouse extends qx.event.`type`.Dom {
+class Mouse extends qx.event.typ.Dom {
     def getButton(): String = js.native
     def getDocumentLeft(): Int = js.native
     def getDocumentTop(): Int = js.native

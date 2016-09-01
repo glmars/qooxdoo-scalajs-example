@@ -9,8 +9,8 @@ package qx.ui.core.scroll {
 @JSName("qx.ui.core.scroll.MRoll")
 trait MRoll extends js.Object {
     protected def _addRollHandling(): Unit = js.native
-    protected def _onPointerDownForRoll(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onRoll(e: qx.event.`type`.Roll): Unit = js.native
+    protected def _onPointerDownForRoll(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onRoll(e: qx.event.typ.Roll): Unit = js.native
     protected def _removeRollHandling(): Unit = js.native
 
 }

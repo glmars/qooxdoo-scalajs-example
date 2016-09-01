@@ -9,8 +9,8 @@ package qx.bom {
 @JSName("qx.bom.WebWorker")
 class WebWorker protected () extends qx.core.Object {
     def this(src: String = ???) = this()
-    protected def _handleError(e: qx.event.`type`.Event): Unit = js.native
-    protected def _handleMessage(e: qx.event.`type`.Event): Unit = js.native
+    protected def _handleError(e: qx.event.typ.Event): Unit = js.native
+    protected def _handleMessage(e: qx.event.typ.Event): Unit = js.native
     def postMessage(msg: String): Unit = js.native
 
 }

@@ -14,8 +14,8 @@ class VirtualSelectBox protected () extends qx.ui.form.core.AbstractVirtualBox w
     def this(model: js.Any = ???) = this()
     protected def _addBindings(): Unit = js.native
     protected def _applySelection(value: qx.data.Array, old: qx.data.Array): Unit = js.native
-    protected def _onPointerOut(event: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerOver(event: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onPointerOut(event: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerOver(event: qx.event.typ.Pointer): Unit = js.native
     protected def _removeBindings(): Unit = js.native
     protected def initSelection(value: qx.data.Array): qx.data.Array = js.native
 

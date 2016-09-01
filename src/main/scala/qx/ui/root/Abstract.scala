@@ -9,7 +9,7 @@ package qx.ui.root {
 @JSName("qx.ui.root.Abstract")
 class Abstract extends qx.ui.core.Widget with qx.ui.core.MChildrenHandling with qx.ui.core.MBlocker with qx.ui.window.MDesktop {
     protected def _applyNativeHelp(value: Boolean, old: Boolean): Unit = js.native
-    protected def _onNativeContextMenu(e: qx.event.`type`.Mouse): Unit = js.native
+    protected def _onNativeContextMenu(e: qx.event.typ.Mouse): Unit = js.native
     def getGlobalCursor(): String = js.native
     def getLayout(): qx.ui.layout.Abstract = js.native
     def getNativeHelp(): Boolean = js.native

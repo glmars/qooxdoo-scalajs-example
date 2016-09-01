@@ -13,7 +13,7 @@ trait MMultiSelectionHandling extends js.Object {
     protected def _applySelectionMode(value: js.Any, old: js.Any): Unit = js.native
     protected def _getLeadItem(): qx.ui.core.Widget = js.native
     protected def _getManager(): qx.ui.core.selection.Abstract = js.native
-    protected def _onSelectionChange(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onSelectionChange(e: qx.event.typ.Data): Unit = js.native
     def addToSelection(item: qx.ui.core.Widget): Unit = js.native
     def getDragSelection(): Boolean = js.native
     def getQuickSelection(): Boolean = js.native

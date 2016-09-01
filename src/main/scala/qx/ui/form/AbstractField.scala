@@ -21,11 +21,11 @@ class AbstractField protected () extends qx.ui.core.Widget with qx.ui.form.IStri
     protected def _createInputElement(): qx.html.Input = js.native
     protected def _getPlaceholderElement(): Unit = js.native
     protected def _getTextSize(): js.Dynamic = js.native
-    protected def _onChangeContent(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onChangeLocale(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onHtmlInput(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeContent(e: qx.event.typ.Data): Unit = js.native
+    protected def _onChangeLocale(e: qx.event.typ.Event): Unit = js.native
+    protected def _onHtmlInput(e: qx.event.typ.Data): Unit = js.native
     protected def _onPointerDownPlaceholder(): Unit = js.native
-    protected def _onWebFontStatusChange(ev: qx.event.`type`.Data): Unit = js.native
+    protected def _onWebFontStatusChange(ev: qx.event.typ.Data): Unit = js.native
     protected def _removePlaceholder(): Unit = js.native
     protected def _renderContentElement(innerHeight: Int, element: HTMLElement): Unit = js.native
     protected def _showPlaceholder(): Unit = js.native

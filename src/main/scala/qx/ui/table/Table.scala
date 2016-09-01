@@ -29,12 +29,12 @@ class Table protected () extends qx.ui.core.Widget with qx.ui.core.MDragDropScro
     protected def _getMetaColumnAtPageX(pageX: Int): Int = js.native
     protected def _getPaneScrollerArr(): js.Array[qx.ui.table.pane.Scroller] = js.native
     protected def _initColumnMenu(): Unit = js.native
-    protected def _onChangeLocale(evt: qx.event.`type`.Event): Unit = js.native
+    protected def _onChangeLocale(evt: qx.event.typ.Event): Unit = js.native
     protected def _onColOrderChanged(evt: js.Any): Unit = js.native
     protected def _onColVisibilityChanged(evt: js.Any): Unit = js.native
     protected def _onColWidthChanged(evt: js.Any): Unit = js.native
     protected def _onFocusChanged(evt: js.Any): Unit = js.native
-    protected def _onKeyPress(evt: qx.event.`type`.KeySequence): Unit = js.native
+    protected def _onKeyPress(evt: qx.event.typ.KeySequence): Unit = js.native
     protected def _onResize(): Unit = js.native
     protected def _onScrollY(evt: js.Any): Unit = js.native
     protected def _onSelectionChanged(evt: js.Any): Unit = js.native
@@ -46,7 +46,7 @@ class Table protected () extends qx.ui.core.Widget with qx.ui.core.MDragDropScro
     protected def _updateTableData(firstRow: Int, lastRow: Int, firstColumn: Int, lastColumn: Int, removeStart: Int = ???, removeCount: Int = ???): Unit = js.native
     def blockHeaderElements(): Unit = js.native
     def cancelEditing(): Unit = js.native
-    def clearFocusedRowHighlight(evt: qx.event.`type`.Pointer): Unit = js.native
+    def clearFocusedRowHighlight(evt: qx.event.typ.Pointer): Unit = js.native
     def getAdditionalStatusBarText(): js.Dynamic = js.native
     def getAlwaysUpdateCells(): Boolean = js.native
     def getColumnVisibilityButtonVisible(): Boolean = js.native

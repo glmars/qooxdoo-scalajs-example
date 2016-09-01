@@ -9,7 +9,7 @@ package qx.ui.root {
 @JSName("qx.ui.root.Inline")
 class Inline protected () extends qx.ui.root.Abstract with qx.ui.core.MLayoutHandling {
     def this(el: HTMLElement = ???, dynamicX: Boolean = ???, dynamicY: Boolean = ???) = this()
-    protected def _onResize(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onResize(e: qx.event.typ.Event): Unit = js.native
     protected def _onWindowResize(): Unit = js.native
 
 }

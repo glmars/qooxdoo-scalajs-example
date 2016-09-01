@@ -16,8 +16,8 @@ class ThemedIframe protected () extends qx.ui.embed.AbstractIframe with qx.ui.co
     protected def _onIframeLoad(): Unit = js.native
     protected def _onIframeObserverInterval(): Unit = js.native
     protected def _onIframeResize(): Unit = js.native
-    protected def _onScrollBarX(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onScrollBarY(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onScrollBarX(e: qx.event.typ.Data): Unit = js.native
+    protected def _onScrollBarY(e: qx.event.typ.Data): Unit = js.native
     protected def _preventIframeScrolling(): Unit = js.native
     protected def _startIframeObserver(): Unit = js.native
     protected def _stopIframeObserver(): Unit = js.native

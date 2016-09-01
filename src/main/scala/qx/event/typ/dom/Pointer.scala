@@ -4,11 +4,11 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.event.`type`.dom {
+package qx.event.typ.dom {
 @js.native
 @JSName("qx.event.type.dom.Pointer")
-class Pointer protected () extends qx.event.`type`.dom.Custom {
-    def this(`type`: js.Any = ???, domEvent: js.Any = ???, customProps: js.Any = ???) = this()
+class Pointer protected () extends qx.event.typ.dom.Custom {
+    def this(typ: js.Any = ???, domEvent: js.Any = ???, customProps: js.Any = ???) = this()
 
 }
 @js.native
@@ -21,7 +21,7 @@ object Pointer extends js.Object {
     def getScreenTop(): Long = js.native
     def getViewportLeft(): Long = js.native
     def getViewportTop(): Long = js.native
-    def normalize(event: qx.event.`type`.Event): Unit = js.native
+    def normalize(event: qx.event.typ.Event): Unit = js.native
 
 }
 }

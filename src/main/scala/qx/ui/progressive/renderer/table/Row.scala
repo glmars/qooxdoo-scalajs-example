@@ -9,7 +9,7 @@ package qx.ui.progressive.renderer.table {
 @JSName("qx.ui.progressive.renderer.table.Row")
 class Row protected () extends qx.ui.progressive.renderer.Abstract {
     def this(columnWidths: qx.ui.progressive.renderer.table.Widths = ???) = this()
-    protected def _resizeColumns(e: qx.event.`type`.Event): Unit = js.native
+    protected def _resizeColumns(e: qx.event.typ.Event): Unit = js.native
     def addRenderer(column: Int, renderer: qx.ui.progressive.renderer.table.cell.Abstract): Unit = js.native
     def getDefaultRowHeight(): js.Dynamic = js.native
     def getLayoutChildren(): js.Array[js.Any] = js.native

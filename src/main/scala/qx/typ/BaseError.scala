@@ -4,7 +4,7 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.`type` {
+package qx.typ {
 @js.native
 @JSName("qx.type.BaseError")
 class BaseError protected () extends js.Error {

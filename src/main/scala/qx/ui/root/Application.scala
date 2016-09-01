@@ -9,7 +9,7 @@ package qx.ui.root {
 @JSName("qx.ui.root.Application")
 class Application protected () extends qx.ui.root.Abstract {
     def this(doc: Document = ???) = this()
-    protected def _onResize(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onResize(e: qx.event.typ.Event): Unit = js.native
 
 }
 }

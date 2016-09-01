@@ -25,13 +25,13 @@ class Abstract extends qx.core.Object {
     protected def _getPage(lead: js.Any, up: Boolean = ???): Unit = js.native
     protected def _getRelatedSelectable(item: js.Any, relation: String): js.Dynamic = js.native
     protected def _getScroll(): js.Dynamic = js.native
-    protected def _getSelectableFromPointerEvent(event: qx.event.`type`.Pointer): js.Dynamic = js.native
+    protected def _getSelectableFromPointerEvent(event: qx.event.typ.Pointer): js.Dynamic = js.native
     protected def _getSelectableLocationX(item: js.Any): js.Dynamic = js.native
     protected def _getSelectableLocationY(item: js.Any): js.Dynamic = js.native
     protected def _getSelectableRange(item1: js.Any, item2: js.Any): js.Array[js.Any] = js.native
     protected def _getSelectedItem(): js.Dynamic = js.native
     protected def _isSelectable(item: js.Any): Boolean = js.native
-    protected def _onInterval(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onInterval(e: qx.event.typ.Event): Unit = js.native
     protected def _releaseCapture(): Unit = js.native
     protected def _removeFromSelection(item: js.Any): Unit = js.native
     protected def _replaceMultiSelection(items: js.Array[js.Any]): Unit = js.native
@@ -43,7 +43,7 @@ class Abstract extends qx.core.Object {
     protected def _setAnchorItem(value: js.Any): Unit = js.native
     protected def _setLeadItem(value: js.Any): Unit = js.native
     protected def _setSelectedItem(item: js.Any): Unit = js.native
-    protected def _styleSelectable(item: js.Any, `type`: String, enabled: Boolean): Unit = js.native
+    protected def _styleSelectable(item: js.Any, typ: String, enabled: Boolean): Unit = js.native
     protected def _toggleInSelection(item: js.Any): Unit = js.native
     def addItem(item: js.Any): Unit = js.native
     def clearSelection(): Unit = js.native
@@ -56,14 +56,14 @@ class Abstract extends qx.core.Object {
     def getSelection(): js.Array[js.Dynamic] = js.native
     def getSelectionContext(): String = js.native
     def getSortedSelection(): js.Array[js.Dynamic] = js.native
-    def handleAddItem(e: qx.event.`type`.Data): Unit = js.native
-    def handleKeyPress(event: qx.event.`type`.KeySequence): Unit = js.native
-    def handleLoseCapture(event: qx.event.`type`.Pointer): Unit = js.native
-    def handlePointerDown(event: qx.event.`type`.Pointer): Unit = js.native
-    def handlePointerMove(event: qx.event.`type`.Pointer): Unit = js.native
-    def handlePointerOver(event: qx.event.`type`.Pointer): Unit = js.native
-    def handleRemoveItem(e: qx.event.`type`.Data): Unit = js.native
-    def handleTap(event: qx.event.`type`.Tap): Unit = js.native
+    def handleAddItem(e: qx.event.typ.Data): Unit = js.native
+    def handleKeyPress(event: qx.event.typ.KeySequence): Unit = js.native
+    def handleLoseCapture(event: qx.event.typ.Pointer): Unit = js.native
+    def handlePointerDown(event: qx.event.typ.Pointer): Unit = js.native
+    def handlePointerMove(event: qx.event.typ.Pointer): Unit = js.native
+    def handlePointerOver(event: qx.event.typ.Pointer): Unit = js.native
+    def handleRemoveItem(e: qx.event.typ.Data): Unit = js.native
+    def handleTap(event: qx.event.typ.Tap): Unit = js.native
     protected def initDrag(value: Boolean): Boolean = js.native
     protected def initMode(value: js.Any): js.Dynamic = js.native
     protected def initQuick(value: Boolean): Boolean = js.native

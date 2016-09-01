@@ -8,7 +8,7 @@ package qx.ui.virtual.selection {
 @js.native
 trait ISelectionDelegate extends js.Object {
     def isItemSelectable(item: js.Any): Boolean
-    def styleSelectable(item: js.Any, `type`: String, wasAdded: Boolean): Unit
+    def styleSelectable(item: js.Any, typ: String, wasAdded: Boolean): Unit
 
 }
 }

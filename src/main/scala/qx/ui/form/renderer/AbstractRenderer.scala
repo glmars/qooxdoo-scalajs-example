@@ -13,7 +13,7 @@ class AbstractRenderer protected () extends qx.ui.core.Widget with qx.ui.form.re
     def this(form: qx.ui.form.Form = ???) = this()
     protected def _connectVisibility(item: qx.ui.core.Widget, label: qx.ui.basic.Label): Unit = js.native
     protected def _createLabelText(name: String, item: qx.ui.form.IForm): String = js.native
-    protected def _onChangeLocale(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onChangeLocale(e: qx.event.typ.Event): Unit = js.native
     protected def _onFormChange(): Unit = js.native
     protected def _render(): Unit = js.native
 

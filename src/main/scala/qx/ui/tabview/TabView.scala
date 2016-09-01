@@ -17,10 +17,10 @@ class TabView protected () extends qx.ui.core.Widget with qx.ui.core.ISingleSele
     def this(barPosition: String = ???) = this()
     protected def _applyBarPosition(value: Boolean, old: Boolean): Unit = js.native
     protected def _getContentPaddingTarget(): qx.ui.core.Widget = js.native
-    protected def _onBeforeChangeSelection(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onChangeSelection(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onPageClose(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onRadioChangeSelection(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onBeforeChangeSelection(e: qx.event.typ.Event): Unit = js.native
+    protected def _onChangeSelection(e: qx.event.typ.Data): Unit = js.native
+    protected def _onPageClose(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onRadioChangeSelection(e: qx.event.typ.Data): Unit = js.native
     def add(page: qx.ui.tabview.Page): Unit = js.native
     def addAt(page: qx.ui.tabview.Page, index: Int = ???): Unit = js.native
     def getBarPosition(): js.Dynamic = js.native

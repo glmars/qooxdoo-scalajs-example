@@ -16,7 +16,7 @@ class Abstract protected () extends qx.core.Object {
     protected def _handlePlayEvent(): Unit = js.native
     protected def _handleTimeUpdateEvent(): Unit = js.native
     protected def _handleVolumeChangeEvent(): Unit = js.native
-    def canPlayType(`type`: String): Boolean = js.native
+    def canPlayType(typ: String): Boolean = js.native
     def getAutoplay(): Boolean = js.native
     def getCurrentTime(): Long = js.native
     def getDuration(): Long = js.native

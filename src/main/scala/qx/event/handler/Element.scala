@@ -8,11 +8,11 @@ package qx.event.handler {
 @js.native
 @JSName("qx.event.handler.Element")
 class Element protected () extends qx.core.Object with qx.event.IEventHandler {
-    override def canHandleEvent(target: js.Any, `type`: String): Boolean = js.native
-    override def registerEvent(target: js.Any, `type`: String, capture: Boolean): Unit = js.native
-    override def unregisterEvent(target: js.Any, `type`: String, capture: Boolean): Unit = js.native
+    override def canHandleEvent(target: js.Any, typ: String): Boolean = js.native
+    override def registerEvent(target: js.Any, typ: String, capture: Boolean): Unit = js.native
+    override def unregisterEvent(target: js.Any, typ: String, capture: Boolean): Unit = js.native
     def this(manager: qx.event.Manager = ???) = this()
-    protected def _onNative(nativeEvent: qx.event.`type`.Event, eventId: Int): Unit = js.native
+    protected def _onNative(nativeEvent: qx.event.typ.Event, eventId: Int): Unit = js.native
 
 }
 }

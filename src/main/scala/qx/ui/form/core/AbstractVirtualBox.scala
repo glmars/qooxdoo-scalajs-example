@@ -21,14 +21,14 @@ class AbstractVirtualBox protected () extends qx.ui.core.Widget with qx.ui.form.
     protected def _applyRowHeight(value: Int, old: Int): Unit = js.native
     protected def _beforeClose(): Unit = js.native
     protected def _beforeOpen(): Unit = js.native
-    protected def _getAction(event: qx.event.`type`.KeySequence): String = js.native
+    protected def _getAction(event: qx.event.typ.KeySequence): String = js.native
     protected def _getBindPath(source: String, path: String = ???): String = js.native
-    protected def _handleKeyboard(event: qx.event.`type`.KeySequence): Unit = js.native
-    protected def _handlePointer(event: qx.event.`type`.Pointer): Unit = js.native
-    protected def _isModifierPressed(event: qx.event.`type`.KeySequence): Boolean = js.native
-    protected def _onBlur(event: qx.event.`type`.Focus): Unit = js.native
-    protected def _onPopupChangeVisibility(event: qx.event.`type`.Data): Unit = js.native
-    protected def _onResize(event: qx.event.`type`.Data): Unit = js.native
+    protected def _handleKeyboard(event: qx.event.typ.KeySequence): Unit = js.native
+    protected def _handlePointer(event: qx.event.typ.Pointer): Unit = js.native
+    protected def _isModifierPressed(event: qx.event.typ.KeySequence): Boolean = js.native
+    protected def _onBlur(event: qx.event.typ.Focus): Unit = js.native
+    protected def _onPopupChangeVisibility(event: qx.event.typ.Data): Unit = js.native
+    protected def _onResize(event: qx.event.typ.Data): Unit = js.native
     def close(): Unit = js.native
     def getDelegate(): js.Dynamic = js.native
     def getIconOptions(): js.Dynamic = js.native

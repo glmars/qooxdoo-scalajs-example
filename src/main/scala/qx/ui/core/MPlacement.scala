@@ -33,7 +33,7 @@ trait MPlacement extends js.Object {
     def moveTo(left: Int, top: Int): Unit = js.native
     def placeToElement(elem: HTMLElement, liveupdate: Boolean): Unit = js.native
     def placeToPoint(point: js.Any): Unit = js.native
-    def placeToPointer(event: qx.event.`type`.Pointer): Unit = js.native
+    def placeToPointer(event: qx.event.typ.Pointer): Unit = js.native
     def placeToWidget(target: qx.ui.core.Widget, liveupdate: Boolean): Boolean = js.native
     def resetDomMove(): Unit = js.native
     def resetOffset(): Unit = js.native

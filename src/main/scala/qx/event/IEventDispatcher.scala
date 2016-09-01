@@ -7,8 +7,8 @@ import js.|
 package qx.event {
 @js.native
 trait IEventDispatcher extends js.Object {
-    def canDispatchEvent(target: HTMLElement, event: qx.event.`type`.Event, `type`: String): Boolean
-    def dispatchEvent(target: HTMLElement, event: qx.event.`type`.Event, `type`: String): Unit
+    def canDispatchEvent(target: HTMLElement, event: qx.event.typ.Event, typ: String): Boolean
+    def dispatchEvent(target: HTMLElement, event: qx.event.typ.Event, typ: String): Unit
 
 }
 }

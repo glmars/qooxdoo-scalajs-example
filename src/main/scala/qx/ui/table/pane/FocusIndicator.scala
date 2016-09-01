@@ -9,7 +9,7 @@ package qx.ui.table.pane {
 @JSName("qx.ui.table.pane.FocusIndicator")
 class FocusIndicator protected () extends qx.ui.container.Composite {
     def this(scroller: js.Any = ???) = this()
-    protected def _onKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
+    protected def _onKeyPress(e: qx.event.typ.KeySequence): Unit = js.native
     def getColumn(): Int = js.native
     def getRow(): Int = js.native
     protected def initColumn(value: Int): Int = js.native

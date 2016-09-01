@@ -14,8 +14,8 @@ class CheckGroupBox extends qx.ui.groupbox.GroupBox with qx.ui.form.IExecutable 
     override def getValue(): Boolean = js.native
     override def resetValue(): Unit = js.native
     override def setValue(value: Boolean): Unit = js.native
-    protected def _onExecute(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onRadioChangeValue(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onExecute(e: qx.event.typ.Event): Unit = js.native
+    protected def _onRadioChangeValue(e: qx.event.typ.Data): Unit = js.native
 
 }
 }

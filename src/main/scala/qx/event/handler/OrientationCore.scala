@@ -10,7 +10,7 @@ package qx.event.handler {
 class OrientationCore protected () extends js.Object {
     def this(targetWindow: Window = ???, emitter: qx.event.Emitter = ???) = this()
     protected def _initObserver(): Unit = js.native
-    protected def _onNative(domEvent: qx.event.`type`.Event): Unit = js.native
+    protected def _onNative(domEvent: qx.event.typ.Event): Unit = js.native
     protected def _stopObserver(): Unit = js.native
 
 }

@@ -10,8 +10,8 @@ package qx.ui.form {
 class HoverButton protected () extends qx.ui.basic.Atom with qx.ui.form.IExecutable with qx.ui.core.MExecutable {
     def this(label: String = ???, icon: String = ???) = this()
     protected def _onInterval(): Unit = js.native
-    protected def _onPointerOut(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerOver(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onPointerOut(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerOver(e: qx.event.typ.Pointer): Unit = js.native
     def getFirstInterval(): Int = js.native
     def getInterval(): Int = js.native
     def getMinTimer(): Int = js.native

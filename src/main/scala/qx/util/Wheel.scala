@@ -13,7 +13,7 @@ class Wheel extends js.Object {
 @js.native
 @JSName("qx.util.Wheel")
 object Wheel extends js.Object {
-    def getDelta(domEvent: qx.event.`type`.Event, axis: String = ???): Int = js.native
+    def getDelta(domEvent: qx.event.typ.Event, axis: String = ???): Int = js.native
 
 }
 }

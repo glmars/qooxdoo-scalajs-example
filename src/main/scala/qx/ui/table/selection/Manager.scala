@@ -12,7 +12,7 @@ class Manager extends qx.core.Object {
     def getSelectionModel(): qx.ui.table.selection.Model = js.native
     def handleMoveKeyDown(index: Int, evt: js.Any): Unit = js.native
     def handleSelectKeyDown(index: Int, evt: js.Any): Unit = js.native
-    def handleTap(index: Int, evt: qx.event.`type`.Tap): Unit = js.native
+    def handleTap(index: Int, evt: qx.event.typ.Tap): Unit = js.native
     protected def initSelectionModel(value: qx.ui.table.selection.Model): qx.ui.table.selection.Model = js.native
     def resetSelectionModel(): Unit = js.native
     def setSelectionModel(value: qx.ui.table.selection.Model): qx.ui.table.selection.Model = js.native

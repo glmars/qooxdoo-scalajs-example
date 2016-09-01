@@ -4,10 +4,10 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.event.`type` {
+package qx.event.typ {
 @js.native
 @JSName("qx.event.type.GeoPosition")
-class GeoPosition extends qx.event.`type`.Event {
+class GeoPosition extends qx.event.typ.Event {
     def getAccuracy(): Long = js.native
     def getAltitude(): Long = js.native
     def getAltitudeAccuracy(): Long = js.native

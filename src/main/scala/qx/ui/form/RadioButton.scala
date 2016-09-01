@@ -18,8 +18,8 @@ class RadioButton protected () extends qx.ui.form.Button with qx.ui.form.IRadioI
     def this(label: String = ???) = this()
     protected def _applyGroup(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyValue(value: Boolean, old: Boolean): Unit = js.native
-    protected def _onExecute(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
+    protected def _onExecute(e: qx.event.typ.Event): Unit = js.native
+    protected def _onKeyPress(e: qx.event.typ.KeySequence): Unit = js.native
     protected def initGroup(value: qx.ui.form.RadioGroup): qx.ui.form.RadioGroup = js.native
     protected def initValue(value: Boolean): Boolean = js.native
     def isValue(): Boolean = js.native

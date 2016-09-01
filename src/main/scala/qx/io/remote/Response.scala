@@ -7,7 +7,7 @@ import js.|
 package qx.io.remote {
 @js.native
 @JSName("qx.io.remote.Response")
-class Response extends qx.event.`type`.Event {
+class Response extends qx.event.typ.Event {
     protected def _applyResponseHeaders(value: js.Any, old: js.Any): Unit = js.native
     def getContent(): js.Dynamic = js.native
     def getResponseHeader(vHeader: String): js.Dynamic = js.native

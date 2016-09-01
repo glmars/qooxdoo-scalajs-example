@@ -7,7 +7,7 @@ import js.|
 package qx.core {
 @js.native
 @JSName("qx.core.ValidationError")
-class ValidationError extends qx.`type`.BaseError {
+class ValidationError extends qx.typ.BaseError {
 
 }
 }

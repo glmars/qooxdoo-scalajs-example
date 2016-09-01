@@ -13,7 +13,7 @@ class ToolTip protected () extends qx.ui.popup.Popup {
     protected def _applyIcon(value: String, old: String): Unit = js.native
     protected def _applyLabel(value: String, old: String): Unit = js.native
     protected def _applyRich(value: Boolean, old: Boolean): Unit = js.native
-    protected def _onPointerOver(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onPointerOver(e: qx.event.typ.Pointer): Unit = js.native
     def getArrowPosition(): js.Dynamic = js.native
     def getHideTimeout(): Int = js.native
     def getIcon(): String = js.native

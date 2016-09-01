@@ -13,8 +13,8 @@ class SlideBar protected () extends qx.ui.core.Widget with qx.ui.core.MRemoteChi
     protected def _hideArrows(): Unit = js.native
     protected def _onExecuteBackward(): Unit = js.native
     protected def _onExecuteForward(): Unit = js.native
-    protected def _onResize(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onRoll(e: qx.event.`type`.Roll): Unit = js.native
+    protected def _onResize(e: qx.event.typ.Event): Unit = js.native
+    protected def _onRoll(e: qx.event.typ.Roll): Unit = js.native
     protected def _onScroll(): Unit = js.native
     protected def _onScrollAnimationEnd(): Unit = js.native
     protected def _showArrows(): Unit = js.native

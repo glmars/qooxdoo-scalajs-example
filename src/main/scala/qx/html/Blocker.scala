@@ -9,7 +9,7 @@ package qx.html {
 @JSName("qx.html.Blocker")
 class Blocker protected () extends qx.html.Element {
     def this(backgroundColor: String = ???, opacity: Long = ???) = this()
-    protected def _stopPropagation(e: qx.event.`type`.Mouse): Unit = js.native
+    protected def _stopPropagation(e: qx.event.typ.Mouse): Unit = js.native
 
 }
 }

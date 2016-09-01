@@ -4,10 +4,10 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.event.`type` {
+package qx.event.typ {
 @js.native
 @JSName("qx.event.type.Pointer")
-class Pointer extends qx.event.`type`.Mouse {
+class Pointer extends qx.event.typ.Mouse {
     def getHeight(): Long = js.native
     def getPointerId(): Long = js.native
     def getPointerType(): String = js.native

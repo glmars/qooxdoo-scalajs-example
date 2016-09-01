@@ -14,7 +14,7 @@ class ToolBar extends qx.ui.core.Widget with qx.ui.core.MChildrenHandling {
     protected def _applySpacing(value: Int, old: Int): Unit = js.native
     protected def _getNextToHide(): qx.ui.core.Widget = js.native
     def _isAllowMenuOpenHover(): Boolean = js.native
-    protected def _onResize(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onResize(e: qx.event.typ.Data): Unit = js.native
     protected def _recalculateOverflow(width: Int = ???, requiredWidth: Int = ???): Unit = js.native
     def _setAllowMenuOpenHover(value: Boolean): Unit = js.native
     def addSeparator(): Unit = js.native
@@ -39,7 +39,7 @@ class ToolBar extends qx.ui.core.Widget with qx.ui.core.MChildrenHandling {
     def setOpenMenu(value: qx.ui.menu.Menu): qx.ui.menu.Menu = js.native
     def setOverflowHandling(value: Boolean): Boolean = js.native
     def setOverflowIndicator(value: qx.ui.core.Widget): qx.ui.core.Widget = js.native
-    def setRemovePriority(item: qx.ui.core.Widget, priority: Int, `override`: Boolean): Unit = js.native
+    def setRemovePriority(item: qx.ui.core.Widget, priority: Int, overrideQx: Boolean): Unit = js.native
     def setShow(value: js.Any): js.Dynamic = js.native
     def setSpacing(value: Int): Int = js.native
     def toggleOverflowHandling(): Boolean = js.native

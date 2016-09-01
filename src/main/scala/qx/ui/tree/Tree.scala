@@ -15,9 +15,9 @@ class Tree extends qx.ui.core.scroll.AbstractScrollArea with qx.ui.core.IMultiSe
     protected def _applyRoot(value: qx.ui.tree.core.AbstractTreeItem, old: qx.ui.tree.core.AbstractTreeItem): Unit = js.native
     protected def _applyRootOpenClose(value: Boolean, old: Boolean): Unit = js.native
     protected def _getContentPaddingTarget(): qx.ui.core.Widget = js.native
-    protected def _onChangeSelection(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
-    protected def _onOpen(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onChangeSelection(e: qx.event.typ.Data): Unit = js.native
+    protected def _onKeyPress(e: qx.event.typ.KeySequence): Unit = js.native
+    protected def _onOpen(e: qx.event.typ.Pointer): Unit = js.native
     def getChildren(): js.Array[qx.ui.tree.core.AbstractTreeItem] = js.native
     def getHideRoot(): Boolean = js.native
     def getItems(recursive: Boolean = ???, invisible: Boolean = ???): js.Array[qx.ui.tree.core.AbstractTreeItem] = js.native

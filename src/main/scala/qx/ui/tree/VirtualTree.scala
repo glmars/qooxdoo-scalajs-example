@@ -38,10 +38,10 @@ class VirtualTree protected () extends qx.ui.virtual.core.Scroller with qx.ui.tr
     protected def _getSelectables(): qx.data.Array = js.native
     protected def _init(): Unit = js.native
     protected def _initLayer(): Unit = js.native
-    protected def _onChangeBubble(event: qx.event.`type`.Data): Unit = js.native
-    protected def _onKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
+    protected def _onChangeBubble(event: qx.event.typ.Data): Unit = js.native
+    protected def _onKeyPress(e: qx.event.typ.KeySequence): Unit = js.native
     protected def _onOpen(event: qx.ui.virtual.core.CellEvent): Unit = js.native
-    protected def _onUpdated(event: qx.event.`type`.Event): Unit = js.native
+    protected def _onUpdated(event: qx.event.typ.Event): Unit = js.native
     protected def _reverseLookup(index: Long): Long = js.native
     def buildLookupTable(): Unit = js.native
     def getChildProperty(): String = js.native

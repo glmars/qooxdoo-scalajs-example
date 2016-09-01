@@ -9,13 +9,13 @@ package qx.ui.core.scroll {
 @JSName("qx.ui.core.scroll.AbstractScrollArea")
 class AbstractScrollArea extends qx.ui.core.Widget with qx.ui.core.scroll.MScrollBarFactory with qx.ui.core.scroll.MRoll with qx.ui.core.MDragDropScrolling {
     protected def _computeScrollbars(): Unit = js.native
-    protected def _onChangeScrollbarXVisibility(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onChangeScrollbarYVisibility(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onChangeScrollbarXVisibility(e: qx.event.typ.Event): Unit = js.native
+    protected def _onChangeScrollbarYVisibility(e: qx.event.typ.Event): Unit = js.native
     protected def _onScrollAnimationEnd(direction: String): Unit = js.native
-    protected def _onScrollBarX(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onScrollBarY(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onScrollPaneX(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onScrollPaneY(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onScrollBarX(e: qx.event.typ.Data): Unit = js.native
+    protected def _onScrollBarY(e: qx.event.typ.Data): Unit = js.native
+    protected def _onScrollPaneX(e: qx.event.typ.Data): Unit = js.native
+    protected def _onScrollPaneY(e: qx.event.typ.Data): Unit = js.native
     def getItemBottom(item: qx.ui.core.Widget): Int = js.native
     def getItemLeft(item: qx.ui.core.Widget): Int = js.native
     def getItemRight(item: qx.ui.core.Widget): Int = js.native

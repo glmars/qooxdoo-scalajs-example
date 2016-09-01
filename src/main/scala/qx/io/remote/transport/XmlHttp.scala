@@ -8,7 +8,7 @@ package qx.io.remote.transport {
 @js.native
 @JSName("qx.io.remote.transport.XmlHttp")
 class XmlHttp extends qx.io.remote.transport.Abstract {
-    protected def _onreadystatechange(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onreadystatechange(e: qx.event.typ.Event): Unit = js.native
     def failedLocally(): Unit = js.native
     def getParseJson(): Boolean = js.native
     def getReadyState(): Int = js.native

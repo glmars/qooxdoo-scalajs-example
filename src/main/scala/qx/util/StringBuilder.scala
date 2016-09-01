@@ -7,7 +7,7 @@ import js.|
 package qx.util {
 @js.native
 @JSName("qx.util.StringBuilder")
-class StringBuilder protected () extends qx.`type`.BaseArray {
+class StringBuilder protected () extends qx.typ.BaseArray {
     def this(length_or_items: Int = ???) = this()
     def add(varargs: String = ???): Unit = js.native
     def clear(): Unit = js.native

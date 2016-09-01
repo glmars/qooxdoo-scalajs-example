@@ -14,7 +14,7 @@ class TextArea protected () extends qx.ui.form.AbstractField {
     protected def _applyWrap(value: Boolean, old: Boolean): Unit = js.native
     protected def _getAreaHeight(): Int = js.native
     protected def _getScrolledAreaHeight(): Int = js.native
-    protected def _onRoll(e: qx.event.`type`.Roll): Unit = js.native
+    protected def _onRoll(e: qx.event.typ.Roll): Unit = js.native
     protected def _setAreaHeight(height: Int): Unit = js.native
     def getAutoSize(): Boolean = js.native
     def getMinimalLineHeight(): Int = js.native

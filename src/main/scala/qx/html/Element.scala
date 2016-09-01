@@ -23,7 +23,7 @@ class Element protected () extends qx.core.Object {
     def add(varargs: qx.html.Element = ???): qx.html.Element = js.native
     def addAt(child: qx.html.Element, index: Int): qx.html.Element = js.native
     def addClass(name: String): Unit = js.native
-    def addListener(`type`: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): js.Dynamic = js.native
+    def addListener(typ: String, listener: js.Function, self: js.Any = ???, capture: Boolean = ???): js.Dynamic = js.native
     def blur(): Unit = js.native
     def capture(containerCapture: Boolean = ???): Unit = js.native
     def clearTextSelection(): Unit = js.native
@@ -52,7 +52,7 @@ class Element protected () extends qx.core.Object {
     def getTextSelectionStart(): Int = js.native
     def hasChild(child: qx.html.Element): Boolean = js.native
     def hasChildren(): Boolean = js.native
-    def hasListener(`type`: String, capture: Boolean = ???): Boolean = js.native
+    def hasListener(typ: String, capture: Boolean = ???): Boolean = js.native
     def hide(): qx.html.Element = js.native
     def include(): qx.html.Element = js.native
     def indexOf(child: qx.html.Element): Int = js.native
@@ -72,13 +72,13 @@ class Element protected () extends qx.core.Object {
     def removeAt(index: Int): qx.html.Element = js.native
     def removeAttribute(key: String, direct: Boolean = ???): qx.html.Element = js.native
     def removeClass(name: String): Unit = js.native
-    def removeListener(`type`: String, listener: js.Function, self: js.Any, capture: Boolean = ???): qx.html.Element = js.native
+    def removeListener(typ: String, listener: js.Function, self: js.Any, capture: Boolean = ???): qx.html.Element = js.native
     def removeListenerById(id: js.Any): qx.html.Element = js.native
     def removeStyle(key: String, direct: Boolean = ???): qx.html.Element = js.native
     def scrollChildIntoViewX(elem: qx.html.Element, align: String = ???, direct: Boolean = ???): Unit = js.native
     def scrollChildIntoViewY(elem: qx.html.Element, align: String = ???, direct: Boolean = ???): Unit = js.native
-    def scrollToX(x: Int, `lazy`: Boolean = ???): Unit = js.native
-    def scrollToY(y: Int, `lazy`: Boolean = ???): Unit = js.native
+    def scrollToX(x: Int, lazyQx: Boolean = ???): Unit = js.native
+    def scrollToY(y: Int, lazyQx: Boolean = ???): Unit = js.native
     def setAttribute(key: String, value: js.Any, direct: Boolean = ???): qx.html.Element = js.native
     def setAttributes(map: js.Any, direct: Boolean = ???): qx.html.Element = js.native
     def setNodeName(name: String): Unit = js.native

@@ -45,7 +45,7 @@ trait MAssert extends js.Object {
     def assertRegExp(value: js.Any, msg: String): Unit = js.native
     def assertString(value: js.Any, msg: String): Unit = js.native
     def assertTrue(value: Boolean, msg: String): Unit = js.native
-    def assertType(value: js.Any, `type`: String, msg: String): Unit = js.native
+    def assertType(value: js.Any, typ: String, msg: String): Unit = js.native
     def assertUndefined(value: js.Any, msg: String): Unit = js.native
     def fail(msg: String, compact: Boolean): Unit = js.native
 

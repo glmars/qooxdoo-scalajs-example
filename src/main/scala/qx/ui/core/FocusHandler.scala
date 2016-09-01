@@ -8,10 +8,10 @@ package qx.ui.core {
 @js.native
 @JSName("qx.ui.core.FocusHandler")
 class FocusHandler extends qx.core.Object {
-    protected def _onActivate(e: qx.event.`type`.Focus): Unit = js.native
-    protected def _onDeactivate(e: qx.event.`type`.Focus): Unit = js.native
-    protected def _onFocusIn(e: qx.event.`type`.Focus): Unit = js.native
-    protected def _onFocusOut(e: qx.event.`type`.Focus): Unit = js.native
+    protected def _onActivate(e: qx.event.typ.Focus): Unit = js.native
+    protected def _onDeactivate(e: qx.event.typ.Focus): Unit = js.native
+    protected def _onFocusIn(e: qx.event.typ.Focus): Unit = js.native
+    protected def _onFocusOut(e: qx.event.typ.Focus): Unit = js.native
     def addRoot(widget: qx.ui.core.Widget): Unit = js.native
     def connectTo(root: qx.ui.root.Abstract): Unit = js.native
     def getActiveWidget(): qx.ui.core.Widget = js.native

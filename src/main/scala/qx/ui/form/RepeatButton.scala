@@ -9,7 +9,7 @@ package qx.ui.form {
 @JSName("qx.ui.form.RepeatButton")
 class RepeatButton protected () extends qx.ui.form.Button {
     def this(label: String = ???, icon: String = ???) = this()
-    protected def _onInterval(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onInterval(e: qx.event.typ.Event): Unit = js.native
     def getFirstInterval(): Int = js.native
     def getInterval(): Int = js.native
     def getMinTimer(): Int = js.native

@@ -16,14 +16,14 @@ class DateChooser protected () extends qx.ui.core.Widget with qx.ui.form.IExecut
     def this(date: js.Date = ???) = this()
     protected def _applyValue(value: js.Date, old: js.Date): Unit = js.native
     protected def _onDayDblTap(): Unit = js.native
-    protected def _onDayTap(evt: qx.event.`type`.Data): Unit = js.native
-    protected def _onKeyPress(evt: qx.event.`type`.Data): Unit = js.native
-    protected def _onNavButtonTap(evt: qx.event.`type`.Data): Unit = js.native
-    protected def _onPointerUpDown(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onDayTap(evt: qx.event.typ.Data): Unit = js.native
+    protected def _onKeyPress(evt: qx.event.typ.Data): Unit = js.native
+    protected def _onNavButtonTap(evt: qx.event.typ.Data): Unit = js.native
+    protected def _onPointerUpDown(e: qx.event.typ.Pointer): Unit = js.native
     protected def _updateDatePane(): Unit = js.native
     def getShownMonth(): Int = js.native
     def getShownYear(): Int = js.native
-    def handleKeyPress(e: qx.event.`type`.Data): Unit = js.native
+    def handleKeyPress(e: qx.event.typ.Data): Unit = js.native
     protected def initShownMonth(value: Int): Int = js.native
     protected def initShownYear(value: Int): Int = js.native
     protected def initValue(value: js.Date): js.Date = js.native

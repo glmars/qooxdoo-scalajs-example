@@ -16,8 +16,8 @@ class WidgetProvider protected () extends qx.core.Object with qx.ui.virtual.core
     override def styleSelectabled(row: Int): Unit = js.native
     override def styleUnselectabled(row: Int): Unit = js.native
     def this(tree: qx.ui.tree.VirtualTree = ???) = this()
-    protected def _onChangeDelegate(event: qx.event.`type`.Data): Unit = js.native
-    protected def _onItemCreated(event: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeDelegate(event: qx.event.typ.Data): Unit = js.native
+    protected def _onItemCreated(event: qx.event.typ.Data): Unit = js.native
     protected def _onPool(item: qx.ui.core.Widget): Unit = js.native
     protected def _styleSelectabled(widget: qx.ui.core.Widget): Unit = js.native
     protected def _styleUnselectabled(widget: qx.ui.core.Widget): Unit = js.native

@@ -20,8 +20,8 @@ class Menu extends qx.ui.core.Widget with qx.ui.core.MPlacement with qx.ui.core.
     protected def _computePlacementSize(): js.Dynamic = js.native
     protected def _getMenuBounds(): js.Dynamic = js.native
     protected def _getMenuLayout(): js.Dynamic = js.native
-    protected def _onPointerOut(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerOver(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onPointerOut(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerOver(e: qx.event.typ.Pointer): Unit = js.native
     protected def _onResize(): Unit = js.native
     def addSeparator(): Unit = js.native
     def getArrowColumnWidth(): Int = js.native
@@ -54,7 +54,7 @@ class Menu extends qx.ui.core.Widget with qx.ui.core.MPlacement with qx.ui.core.
     def isBlockBackground(): Boolean = js.native
     def open(): Unit = js.native
     def openAtPoint(point: js.Any): Unit = js.native
-    def openAtPointer(e: qx.event.`type`.Pointer): Unit = js.native
+    def openAtPointer(e: qx.event.typ.Pointer): Unit = js.native
     def resetArrowColumnWidth(): Unit = js.native
     def resetBlockBackground(): Unit = js.native
     def resetBlockerColor(): Unit = js.native

@@ -12,8 +12,8 @@ class ComboBox extends qx.ui.form.AbstractSelectBox with qx.ui.form.IStringForm 
     override def resetValue(): Unit = js.native
     override def setValue(value: String): Unit = js.native
     protected def _applyPlaceholder(value: String, old: String): Unit = js.native
-    protected def _onTap(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onTextFieldChangeValue(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onTap(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onTextFieldChangeValue(e: qx.event.typ.Data): Unit = js.native
     protected def _setPreselectedItem(): Unit = js.native
     def clearTextSelection(): Unit = js.native
     def getPlaceholder(): String = js.native

@@ -13,10 +13,10 @@ class Pane protected () extends qx.ui.core.Widget {
     protected def _applyOrientation(value: String, old: String): Unit = js.native
     protected def _finalizeSizes(): Unit = js.native
     protected def _isActiveDragSession(): Boolean = js.native
-    protected def _onPointerDown(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerMove(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerOut(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerUp(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onPointerDown(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerMove(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerOut(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerUp(e: qx.event.typ.Pointer): Unit = js.native
     protected def _setLastPointerPosition(x: Int, y: Int): Unit = js.native
     def add(widget: qx.ui.core.Widget, flex: Long): Unit = js.native
     def getBlocker(): qx.ui.splitpane.Blocker = js.native

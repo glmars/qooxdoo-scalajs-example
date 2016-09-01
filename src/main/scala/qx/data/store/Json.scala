@@ -12,9 +12,9 @@ class Json protected () extends qx.core.Object {
     protected def _applyUrl(value: String, old: String): Unit = js.native
     protected def _createRequest(url: String): Unit = js.native
     protected def _getRequest(): js.Dynamic = js.native
-    protected def _onChangePhase(ev: qx.event.`type`.Data): Unit = js.native
-    protected def _onFail(ev: qx.event.`type`.Event): Unit = js.native
-    protected def _onSuccess(ev: qx.event.`type`.Event): Unit = js.native
+    protected def _onChangePhase(ev: qx.event.typ.Data): Unit = js.native
+    protected def _onFail(ev: qx.event.typ.Event): Unit = js.native
+    protected def _onSuccess(ev: qx.event.typ.Event): Unit = js.native
     protected def _setRequest(request: js.Any): Unit = js.native
     def getModel(): js.Dynamic = js.native
     def getState(): js.Dynamic = js.native

@@ -16,8 +16,8 @@ class CellSpanManager protected () extends qx.core.Object {
     protected def _getSortedCells(key: String): js.Array[js.Dynamic] = js.native
     protected def _invalidatePositionCache(): Unit = js.native
     protected def _invalidateSortCache(): Unit = js.native
-    protected def _onColumnConfigChange(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onRowConfigChange(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onColumnConfigChange(e: qx.event.typ.Event): Unit = js.native
+    protected def _onRowConfigChange(e: qx.event.typ.Event): Unit = js.native
     def addCell(id: String, row: Int, column: Int, rowSpan: Int, columnSpan: Int): Unit = js.native
     def computeCellSpanMap(cells: js.Array[js.Any], firstRow: Int, firstColumn: Int, rowCount: Int, columnCount: Int): js.Array[js.Dynamic] = js.native
     def findCellsInWindow(firstRow: Int, firstColumn: Int, rowCount: Int, columnCount: Int): js.Array[js.Dynamic] = js.native

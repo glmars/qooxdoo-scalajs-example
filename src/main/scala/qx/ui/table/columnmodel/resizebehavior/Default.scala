@@ -9,8 +9,8 @@ package qx.ui.table.columnmodel.resizebehavior {
 @JSName("qx.ui.table.columnmodel.resizebehavior.Default")
 class Default extends qx.ui.table.columnmodel.resizebehavior.Abstract {
     protected def _computeColumnsFlexWidth(): Unit = js.native
-    protected def _extendLastColumn(event: qx.event.`type`.Data): Unit = js.native
-    protected def _extendNextColumn(event: qx.event.`type`.Data): Unit = js.native
+    protected def _extendLastColumn(event: qx.event.typ.Data): Unit = js.native
+    protected def _extendNextColumn(event: qx.event.typ.Data): Unit = js.native
     protected def _getResizeColumnData(): js.Array[qx.ui.core.ColumnData] = js.native
     def getInitializeWidthsOnEveryAppear(): Boolean = js.native
     def getLayoutChildren(): js.Array[qx.ui.core.ColumnData] = js.native

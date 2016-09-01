@@ -12,8 +12,8 @@ class Iframe protected () extends qx.ui.embed.AbstractIframe {
     protected def _applyNativeHelp(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyScrollbar(value: js.Any, old: js.Any): Unit = js.native
     protected def _createBlockerElement(): js.Dynamic = js.native
-    protected def _onIframeLoad(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onNativeContextMenu(e: qx.event.`type`.Mouse): Unit = js.native
+    protected def _onIframeLoad(e: qx.event.typ.Event): Unit = js.native
+    protected def _onNativeContextMenu(e: qx.event.typ.Mouse): Unit = js.native
     protected def _syncSourceAfterDOMMove(): Unit = js.native
     def block(): Unit = js.native
     def getNativeHelp(): Boolean = js.native

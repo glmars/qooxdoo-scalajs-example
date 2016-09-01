@@ -14,16 +14,16 @@ class List protected () extends qx.ui.core.scroll.AbstractScrollArea with qx.ui.
     protected def _applyOrientation(value: js.Any, old: js.Any): Unit = js.native
     protected def _applySpacing(value: Int, old: Int): Unit = js.native
     protected def _createListItemContainer(): qx.ui.container.Composite = js.native
-    protected def _onAddChild(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onKeyInput(e: qx.event.`type`.KeyInput): Unit = js.native
-    protected def _onKeyPress(e: qx.event.`type`.KeySequence): Boolean = js.native
-    protected def _onRemoveChild(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onAddChild(e: qx.event.typ.Data): Unit = js.native
+    protected def _onKeyInput(e: qx.event.typ.KeyInput): Unit = js.native
+    protected def _onKeyPress(e: qx.event.typ.KeySequence): Boolean = js.native
+    protected def _onRemoveChild(e: qx.event.typ.Data): Unit = js.native
     def findItem(search: String, ignoreCase: Boolean = ???): qx.ui.form.ListItem = js.native
     def findItemByLabelFuzzy(search: String): qx.ui.form.ListItem = js.native
     def getEnableInlineFind(): Boolean = js.native
     def getOrientation(): js.Dynamic = js.native
     def getSpacing(): Int = js.native
-    def handleKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
+    def handleKeyPress(e: qx.event.typ.KeySequence): Unit = js.native
     protected def initEnableInlineFind(value: Boolean): Boolean = js.native
     protected def initOrientation(value: js.Any): js.Dynamic = js.native
     protected def initSpacing(value: Int): Int = js.native

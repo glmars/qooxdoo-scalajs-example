@@ -12,7 +12,7 @@ class Canvas protected () extends qx.ui.core.Widget {
     protected def _applyCanvasHeight(value: Int, old: Int): Unit = js.native
     protected def _applyCanvasWidth(value: Int, old: Int): Unit = js.native
     protected def _draw(width: Int, height: Int, context: CanvasRenderingContext2D): Unit = js.native
-    protected def _onResize(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onResize(e: qx.event.typ.Data): Unit = js.native
     def getCanvasHeight(): Int = js.native
     def getCanvasWidth(): Int = js.native
     def getContext2d(): CanvasRenderingContext2D = js.native

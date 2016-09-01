@@ -17,8 +17,8 @@ class Label protected () extends qx.ui.core.Widget with qx.ui.form.IStringForm {
     protected def _applyTextAlign(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyValue(value: String, old: String): Unit = js.native
     protected def _applyWrap(value: Boolean, old: Boolean): Unit = js.native
-    protected def _onChangeLocale(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onWebFontStatusChange(ev: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeLocale(e: qx.event.typ.Event): Unit = js.native
+    protected def _onWebFontStatusChange(ev: qx.event.typ.Data): Unit = js.native
     def getBuddy(): qx.ui.core.Widget = js.native
     def getRich(): Boolean = js.native
     def getTextAlign(): js.Dynamic = js.native

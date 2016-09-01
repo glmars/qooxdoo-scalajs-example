@@ -8,8 +8,8 @@ package qx.io.remote.transport {
 @js.native
 @JSName("qx.io.remote.transport.Iframe")
 class Iframe extends qx.io.remote.transport.Abstract {
-    protected def _onload(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onreadystatechange(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onload(e: qx.event.typ.Event): Unit = js.native
+    protected def _onreadystatechange(e: qx.event.typ.Event): Unit = js.native
     protected def _switchReadyState(vReadyState: String): Unit = js.native
     def getIframeBody(): js.Dynamic = js.native
     def getIframeDocument(): js.Dynamic = js.native

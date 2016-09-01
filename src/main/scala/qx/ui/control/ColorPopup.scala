@@ -15,12 +15,12 @@ class ColorPopup extends qx.ui.popup.Popup with qx.ui.form.IColorForm {
     protected def _createBoxes(): Unit = js.native
     protected def _createColorSelector(): Unit = js.native
     protected def _onAutomaticBtnExecute(): Unit = js.native
-    protected def _onChangeVisibility(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeVisibility(e: qx.event.typ.Data): Unit = js.native
     protected def _onColorSelectorCancel(): Unit = js.native
     protected def _onColorSelectorOk(): Unit = js.native
-    protected def _onFieldPointerDown(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onFieldPointerOut(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onFieldPointerOver(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onFieldPointerDown(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onFieldPointerOut(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onFieldPointerOver(e: qx.event.typ.Pointer): Unit = js.native
     protected def _onSelectorButtonExecute(): Unit = js.native
     protected def _rotatePreviousColors(): Unit = js.native
     def getBlue(): Long = js.native

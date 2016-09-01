@@ -12,9 +12,9 @@ class AbstractButton extends qx.ui.core.Widget with qx.ui.form.IExecutable with 
     protected def _applyLabel(value: String, old: String): Unit = js.native
     protected def _applyMenu(value: qx.ui.menu.Menu, old: qx.ui.menu.Menu): Unit = js.native
     protected def _applyShowCommandLabel(value: Boolean, old: Boolean): Unit = js.native
-    protected def _onChangeCommand(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onKeyPress(e: qx.event.`type`.KeySequence): Unit = js.native
-    protected def _onTap(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onChangeCommand(e: qx.event.typ.Data): Unit = js.native
+    protected def _onKeyPress(e: qx.event.typ.KeySequence): Unit = js.native
+    protected def _onTap(e: qx.event.typ.Pointer): Unit = js.native
     def getChildrenSizes(): js.Array[js.Any] = js.native
     def getIcon(): String = js.native
     def getLabel(): String = js.native

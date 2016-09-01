@@ -4,10 +4,10 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.`type` {
+package qx.typ {
 @js.native
 @JSName("qx.type.Array")
-class Array protected () extends qx.`type`.BaseArray {
+class Array protected () extends qx.typ.BaseArray {
     def this(length_or_items: Int = ???) = this()
     def append(arr: js.Array[js.Any]): js.Array[js.Any] = js.native
     @JSName("clone")

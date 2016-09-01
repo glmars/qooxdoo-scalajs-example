@@ -23,8 +23,8 @@ class Scroller protected () extends qx.ui.core.Widget with qx.ui.core.scroll.MSc
     protected def _hideResizeLine(): Unit = js.native
     protected def _onAppear(): Unit = js.native
     protected def _onCellEditorModalWindowClose(e: js.Any): Unit = js.native
-    protected def _onChangeCaptureHeader(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onContextMenu(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onChangeCaptureHeader(e: qx.event.typ.Data): Unit = js.native
+    protected def _onContextMenu(e: qx.event.typ.Pointer): Unit = js.native
     protected def _onDbltapPane(e: js.Any): Unit = js.native
     protected def _onDisappear(): Unit = js.native
     protected def _oninterval(): Unit = js.native
@@ -34,10 +34,10 @@ class Scroller protected () extends qx.ui.core.Widget with qx.ui.core.scroll.MSc
     protected def _onPointermoveHeader(e: js.Any): Unit = js.native
     protected def _onPointermovePane(e: js.Any): Unit = js.native
     protected def _onPointerout(e: js.Any): Unit = js.native
-    protected def _onPointerupFocusIndicator(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onPointerupFocusIndicator(e: qx.event.typ.Pointer): Unit = js.native
     protected def _onPointerupHeader(e: js.Any): Unit = js.native
     protected def _onResizePane(): Unit = js.native
-    protected def _onRoll(e: qx.event.`type`.Roll): Unit = js.native
+    protected def _onRoll(e: qx.event.typ.Roll): Unit = js.native
     protected def _onScrollX(e: js.Any): Unit = js.native
     protected def _onScrollY(e: js.Any): Unit = js.native
     protected def _onTapHeader(e: js.Any): Unit = js.native

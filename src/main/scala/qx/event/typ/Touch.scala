@@ -4,10 +4,10 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.event.`type` {
+package qx.event.typ {
 @js.native
 @JSName("qx.event.type.Touch")
-class Touch extends qx.event.`type`.Dom {
+class Touch extends qx.event.typ.Dom {
     protected def _isTouchEnd(): Boolean = js.native
     def getAllTouches(): js.Array[js.Dynamic] = js.native
     def getChangedTargetTouches(): js.Array[js.Dynamic] = js.native

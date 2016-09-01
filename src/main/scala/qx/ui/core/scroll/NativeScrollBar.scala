@@ -32,9 +32,9 @@ class NativeScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scr
     protected def _applyOrientation(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyPosition(value: Long, old: Long): Unit = js.native
     protected def _getScrollPaneElement(): qx.html.Element = js.native
-    protected def _onAppear(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onScroll(e: qx.event.`type`.Event): Unit = js.native
-    protected def _stopPropagation(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onAppear(e: qx.event.typ.Data): Unit = js.native
+    protected def _onScroll(e: qx.event.typ.Event): Unit = js.native
+    protected def _stopPropagation(e: qx.event.typ.Event): Unit = js.native
     protected def _updateScrollBar(): Unit = js.native
     def getSingleStep(): Int = js.native
     protected def initSingleStep(value: Int): Int = js.native

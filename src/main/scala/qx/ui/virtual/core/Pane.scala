@@ -12,11 +12,11 @@ class Pane protected () extends qx.ui.core.Widget {
     protected def _deferredUpdateScrollPosition(): Unit = js.native
     protected def _fullUpdate(): Unit = js.native
     protected def _onAppear(): Unit = js.native
-    protected def _onContextmenu(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onDbltap(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onPointerDown(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onContextmenu(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onDbltap(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onPointerDown(e: qx.event.typ.Pointer): Unit = js.native
     protected def _onResize(): Unit = js.native
-    protected def _onTap(e: qx.event.`type`.Pointer): Unit = js.native
+    protected def _onTap(e: qx.event.typ.Pointer): Unit = js.native
     protected def _setLayerWindow(layers: js.Array[qx.ui.virtual.core.ILayer], left: Int, top: Int, minWidth: Int, minHeight: Int, doFullUpdate: Boolean = ???): Unit = js.native
     protected def _updateScrollPosition(): Unit = js.native
     def addLayer(layer: qx.ui.virtual.core.ILayer): Unit = js.native

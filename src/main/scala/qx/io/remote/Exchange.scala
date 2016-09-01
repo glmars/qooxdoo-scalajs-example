@@ -11,12 +11,12 @@ class Exchange protected () extends qx.core.Object {
     def this(vRequest: qx.io.remote.Request = ???) = this()
     protected def _applyImplementation(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyState(value: js.Any, old: js.Any): Unit = js.native
-    protected def _onabort(e: qx.event.`type`.Event): Unit = js.native
-    protected def _oncompleted(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onfailed(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onreceiving(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onsending(e: qx.event.`type`.Event): Unit = js.native
-    protected def _ontimeout(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onabort(e: qx.event.typ.Event): Unit = js.native
+    protected def _oncompleted(e: qx.event.typ.Event): Unit = js.native
+    protected def _onfailed(e: qx.event.typ.Event): Unit = js.native
+    protected def _onreceiving(e: qx.event.typ.Event): Unit = js.native
+    protected def _onsending(e: qx.event.typ.Event): Unit = js.native
+    protected def _ontimeout(e: qx.event.typ.Event): Unit = js.native
     def abort(): Unit = js.native
     def getImplementation(): qx.io.remote.transport.Abstract = js.native
     def getRequest(): qx.io.remote.Request = js.native

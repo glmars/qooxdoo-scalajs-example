@@ -26,7 +26,7 @@ class RadioGroup protected () extends qx.core.Object with qx.ui.core.ISingleSele
     protected def _getItems(): js.Array[qx.ui.form.IRadioItem] = js.native
     protected def _isAllowEmptySelection(): Boolean = js.native
     protected def _isItemSelectable(item: qx.ui.form.IRadioItem): Boolean = js.native
-    protected def _onItemChangeChecked(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onItemChangeChecked(e: qx.event.typ.Data): Unit = js.native
     def add(varargs: qx.ui.form.IRadioItem = ???): Unit = js.native
     def getAllowEmptySelection(): Boolean = js.native
     def getChildren(): js.Array[qx.ui.form.IRadioItem] = js.native

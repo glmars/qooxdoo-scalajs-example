@@ -33,10 +33,10 @@ class ScrollBar protected () extends qx.ui.core.Widget with qx.ui.core.scroll.IS
     protected def _applyOrientation(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyPageStep(value: Int, old: Int): Unit = js.native
     protected def _applyPosition(value: js.Any, old: js.Any): Unit = js.native
-    protected def _onChangeSliderValue(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onExecuteBegin(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onExecuteEnd(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onResizeSlider(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeSliderValue(e: qx.event.typ.Data): Unit = js.native
+    protected def _onExecuteBegin(e: qx.event.typ.Event): Unit = js.native
+    protected def _onExecuteEnd(e: qx.event.typ.Event): Unit = js.native
+    protected def _onResizeSlider(e: qx.event.typ.Data): Unit = js.native
     protected def _onSlideAnimationEnd(): Unit = js.native
     def getPageStep(): Int = js.native
     def getSingleStep(): Int = js.native

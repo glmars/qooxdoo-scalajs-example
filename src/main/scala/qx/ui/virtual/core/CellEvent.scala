@@ -7,7 +7,7 @@ import js.|
 package qx.ui.virtual.core {
 @js.native
 @JSName("qx.ui.virtual.core.CellEvent")
-class CellEvent extends qx.event.`type`.Pointer {
+class CellEvent extends qx.event.typ.Pointer {
     def getColumn(): Int = js.native
     def getRow(): Int = js.native
     protected def initColumn(value: Int): Int = js.native

@@ -8,7 +8,7 @@ package qx.ui.form {
 @js.native
 @JSName("qx.ui.form.TextField")
 class TextField extends qx.ui.form.AbstractField {
-    protected def _onKeyPress(evt: qx.event.`type`.KeySequence): Unit = js.native
+    protected def _onKeyPress(evt: qx.event.typ.KeySequence): Unit = js.native
 
 }
 }

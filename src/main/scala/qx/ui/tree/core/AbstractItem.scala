@@ -16,7 +16,7 @@ class AbstractItem protected () extends qx.ui.core.Widget with qx.ui.form.IModel
     protected def _applyLabel(value: String, old: String): Unit = js.native
     protected def _applyOpen(value: Boolean, old: Boolean): Unit = js.native
     protected def _applyOpenSymbolMode(value: js.Any, old: js.Any): Unit = js.native
-    protected def _onChangeOpen(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeOpen(e: qx.event.typ.Data): Unit = js.native
     protected def _shouldShowOpenSymbol(): Boolean = js.native
     protected def _updateIndent(): Unit = js.native
     def addIcon(): Unit = js.native

@@ -10,9 +10,9 @@ package qx.ui.core.scroll {
 class ScrollPane extends qx.ui.core.Widget {
     protected def _applyScrollX(value: js.Any, old: js.Any): Unit = js.native
     protected def _applyScrollY(value: js.Any, old: js.Any): Unit = js.native
-    protected def _onAppear(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onScroll(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onUpdate(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onAppear(e: qx.event.typ.Event): Unit = js.native
+    protected def _onScroll(e: qx.event.typ.Event): Unit = js.native
+    protected def _onUpdate(e: qx.event.typ.Event): Unit = js.native
     def add(widget: qx.ui.core.Widget = ???): Unit = js.native
     def getChildren(): js.Array[js.Dynamic] = js.native
     def getItemBottom(item: qx.ui.core.Widget): Int = js.native

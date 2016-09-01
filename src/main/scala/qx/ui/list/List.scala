@@ -28,8 +28,8 @@ class List protected () extends qx.ui.virtual.core.Scroller with qx.data.control
     protected def _isGroup(row: Int): Boolean = js.native
     protected def _lookup(row: Long): Long = js.native
     protected def _lookupGroup(row: Long): Long = js.native
-    protected def _onModelChange(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onResize(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onModelChange(e: qx.event.typ.Data): Unit = js.native
+    protected def _onResize(e: qx.event.typ.Data): Unit = js.native
     protected def _reverseLookup(index: Long): Long = js.native
     protected def _runDelegateFilter(model: qx.data.IListData): Unit = js.native
     protected def _runDelegateGroup(model: qx.data.IListData): Unit = js.native

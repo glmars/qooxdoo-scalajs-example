@@ -13,9 +13,9 @@ class FiniteStateMachine protected () extends qx.core.Object {
     def addObject(friendlyName: String, obj: js.Any, groupNames: js.Array[js.Any]): Unit = js.native
     def addState(state: qx.util.fsm.State): Unit = js.native
     def displayAllObjects(): Unit = js.native
-    def enqueueEvent(event: qx.event.`type`.Event, bAddAtHead: Boolean): Unit = js.native
-    def eventListener(event: qx.event.`type`.Event): Unit = js.native
-    def fireImmediateEvent(`type`: String, target: qx.core.Object, data: js.Any): Unit = js.native
+    def enqueueEvent(event: qx.event.typ.Event, bAddAtHead: Boolean): Unit = js.native
+    def eventListener(event: qx.event.typ.Event): Unit = js.native
+    def fireImmediateEvent(typ: String, target: qx.core.Object, data: js.Any): Unit = js.native
     def getDebugFlags(): Long = js.native
     def getFriendlyName(obj: js.Any): String = js.native
     def getGroupObjects(groupName: String): js.Array[js.Any] = js.native
@@ -33,7 +33,7 @@ class FiniteStateMachine protected () extends qx.core.Object {
     protected def initState(value: String): String = js.native
     def isTerminated(): Boolean = js.native
     def popState(): String = js.native
-    def postponeEvent(event: qx.event.`type`.Event): Unit = js.native
+    def postponeEvent(event: qx.event.typ.Event): Unit = js.native
     def pushState(state: Boolean): Unit = js.native
     def removeObject(friendlyName: String): Unit = js.native
     def replaceState(state: qx.util.fsm.State, bDispose: Boolean): js.Dynamic = js.native
@@ -43,7 +43,7 @@ class FiniteStateMachine protected () extends qx.core.Object {
     def resetNextState(): Unit = js.native
     def resetPreviousState(): Unit = js.native
     def resetState(): Unit = js.native
-    def scheduleEvent(`type`: String, target: qx.core.Object, data: js.Any, timeout: Int): Unit = js.native
+    def scheduleEvent(typ: String, target: qx.core.Object, data: js.Any, timeout: Int): Unit = js.native
     def setDebugFlags(value: Long): Long = js.native
     def setMaxSavedStates(value: Long): Long = js.native
     def setName(value: String): String = js.native

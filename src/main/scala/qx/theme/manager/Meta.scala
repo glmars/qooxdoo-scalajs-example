@@ -10,7 +10,7 @@ package qx.theme.manager {
 class Meta extends qx.core.Object {
     protected def _activateEvents(): Unit = js.native
     protected def _applyTheme(value: qx.Theme, old: qx.Theme): Unit = js.native
-    protected def _fireEvent(e: qx.event.`type`.Data): Unit = js.native
+    protected def _fireEvent(e: qx.event.typ.Data): Unit = js.native
     protected def _suspendEvents(): Unit = js.native
     def getTheme(): qx.Theme = js.native
     def initialize(): Unit = js.native

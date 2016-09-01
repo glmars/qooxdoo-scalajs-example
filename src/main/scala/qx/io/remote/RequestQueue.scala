@@ -11,10 +11,10 @@ class RequestQueue extends qx.core.Object {
     protected def _applyEnabled(value: Boolean, old: Boolean): Unit = js.native
     protected def _check(): Unit = js.native
     protected def _debug(): Unit = js.native
-    protected def _oncompleted(e: qx.event.`type`.Event): Unit = js.native
-    protected def _oninterval(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onreceiving(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onsending(e: qx.event.`type`.Event): Unit = js.native
+    protected def _oncompleted(e: qx.event.typ.Event): Unit = js.native
+    protected def _oninterval(e: qx.event.typ.Event): Unit = js.native
+    protected def _onreceiving(e: qx.event.typ.Event): Unit = js.native
+    protected def _onsending(e: qx.event.typ.Event): Unit = js.native
     protected def _remove(vTransport: qx.io.remote.Exchange): Unit = js.native
     def abort(vRequest: js.Any): Unit = js.native
     def add(vRequest: js.Any): Unit = js.native

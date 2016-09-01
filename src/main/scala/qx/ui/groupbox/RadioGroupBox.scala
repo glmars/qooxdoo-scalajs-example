@@ -16,8 +16,8 @@ class RadioGroupBox extends qx.ui.groupbox.GroupBox with qx.ui.form.IRadioItem w
     override def getCommand(): qx.ui.command.Command = js.native
     override def setCommand(command: qx.ui.command.Command): qx.ui.command.Command = js.native
     override def resetValue(): Unit = js.native
-    protected def _onExecute(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onRadioChangeValue(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onExecute(e: qx.event.typ.Event): Unit = js.native
+    protected def _onRadioChangeValue(e: qx.event.typ.Data): Unit = js.native
     def getLabel(): String = js.native
 
 }

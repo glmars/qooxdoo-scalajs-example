@@ -14,8 +14,8 @@ trait MModel extends js.Object {
     protected def _applySelection(value: qx.data.Array, old: qx.data.Array): Unit = js.native
     protected def _applySelectionMode(value: js.Any, old: js.Any): Unit = js.native
     protected def _initSelectionManager(): Unit = js.native
-    protected def _onChangeSelection(e: qx.event.`type`.Data): Unit = js.native
-    protected def _onManagerChangeSelection(e: qx.event.`type`.Data): Unit = js.native
+    protected def _onChangeSelection(e: qx.event.typ.Data): Unit = js.native
+    protected def _onManagerChangeSelection(e: qx.event.typ.Data): Unit = js.native
     protected def _updateSelection(): Unit = js.native
     def getAutoScrollIntoView(): Boolean = js.native
     def getDragSelection(): Boolean = js.native

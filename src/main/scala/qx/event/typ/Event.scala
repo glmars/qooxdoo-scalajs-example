@@ -4,7 +4,7 @@ import org.scalajs.dom.raw._
 import js.annotation._
 import js.|
 
-package qx.event.`type` {
+package qx.event.typ {
 @js.native
 @JSName("qx.event.type.Event")
 class Event extends qx.core.Object {
@@ -18,7 +18,7 @@ class Event extends qx.core.Object {
     def getTarget(): HTMLElement = js.native
     def getTimeStamp(): Int = js.native
     def getType(): String = js.native
-    def init(canBubble: Boolean = ???, cancelable: Boolean = ???): qx.event.`type`.Event = js.native
+    def init(canBubble: Boolean = ???, cancelable: Boolean = ???): qx.event.typ.Event = js.native
     def isCancelable(): Boolean = js.native
     def preventDefault(): Unit = js.native
     def setBubbles(bubbles: Boolean): Unit = js.native
@@ -28,7 +28,7 @@ class Event extends qx.core.Object {
     def setOriginalTarget(originalTarget: HTMLElement): Unit = js.native
     def setRelatedTarget(relatedTarget: HTMLElement): Unit = js.native
     def setTarget(target: HTMLElement): Unit = js.native
-    def setType(`type`: String): Unit = js.native
+    def setType(typ: String): Unit = js.native
     def stop(): Unit = js.native
     def stopPropagation(): Unit = js.native
 

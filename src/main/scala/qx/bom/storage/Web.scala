@@ -8,7 +8,7 @@ package qx.bom.storage {
 @js.native
 @JSName("qx.bom.storage.Web")
 class Web protected () extends js.Object {
-    def this(`type`: String = ???) = this()
+    def this(typ: String = ???) = this()
     def clear(): Unit = js.native
     def forEach(callback: js.Function, scope: js.Any): Unit = js.native
     def getItem(key: String): js.Dynamic = js.native

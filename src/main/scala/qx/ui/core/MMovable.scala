@@ -9,10 +9,10 @@ package qx.ui.core {
 @JSName("qx.ui.core.MMovable")
 trait MMovable extends js.Object {
     protected def _activateMoveHandle(widget: qx.ui.core.Widget): Unit = js.native
-    protected def _onMovePointerDown(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onMovePointerMove(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onMovePointerUp(e: qx.event.`type`.Pointer): Unit = js.native
-    protected def _onMoveRoll(e: qx.event.`type`.Roll): Unit = js.native
+    protected def _onMovePointerDown(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onMovePointerMove(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onMovePointerUp(e: qx.event.typ.Pointer): Unit = js.native
+    protected def _onMoveRoll(e: qx.event.typ.Roll): Unit = js.native
     def getMovable(): Boolean = js.native
     def getUseMoveFrame(): Boolean = js.native
     protected def initMovable(value: Boolean): Boolean = js.native

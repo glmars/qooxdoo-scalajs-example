@@ -12,8 +12,8 @@ trait MDesktop extends js.Object {
     protected def _afterAddChild(win: qx.ui.core.Widget): Unit = js.native
     protected def _afterRemoveChild(win: qx.ui.core.Widget): Unit = js.native
     protected def _applyActiveWindow(value: qx.ui.window.Window, old: qx.ui.window.Window): Unit = js.native
-    protected def _onChangeActive(e: qx.event.`type`.Event): Unit = js.native
-    protected def _onChangeModal(e: qx.event.`type`.Event): Unit = js.native
+    protected def _onChangeActive(e: qx.event.typ.Event): Unit = js.native
+    protected def _onChangeModal(e: qx.event.typ.Event): Unit = js.native
     protected def _onChangeVisibility(): Unit = js.native
     protected def _removeWindow(win: qx.ui.window.Window): Unit = js.native
     def getActiveWindow(): qx.ui.window.Window = js.native

@@ -13,8 +13,8 @@ class Aspect extends js.Object {
 @js.native
 @JSName("qx.core.Aspect")
 object Aspect extends js.Object {
-    def addAdvice(fcn: js.Function, position: String = ???, `type`: String = ???, name: String = ???): Unit = js.native
-    def wrap(fullName: String, fcn: js.Function, `type`: String): js.Function = js.native
+    def addAdvice(fcn: js.Function, position: String = ???, typ: String = ???, name: String = ???): Unit = js.native
+    def wrap(fullName: String, fcn: js.Function, typ: String): js.Function = js.native
 
 }
 }

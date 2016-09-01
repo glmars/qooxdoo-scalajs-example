@@ -11,6 +11,7 @@ class Inline protected () extends qx.ui.root.Abstract with qx.ui.core.MLayoutHan
     def this(el: HTMLElement = ???, dynamicX: Boolean = ???, dynamicY: Boolean = ???) = this()
     protected def _onResize(e: qx.event.typ.Event): Unit = js.native
     protected def _onWindowResize(): Unit = js.native
+	override def getLayout(): qx.ui.layout.Abstract = js.native
 
 }
 }

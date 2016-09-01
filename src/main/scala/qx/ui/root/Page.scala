@@ -9,7 +9,7 @@ package qx.ui.root {
 @JSName("qx.ui.root.Page")
 class Page protected () extends qx.ui.root.Abstract {
     def this(doc: Document = ???) = this()
-    def supportsMaximize(): Boolean = js.native
+    override def supportsMaximize(): Boolean = js.native
 
 }
 }

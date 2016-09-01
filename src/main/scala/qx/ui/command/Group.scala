@@ -9,10 +9,13 @@ package qx.ui.command {
 @JSName("qx.ui.command.Group")
 class Group extends qx.core.Object {
     protected def _applyActive(value: Boolean, old: Boolean): Unit = js.native
-    def add(key: String, command: qx.ui.command.Command): Boolean = js.native
-    def get(key: String): qx.ui.command.Command = js.native
+	@JSName("add")
+	def addCommand(key: String, command: qx.ui.command.Command): Boolean = js.native
+	@JSName("get")
+	def getCommand(key: String): qx.ui.command.Command = js.native
     def getActive(): Boolean = js.native
-    def has(key: String): Boolean = js.native
+	@JSName("has")
+	def hasCommand(key: String): Boolean = js.native
     protected def initActive(value: Boolean): Boolean = js.native
     def isActive(): Boolean = js.native
     def remove(key: String): qx.ui.command.Command = js.native

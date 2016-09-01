@@ -12,11 +12,11 @@ trait IListProvider extends js.Object {
     def createLayer(): qx.ui.virtual.layer.Abstract
     def isSelectable(row: Int): Boolean
     def removeBindings(): Unit
-    def setDelegate(delegate: js.Any): Unit
-    def setIconOptions(options: js.Any): Unit
-    def setIconPath(path: String): Unit
-    def setLabelOptions(options: js.Any): Unit
-    def setLabelPath(path: String): Unit
+    def setDelegate(delegate: js.Any): js.Dynamic
+    def setIconOptions(options: js.Any): js.Dynamic
+    def setIconPath(path: String): String
+    def setLabelOptions(options: js.Any): js.Dynamic
+    def setLabelPath(path: String): String
     def styleSelectabled(row: Int): Unit
     def styleUnselectabled(row: Int): Unit
 

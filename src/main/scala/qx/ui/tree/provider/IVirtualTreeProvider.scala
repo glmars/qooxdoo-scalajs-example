@@ -10,8 +10,8 @@ trait IVirtualTreeProvider extends js.Object {
     def createLayer(): qx.ui.virtual.layer.Abstract
     def createRenderer(): js.Dynamic
     def isSelectable(row: Int): Boolean
-    def setChildProperty(value: String): Unit
-    def setLabelPath(value: String): Unit
+    def setChildProperty(value: String): String
+    def setLabelPath(value: String): String
     def styleSelectabled(row: Int): Unit
     def styleUnselectabled(row: Int): Unit
 

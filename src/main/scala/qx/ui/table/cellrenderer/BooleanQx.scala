@@ -7,7 +7,7 @@ import js.|
 package qx.ui.table.cellrenderer {
 @js.native
 @JSName("qx.ui.table.cellrenderer.Boolean")
-class Boolean extends qx.ui.table.cellrenderer.AbstractImage {
+class BooleanQx extends qx.ui.table.cellrenderer.AbstractImage {
     protected def _applyIconFalse(value: String, old: String): Unit = js.native
     protected def _applyIconTrue(value: String, old: String): Unit = js.native
     def getIconFalse(): String = js.native

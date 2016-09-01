@@ -9,10 +9,10 @@ package qx.ui.table {
 trait IColumnMenuButton extends js.Object {
     def empty(): Unit
     def factory(item: String, options: js.Any): qx.ui.core.Widget
-    def getMenu(): js.Dynamic
-    protected def initMenu(value: js.Any): js.Dynamic
+    def getMenu(): qx.ui.menu.Menu
+    protected def initMenu(value: qx.ui.menu.Menu): qx.ui.menu.Menu
     def resetMenu(): Unit
-    def setMenu(value: js.Any): js.Dynamic
+    def setMenu(value: qx.ui.menu.Menu): qx.ui.menu.Menu
 
 }
 }
